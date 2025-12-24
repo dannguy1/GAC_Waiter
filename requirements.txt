@@ -1,0 +1,16 @@
+streamlit
+pandas
+openai
+faster-whisper
+sounddevice
+numpy
+requests
+soundfile
+python-dotenv
+fastapi
+uvicorn
+python-multipart
+sentence-transformers==2.2.2
+faiss-cpu==1.7.4
+rank-bm25==0.2.2
+langdetect

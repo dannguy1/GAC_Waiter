@@ -1,0 +1,1296 @@
+{
+  "restaurant_info": {
+    "name": "Garlic & Chives",
+    "location": "Garden Grove, CA"
+  },
+  "items": [
+    {
+      "item_name": "Honey Walnut Shrimps w/ Chips",
+      "description": "Indulge in our Honey Walnut Shrimp, where crispy shrimp are tossed in a creamy, sweet honey sauce, sprinkled with candied walnuts, and served alongside crunchy shrimp chips for an irresistible blend of textures and flavors.",
+      "image_path": "",
+      "price": 13,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Baked Crispy Catfish w. Boiled Pork/Ca Nuong Da Gion Thit Luoc",
+      "description": "Crispy baked catfish with poached pork. Please allow 1 hour for preparation.",
+      "image_path": "./images/BakedCrispyCatfishWBoiledPorkCaNuongDaGionThitLuoc.jpg",
+      "price": 22,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Crispy Peking Duck w/ Crepes",
+      "description": "Succulent duck with shatteringly crisp skin is served alongside delicate, warm crepes, sweet hoisin sauce, and fresh scallions, inviting you to wrap your own bite of this traditional delicacy, bursting with flavors and textures",
+      "image_path": "",
+      "price": 17,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Crispy Whole Fish w/ Mango Sauce or Thai Chili",
+      "description": "A tropical delight with our Fried Fish, either bathed in a tangy-sweet mango sauce or kicked up with a vibrant Thai chili glaze, offering a perfect harmony of crispy textures and zesty, spicy flavors that dance on the palate.",
+      "image_path": "",
+      "price": 24,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "House Special Pork Chops",
+      "description": "Savor our House Special Pork Chops, where juicy chops are marinated in a signature blend of spices, grilled to perfection, and served with a unique house sauce that elevates the humble pork chop to a gourmet delight.",
+      "image_path": "",
+      "price": 12,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Salt & Pepper Garlic Butter Pork Chops",
+      "description": "Savor our Salt & Pepper Garlic Butter Pork Chops, where juicy chops are seasoned to perfection, kissed with the richness of garlic butter, and crisped to a golden delight, offering a symphony of flavors with every bite.",
+      "image_path": "",
+      "price": 23,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "House Special Squid",
+      "description": "Dive into our House Special Squid, where tender squid meets a secret blend of spices, lightly battered and fried to a golden crisp, served with a zesty dipping sauce that promises an irresistible dance of flavors.",
+      "image_path": "",
+      "price": 14,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "House Special Lobster with Garlic Noodles (priced by lbs)",
+      "description": "Indulge in luxury with our House Special Lobster, where succulent lobster meat meets buttery garlic noodles, all intertwined with a special house sauce, creating a dish that's both lavish and deeply satisfying.",
+      "image_path": "./images/LobsterwithNoodles.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Salmon in Seafood Sauce w/ Garlic Rice",
+      "description": "Savor our Grilled Salmon, where the fish's rich flavors are enhanced by a luscious seafood sauce, served alongside fragrant garlic rice, creating a dish that's both hearty and exquisitely refined.",
+      "image_path": "",
+      "price": 14,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Sticky Rice with Mango",
+      "description": "Sweetened sticky rice with fresh mangoes",
+      "image_path": "./images/stickyricemango.jpg",
+      "price": 24,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Creme Brulee",
+      "description": "Conclude your meal with our Cr\u00e8me Br\u00fbl\u00e9e, a creamy, vanilla-kissed custard under a perfectly caramelized sugar crust, offering a delightful crunch followed by a smooth, rich finish that's simply divine.",
+      "image_path": "",
+      "price": 20,
+      "category": "Dessert",
+      "popular": false
+    },
+    {
+      "item_name": "Garlic Butter Chicken/Canh Ga Bo Chien",
+      "description": "Crispy chicken wings tossed in garlic butter and topped with crispy garlic",
+      "image_path": "./images/garlicbutterchicken.jpg",
+      "price": 10,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Baked Corn Cheese",
+      "description": "Baked corn served on a hot skillet topped with mozzarella",
+      "image_path": "./images/bakecorncheese.jpg",
+      "price": 23,
+      "category": "Vegetables & Sides",
+      "popular": true
+    },
+    {
+      "item_name": "Egg rolls/Cha Gio",
+      "description": "Indulge in our Ch\u1ea3 Gi\u00f2, crispy Vietnamese spring rolls filled with a savory mix of ground pork, shrimp, vegetables, and vermicelli, wrapped and fried to golden perfection, served with nuoc cham sauce for that quintessential balance of crunch and flavor.",
+      "image_path": "./images/eggrolls.jpg",
+      "price": 30,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Chicken Satay",
+      "description": "Savor the exotic with our Chicken Satay Skewers, where tender, marinated chicken is grilled to smoky perfection, served with a rich peanut sauce that adds a sweet and nutty depth to each bite.",
+      "image_path": "./images/ChickenSatay.jpg",
+      "price": 16,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Holy Crunchy Chicken wings/Canh Ga Chien",
+      "description": "Heavenly crispy fried chicken wings with sweet and spicy sauce topped with fried garlic chips",
+      "image_path": "./images/HolyCrunchyChickenWings.jpg",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Fried Sweet Potatoes/Khoai Lang Chien",
+      "description": "Salmon Belly, mint, vermicelli, cucumber, rolled in rice paper and served with tamarind sauce",
+      "image_path": "./images/FriedSweetPotatoes.jpg",
+      "price": 23,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Salmon Belly Chien Gion",
+      "description": "Salmon Belly battered in garlic seasonings and fried crisp. Served with house special sauce",
+      "image_path": "./images/SalmonBellyChienGion.jpg",
+      "price": 11,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Toothpick Lamb/Cuu Xien Que",
+      "description": "Discover the flavors of our Toothpick Lamb, where succulent pieces of lamb are seasoned with a blend of spices, skewered, and grilled to tender perfection, offering a bite-sized taste of culinary craftsmanship.",
+      "image_path": "./images/TootpickLamb.jpg",
+      "price": 22,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Corn with Dried Shrimp/Bap Xao Tom Kho",
+      "description": "Saut\u00e9ed corn in house special seasonings topped with dried shrimp",
+      "image_path": "./images/CornWithDriedShrimp.jpg",
+      "price": 12,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Pho French Dip",
+      "description": "Experience a fusion of cultures with our Pho French Dip, where the rich, aromatic broth of traditional Vietnamese pho meets the classic French dip sandwich, featuring thinly sliced beef and a side of pho broth for dipping, creating a unique, flavorful twist on two beloved dishes.",
+      "image_path": "./images/PhoFrenchDip.jpg",
+      "price": 15,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Shrimp Roll/Goi Cuon Tom",
+      "description": "Delight in the freshness of our G\u1ecfi Cu\u1ed1n T\u00f4m, where succulent shrimp, crisp vegetables, and herbs are wrapped in delicate rice paper, served with a tangy peanut dipping sauce for a light, refreshing bite.",
+      "image_path": "./images/ShrimpRolls.jpg",
+      "price": 19,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Pork Sausage Roll/Goi Cuon Nem Nuong",
+      "description": "Grilled pork sausage, mint, vermicelli, chives, served with Chef's special sauce",
+      "image_path": "./images/GrilledPorkSausageRolls.jpg",
+      "price": 17,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Veggie Roll/Goi Cuon Chay",
+      "description": "Enjoy our G\u1ecfi Cu\u1ed1n Chay, where fresh veggies, herbs, and tofu are snugly wrapped in rice paper, offering a burst of freshness with each bite, served with a savory dipping sauce.",
+      "image_path": "./images/VegetarianSpringRolls.jpg",
+      "price": 14,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Pork Spring Roll/Goi Cuon Thit Nuong",
+      "description": "Grilled pork, fresh lettuce & herbs, cucumber, vermicelli, chives rolled in rice paper, served with house special fish sauce",
+      "image_path": "./images/GrillPorkRolls.jpg",
+      "price": 10,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Salmon Belly Roll/Goi Cuon Ca Salmon",
+      "description": "Salmon Belly, mint, cucumber, rolled in rice paper and served with tamarind sauce",
+      "image_path": "./images/SalmonBellyRolls.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Beef Roll/Goi Cuon Bo Nuong",
+      "description": "Lemongrass beef, fresh lettuce, pickled daikon and carrots, crispy wonton wrapper rolled up in rice paper. Served with house special fish sauce.",
+      "image_path": "./images/BeefRolls.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Poke Roll/Goi Cuon Ahi Poke",
+      "description": "Raw Ahi Tuna, fresh lettuce, avocado, pickled daikon and carrots, crispy wonton wrapper rolled up in rice paper. Served with house special soy sauce and wasabi",
+      "image_path": "./images/PokeRolls.jpg",
+      "price": 11,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Pork and Shrimp Roll/Goi Cuon Tom Thit",
+      "description": "Gulf shrimp, pork, mint, vermicelli, chives, served with Chef's peanut sauce",
+      "image_path": "./images/PorkandShrimpRolls.jpg",
+      "price": 30,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Shrimp and Pork Mustard Green",
+      "description": "Shrimp and Pork Wrapped Mustard Green Leaf - C\u1ea3i B\u1eb9 Xanh Cu\u1ed1n T\u00f4m Th\u1ecbt",
+      "image_path": "./images/ShrimpandPorkMustardGreen.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Tiger Shrimp and Mango Salad - Goi Xoai Tom Xu",
+      "description": "Marinated black tiger shrimp served with mango salad",
+      "image_path": "",
+      "price": 21,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Ahi Poke Salad (Seared) - Goi Ca Ahi",
+      "description": "Seared tuna topped on a bed of lettuce, seaweed, onions, and crispy chives. Served with wasabi dressing",
+      "image_path": "./images/AhiPokeSalad.jpg",
+      "price": 29,
+      "category": "Vegetables & Sides",
+      "popular": true
+    },
+    {
+      "item_name": "Green Papaya Beef Jerky Salad - Du Du Kho Bo",
+      "description": "Caramelized peppered pork belly served in claypot with pickled mustard greens",
+      "image_path": "./images/GreenPapayaBeefJerkySalad.jpg",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Thai Calamari Salad - Goi Muc Thailand",
+      "description": "Grilled calamari with sliced papaya, mango, onion, mint, peanuts, and shallots tossed in fish sauce vinaigrette",
+      "image_path": "./images/ThaiCalamariSalad.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Baby Clam Salad - Goi Hen",
+      "description": "Baby clams, cabbage, banana blossom, fresh herbs, peanuts, and shallots. Served with house fish sauce vinaigrette",
+      "image_path": "./images/BabyClamSalad.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Salmon Salad",
+      "description": "Grilled salmon served on a bed of greens, herbs, and onions topped with creamy dressing",
+      "image_path": "",
+      "price": 17,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Ahi Poke Salad",
+      "description": "Sesame marinated tuna on bed of field greens and topped with wasabi dressing",
+      "image_path": "./images/AhiPokeSalad.jpg",
+      "price": 30,
+      "category": "Vegetables & Sides",
+      "popular": false
+    },
+    {
+      "item_name": "Lotus Root Salad - Goi Ngo Sen",
+      "description": "Lotus root, pork, shrimp, onions, peanuts, carrots, cucumber, celery tossed in house fish sauce vinaigrette",
+      "image_path": "./images/LotusRootSalad.jpg",
+      "price": 10,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Beef Ong Choy Salad - Goi Rau Moung Bo Xao",
+      "description": "Shredded ong choy, fresh herbs, pickled daikon and carrots, onions, and peanuts tossed in house fish sauce vinaigrette",
+      "image_path": "./images/BeefOngChoySalad.jpg",
+      "price": 24,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Thai Beef Salad - Goi Bo Thailand",
+      "description": "Thai marinated filet mignon grilled and served on top of greens, cucumber, celery, onion, peanuts and tossed in house fish sauce vinaigrette",
+      "image_path": "./images/ThaiBeefSalad.jpg",
+      "price": 21,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Rice paper Salad - Banh Trang Tron",
+      "description": "Sliced beef jerky, julienne mango, fresh herbs, peanuts tossed in house fish sauce vinaigrette",
+      "image_path": "./images/RicePaperSalad.jpg",
+      "price": 25,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Lime Beef Salad - Bo Tai Chanh",
+      "description": "Beef tenderloin marinated in lime juice tossed with mint, onion, peanuts and house fish sauce vinaigrette",
+      "image_path": "",
+      "price": 25,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Pomelo Salad - Goi Buoi",
+      "description": "Grapefruit, gulf shrimp, pork, banana blossom, carrots, onion, mint, peanuts tossed in house special vinaigrette",
+      "image_path": "./images/PomeloSalad.jpg",
+      "price": 23,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Hamachi Yellowtail Sashimi Salad/Goi Ca Yellowtail",
+      "description": "Fresh yellowtail shashimi, herbs, banana blossom, lotus root, peanuts served with soy sauce and wasabi",
+      "image_path": "./images/HamachiYellowTailSashimiSalad.jpg",
+      "price": 15,
+      "category": "Vegetables & Sides",
+      "popular": false
+    },
+    {
+      "item_name": "Mango and Papaya Salad - Goi Xoai and Du Du",
+      "description": "Sliced mango, papaya, herbs, onions, tomatoes and peanuts tossed in house special vinaigrette",
+      "image_path": "./images/",
+      "price": 25,
+      "category": "Vegetables & Sides",
+      "popular": false
+    },
+    {
+      "item_name": "Pineapple Salad - Goi Thom",
+      "description": "Fresh pineapple, herbs, lettuce, pork, shrimp, fish jerky, and peanuts tossed in house special vinaigrette",
+      "image_path": "./images/PineappleSalad.jpg",
+      "price": 17,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Chicken Salad/Goi Ga",
+      "description": "Relish the zest of our G\u1ecfi G\u00e0, a refreshing Vietnamese chicken salad that combines shredded chicken with crisp vegetables, tangy lime, fresh herbs, and a sprinkle of peanuts for a delightful crunch.",
+      "image_path": "",
+      "price": 19,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Tamarind Crab/Cua Rang Me (1 Con)",
+      "description": "Spicy Crab in tamarind sauce",
+      "image_path": "./images/TamarindCrab.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Ong Choy w/ Pork Belly and Seasnails - Rau Muong Xao Oc Ba Roi",
+      "description": "Ong choy sauteed with pork belly and sliced seasnails",
+      "image_path": "./images/OngChoywPorkBelly.jpg",
+      "price": 20,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Baked Clams with Chili Garlic/Ngheu Xao Toi Ot",
+      "description": "Baked clams topped with peanuts, crispy shallots, and chili garlic oil",
+      "image_path": "./images/BakedClams.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Sauteed Sea Snails/Oc Huong Xao",
+      "description": "Sauteed Garlic Butter Seasnails served on top of sizzling onions",
+      "image_path": "./images/SauteedSeaSnails.jpg",
+      "price": 12,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Clams in Lemongrass soup/Ngheu Hap Xa",
+      "description": "Steamed clams in spicy lemongrass soup",
+      "image_path": "./images/ClamsInLemongrassSoup.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Chili Lemongrass Seasnail Soup/Oc Huong Hap Xa Ot",
+      "description": "Steamed seasnails in spicy lemongrass soup",
+      "image_path": "./images/ChiliLemongrassSeasnailSoup.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Deep Fried Calamari/Muc Lan Bot",
+      "description": "Calamari encrusted in garlic seasonings and tossed in garlic butter with jalepenos and onions",
+      "image_path": "./images/DeepFriedCalamari.jpg",
+      "price": 28,
+      "category": "Specialties",
+      "popular": false
+    },
+    {
+      "item_name": "Baked Clams/Ngheu Nuong Mo Hanh Toi",
+      "description": "Baked clams topped with peanuts, crispy shallots, and onions",
+      "image_path": "./images/BakedClams.jpg",
+      "price": 20,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Basil Clams/Ngheu Xao La Que",
+      "description": "Sauteed Clams with basil, onions and jalepenos",
+      "image_path": "./images/BasilClams.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Chili Dungeness Crab/Cua Singapore (1 con)",
+      "description": "Singaporean style Chili Crab - served with fried Chinese Donut and baguette",
+      "image_path": "./images/ChiliDungenessCrab.jpg",
+      "price": 24,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Charbroiled Blk Tiger on Garlic Noodles/Mi Toi Tom Xu Nuong",
+      "description": "Marinated black tiger shrimp served with garlic butter noodles",
+      "image_path": "./images/CharbroiedBlkTigeronGarlicNoodles.jpg",
+      "price": 10,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Salt and Pepper Shrimp/Tom Rang Muoi",
+      "description": "Deep fried colossal shrimp sauteed in garlic butter, onions and jalepenos",
+      "image_path": "./images/SaltandPepperShrimp.jpg",
+      "price": 22,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Ong Choy with Seasnails/Rau Muong Xao Oc Huong",
+      "description": "Ong choy sauteed with sliced seasnails",
+      "image_path": "./images/OngChoyWithSeasnails.jpg",
+      "price": 24,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Blood clams/So Long Nuong Mo Hanh",
+      "description": "Baked blood clams topped with peanuts, crispy garlic and chives",
+      "image_path": "./images/GrilledBloodClams.jpg",
+      "price": 12,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Shrimp Skewers/Tom Xien Nuong",
+      "description": "Marinated colossal shrimp grilled with and served on sizzling skillet",
+      "image_path": "./images/ShrimpSkewers.jpg",
+      "price": 24,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Baked King Crab Legs",
+      "description": "Baked King Crab Legs topped with house aoili, crispy garlic and chives",
+      "image_path": "",
+      "price": 23,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Calamari/Muc Nuong Thailand",
+      "description": "Thai marinated calamari served with onions, crispy garlic and jalepenos",
+      "image_path": "./images/GrilledCalamari.jpg",
+      "price": 25,
+      "category": "Specialties",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Scallops/So Diep Nuong",
+      "description": "Indulge in our S\u00f2 \u0110i\u1ec7p N\u01b0\u1edbng, where succulent scallops are perfectly grilled, often seasoned with a delicate mix of Vietnamese spices, served on the half shell for an elegant, flavorful seafood experience.",
+      "image_path": "./images/GrilledScallops.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Razor Clams - Oc Mong Tay",
+      "description": "Baked razor clams topped with peanuts, chili garlic, and bell peppers",
+      "image_path": "./images/RazorClams.jpg",
+      "price": 30,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Coconut Seasnails/Oc Len Xao Dua",
+      "description": "Small seasnails cooked in coconut broth, onions, garlic and chili",
+      "image_path": "./images/CoconutSeasnails.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Spicy Baby Clams on Rice Chips/Hen Xao Xuc Banh Trang",
+      "description": "Baby clams sauteed with peanuts, onions, garlic and herbs, served with crispy sesame cracker",
+      "image_path": "./images/SpicyBabyClamsonRiceChips.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Lemongrass Seafood Soup/Do Bien Hap Xa",
+      "description": "Clams, calamari and shrimp steamed in spicy lemongrass seafood soup",
+      "image_path": "./images/LemongrassSeafoodSoup.jpg",
+      "price": 18,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "House-Special Garlic Crab/Cua Dac Biet (1 Con)",
+      "description": "Dungeness Crab fried in house seasonings, sauteed in garlic butter, onions, and jalepenos, and topped with crispy garlic",
+      "image_path": "./images/HouseSpecialGarlicCrab.jpg",
+      "price": 25,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "House Special Squid",
+      "description": "Dive into our House Special Squid, where tender squid is masterfully seasoned and crisply fried, served with a unique house sauce that elevates its natural flavors to an unforgettable culinary delight.",
+      "image_path": "",
+      "price": 17,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "House Special Lobster",
+      "description": "Lobster sauteed in our house special sauce with garlic, onion and jalapenos",
+      "image_path": "./images/HouseSpecialLobster.jpg",
+      "price": 25,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Baked Crispy Catfish w. Boiled Pork/Ca Nuong Da Gion Thit Luoc",
+      "description": "Crispy baked catfish with poached pork. Please allow 1 hour for preparation.",
+      "image_path": "./images/BakedCrispyCatfishWBoiledPorkCaNuongDaGionThitLuoc.jpg",
+      "price": 14,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Charbroiled Blk Tiger on Garlic Noodles/Mi Toi Tom Xu Nuong",
+      "description": "Marinated black tiger shrimp served with garlic butter noodles",
+      "image_path": "./images/CharbroiedBlkTigeronGarlicNoodles.jpg",
+      "price": 13,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Ong choy with Beef/Rau Muong Xao Bo",
+      "description": "Sauteed ong choy with sliced beef",
+      "image_path": "./images/OngChoywithBeef.jpg",
+      "price": 14,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Shaken tofu/Dau hu luc lac",
+      "description": "Fried tofu saut\u00e9ed with onions, bell peppers, and mushrooms. Served with rice",
+      "image_path": "",
+      "price": 14,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Lamb Chops",
+      "description": "Fresh crispy noodles topped with beef or chicken, vegetables, and hearty sauce",
+      "image_path": "./images/LambChops.jpg",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Chicken Curry/Cari Ga",
+      "description": "Bone-in chicken simmered in Vietnamese style curry with taro and potatoes. Served with bread, rice or noodles.",
+      "image_path": "./images/ChickenCurry.jpg",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Sizzling Filet Mignon/Bo Ne",
+      "description": "Marinated filet mignon grilled with egg, sausage and pate. Choice of bread or rice",
+      "image_path": "./images/SizzlingFiletMignon.jpg",
+      "price": 19,
+      "category": "Rice & Noodles",
+      "popular": true
+    },
+    {
+      "item_name": "Seafood Chowfun/Ap Chao Do Bien",
+      "description": "Saut\u00e9ed flat rice noodles with combination seafood, bean sprouts, and green onion",
+      "image_path": "./images/SeafoodChowfun.jpg",
+      "price": 18,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Chicken Chowfun/Ap Chao Thit Ga",
+      "description": "Saut\u00e9ed flat rice noodles with chicken, bean sprouts, and green onion",
+      "image_path": "",
+      "price": 16,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Sauteed Beef and Garlic Noodles/Bo Xao Mi Toi",
+      "description": "Garlic butter noodles saut\u00e9ed with sliced beef and onions",
+      "image_path": "",
+      "price": 20,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Vegetarian Egg Noodles/Mi Xao Chay",
+      "description": "Saut\u00e9ed yellow noodles with tofu and vegetables",
+      "image_path": "./images/VegetarianEggNoodles.jpg",
+      "price": 16,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Chicken Egg Noodles/Mi Xao Ga",
+      "description": "Saut\u00e9ed yellow noodles with chicken and vegetables",
+      "image_path": "./images/ChickenEggNoodles.jpg",
+      "price": 15,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Seafood Egg Noodles/Mi Xao Do Bien",
+      "description": "Saut\u00e9ed yellow noodles with combination seafood and mixed vegetables",
+      "image_path": "./images/SeafoodEggNoodles.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Pork Chop/Egg/Garlic Fries - Suon Heo Cot Let",
+      "description": "Grilled marinated pork chop and egg. Served with French fries",
+      "image_path": "",
+      "price": 27,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Combination Egg Noodles/Mi Xao Thap Cam",
+      "description": "Saut\u00e9ed yellow noodles with combination seafood, beef and mixed vegetables",
+      "image_path": "./images/CombinationEggNoodes.jpg",
+      "price": 30,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Chicken Garlic Noodles - Mi Toi Ga",
+      "description": "Garlic butter noodles saut\u00e9ed with sliced chicken and onions",
+      "image_path": "",
+      "price": 13,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Beef Egg Noodles/Mi Xao Bo",
+      "description": "Saut\u00e9ed yellow noodles with beef and mixed vegetables",
+      "image_path": "",
+      "price": 27,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Beef Chowfun/Ap Chao Thit Bo",
+      "description": "Saut\u00e9ed flat rice noodles with beef, bean sprouts, and green onion",
+      "image_path": "",
+      "price": 11,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Shaken Filet Mignon/Bo Luc Lac",
+      "description": "Seared cubed filet mignon saut\u00e9ed with onions, bell peppers, and mushrooms.",
+      "image_path": "./images/ShakenFiletMignon.jpg",
+      "price": 11,
+      "category": "Specialties",
+      "popular": false
+    },
+    {
+      "item_name": "Goat Curry/Cari De",
+      "description": "Tender beef shank, pork hocks, pork paste, thick rice noodles in a spicy and flavorful central Vietnam style soup",
+      "image_path": "./images/GoatCurry.jpg",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Combination Chowfun/Ap Chao Thap Cam",
+      "description": "Saut\u00e9ed flat rice noodles with calamari, fish, shrimp, beef, bean sprouts, and green onion",
+      "image_path": "./images/CombinationChowfun.jpg",
+      "price": 10,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Pad Thai",
+      "description": "Rice noodles saut\u00e9ed in Thai sauce. Choice of chicken, shrimp or tofu.",
+      "image_path": "./images/Padthai.jpg",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Stir Fried Glass noodles Crab/Shrimp - Mien Xao Tom Cua",
+      "description": "Glass noodles, minced crab, shrimp, eggs, celery, carrots, and bean sprouts saut\u00e9ed in seasonings",
+      "image_path": "",
+      "price": 23,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Shrimp Chowfun/Ap Chao Mem Tom",
+      "description": "Saut\u00e9ed flat rice noodles with Shrimp, bean sprouts, and green onion",
+      "image_path": "",
+      "price": 15,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Vegetarian Chowfun/Ap Chao Chay",
+      "description": "Saut\u00e9ed flat rice noodles with tofu, bean sprouts, and green onion",
+      "image_path": "",
+      "price": 18,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Chicken Garlic Noodles/Ga Nuong Mi Xao Toi",
+      "description": "Grilled chicken served with steamed vegetables and garlic noodles.",
+      "image_path": "./images/GrilledChickenGarlicNoodles.jpg",
+      "price": 17,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Stir-Fried Eggplant with Crispy Pork",
+      "description": "Savor the harmony of soft, savory eggplant stir-fried to perfection, paired with the delightful crunch of crispy pork, all melded together in a rich, flavorful sauce.",
+      "image_path": "",
+      "price": 13,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Fried Rice/Com Chien",
+      "description": "Vietnamese styled fried rice prepared with egg, peas and carrots plus your choice of shrimp, salted fish or combination.",
+      "image_path": "./images/YoungChowFriedRice.jpg",
+      "price": 26,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Salted Fish Rice/Com Ca Man",
+      "description": "Experience the robust flavors of Vietnam with our C\u01a1m C\u00e1 M\u1eb7n, where the unique saltiness of preserved fish melds with the subtle sweetness of stir-fried rice, creating a dish that's both comforting and exotic. Each grain of rice is infused with the savory essence of salted fish, complemented by the freshness of vegetables and the richness of scrambled eggs, making for a simple yet unforgettable meal.",
+      "image_path": "",
+      "price": 19,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Pork Rice/Com Thit Nuong",
+      "description": "Grilled marinated pork served with rice, pickled vegetables, and lettuce",
+      "image_path": "",
+      "price": 30,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Ong Choy w/ Pork Belly - Rau Muong Xao Ba Roi",
+      "description": "Delight in the simplicity and flavor of our Rau Mu\u1ed1ng X\u00e0o B\u00e0 R\u00f2i, where fresh water spinach is quickly stir-fried with an abundance of fragrant garlic, capturing the essence of Vietnamese home cooking in every crisp, green bite.",
+      "image_path": "./images/OngChoywPorkBelly.jpg",
+      "price": 24,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Thai Hotpot/Lau Thai",
+      "description": "Seafood mix served with noodles and vegetables",
+      "image_path": "./images/ThaiHotpot.jpg",
+      "price": 23,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Fish Head Hotpot/Lau Dau Ca Bap Chuoi",
+      "description": "Salmon fish head simmered in broth served with noodles and vegetables",
+      "image_path": "./images/FishHeadHotpot.jpg",
+      "price": 25,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Fish Hotpot/Lau Canh Chua Ca",
+      "description": "Small catfish simmered in sweet and sour soup with beansprouts, herbs, pineapple, okra, and tomatoes",
+      "image_path": "",
+      "price": 12,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Lobster and Seafood hotpot/Lau Tom Hum Hai San",
+      "description": "Lobster and seafood mix served with noodles and vegetables",
+      "image_path": "./images/LobsterAndSeafoodHotpot.jpg",
+      "price": 29,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Salmon Hotpot - Lau Ca Salmon",
+      "description": "Sliced salmon simmered in broth served with noodles and vegetables",
+      "image_path": "",
+      "price": 23,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Seabass w. Prawn Hot Pot - Lau Ca Seabass Tom Cang",
+      "description": "Filet seabass simmered in broth served with noodles and vegetables",
+      "image_path": "",
+      "price": 11,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Szechwan Hotpot/Lau Trieu Chau",
+      "description": "Very spicy Szechwan style broth served with mixed seafood and beef, noodles and vegetables",
+      "image_path": "./images/SzechwanHotpot.jpg",
+      "price": 26,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Goat Hot Pot / Lau De Dac Biet Binh Dan",
+      "description": "Goat meat simmered in broth, served with noodles and vegetables",
+      "image_path": "",
+      "price": 11,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Filet Mignon Hot Pot/Lau Pho Filet Mignon",
+      "description": "Dive into the luxury of our L\u1ea9u Ph\u1edf Filet Mignon, where tender slices of filet mignon are the star in a fragrant, simmering pho broth, accompanied by fresh herbs, noodles, and vegetables for a sumptuous, interactive dining experience.",
+      "image_path": "",
+      "price": 10,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Oxtail Hotpot/Lau Duoi Bo",
+      "description": "Dive into the rich, comforting depths of our L\u1ea9u \u0110u\u00f4i B\u00f2, an oxtail hot pot where tender, fall-off-the-bone oxtail pieces are simmered with aromatic spices, vegetables, and noodles in a hearty broth, offering a soul-warming meal that's both luxurious and homely.",
+      "image_path": "",
+      "price": 14,
+      "category": "Rice & Noodles",
+      "popular": false
+    },
+    {
+      "item_name": "Vietnamese Soup/Pho",
+      "description": "Vietnamese noodle soup that's made with broth, rice noodles, meat, and fresh garnishes.",
+      "image_path": "",
+      "price": 17,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Water Spinach Noodle Soup - Canh Bun",
+      "description": "Vietnamese tomato, crab, shrimp, water spinach noodle soup",
+      "image_path": "",
+      "price": 16,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Vietnamese Hot and Sour Soup/Canh Chua",
+      "description": "Large catfish simmered in sweet and sour soup with beansprouts, herbs, pineapple, okra, and tomatoes",
+      "image_path": "./images/CanhChuaCa.jpg",
+      "price": 18,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Purple Yam Soup/Canh Khoai Mo",
+      "description": "Large grated purple yam simmered in broth with shrimp",
+      "image_path": "./images/PurpleYamSoup.jpg",
+      "price": 18,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Tofu and Fish Soup/Soup Ca va Dau Hu Cay",
+      "description": "Small soft tofu and sole filet cooked in spicy broth",
+      "image_path": "./images/TofuandFishSoup.jpg",
+      "price": 26,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Mustard Green Soup - Canh Chua Cai",
+      "description": "Small beef and mustard green sweet and sour soup",
+      "image_path": "",
+      "price": 25,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Fried Rice/Com Chien",
+      "description": "Vietnamese styled fried rice prepared with egg, peas and carrots plus your choice of shrimp, salted fish or combination.",
+      "image_path": "",
+      "price": 10,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Carmelized Salmon/Salmon Kho To",
+      "description": "Filet of salmon caramelized. Served with crispy rice",
+      "image_path": "./images/CarmelizedSalmon.jpg",
+      "price": 25,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Grilled Salmon w. Tamarind Sauce/Com Chay Ca Salmon Nuong Sot Me",
+      "description": "A delightful Vietnamese dish featuring grilled salmon glazed with a tangy tamarind sauce, served alongside vegetarian accompaniments.",
+      "image_path": "",
+      "price": 14,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Caramelized Catfish w. Pork Belly/Ca Kho To Ba Roi",
+      "description": "Catfish and pork belly caramelized. Served with crispy rice",
+      "image_path": "./images/CarmelizedCatfishwPorkBelly.jpg",
+      "price": 22,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Caramelized Peppered Pork Belly/Com Chay Thit Ba Roi Kho To",
+      "description": "Pork belly caramelized in sauce. Served with crispy rice",
+      "image_path": "./images/CaramelizedPepperedPorkBelly.jpg",
+      "price": 21,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Salmon - Ca Salmon Nuong",
+      "description": "Grilled salmon with Thai basil sauce served on top of onions. Served with crispy rice",
+      "image_path": "",
+      "price": 19,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Lemongrass Pork Ribs/Suon Non Nuong XO",
+      "description": "Braised lemongrass pork ribs served on top of onions. Served with crispy rice",
+      "image_path": "./images/LemongrassPorkRibs.jpg",
+      "price": 15,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Rotisserie Chicken/Com Chay Ga Roti",
+      "description": "Braised chicken in house seasonings. Served with crispy rice",
+      "image_path": "./images/RotisserieChicken.jpg",
+      "price": 29,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Sticky Rice w. Chinese Sausage, Eggs, Shredded Pork / Xoi Lap Xuong Trung Cha Bong",
+      "description": "Coconut sweet rice topped with chicken wing, pork floss, Chinese sausage, and egg",
+      "image_path": "./images/StickyRicewChineseSausagesEggsShreddedPork.jpg",
+      "price": 19,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Carmelized Catfish/Ca Kho",
+      "description": "Catfish caramelized in sauce. Served with crispy rice",
+      "image_path": "",
+      "price": 17,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Caramelized Pork Ribs/Cam Chay Suon Ram",
+      "description": "Bone in pork ribs caramelized in sweet sauce. Served with crispy rice",
+      "image_path": "./images/CaramelizedPorkRibs.jpg",
+      "price": 11,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Salmon w. House Special Sauce/Com Chay Ca Salmon",
+      "description": "Glazed fried salmon filet topped with bell peppers and onions. Served with crispy rice",
+      "image_path": "./images/SalmonwHouseSpecialSauce.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Fried Chili Lemongrass Salmon - Cam Chay Ca Salmon Xa Ot",
+      "description": "Chili lemongrass fried salmon filet topped with bell peppers and onions. Served with crispy rice",
+      "image_path": "./images/FriedChiliLemongrassSalmon.jpg",
+      "price": 15,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Dill and Tumeric Fish/Bun Cha Ca Thang Long",
+      "description": "Savor the iconic flavors of Hanoi with our B\u00fan Ch\u1ea3 C\u00e1 Th\u0103ng Long, featuring chunks of fish marinated in turmeric, grilled to perfection, and served over vermicelli noodles with an abundance of fresh dill, spring onions, and a side of tangy dipping sauce.",
+      "image_path": "./images/DillsandTumericFishWNoodles.jpg",
+      "price": 28,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Sauteed Filet Mignon Vermicelli/Bun Bo Xao",
+      "description": "Filet mignon sauteed in lemongrass, garlic and onion. Served on top rice noodles with pickled vegetables, herbs, lettuce, and peanuts",
+      "image_path": "./images/SauteedFiletMignonVermicelli.jpg",
+      "price": 15,
+      "category": "Rice & Noodles",
+      "popular": true
+    },
+    {
+      "item_name": "Grilled Salmon Noodles/Bun Ca Salmon Nuong",
+      "description": "Grilled salmon served on top of rice noodles with lettuce, herbs, pickled vegetables, and peanuts",
+      "image_path": "",
+      "price": 29,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Shrimp Noodles/Bun Tom Nuong",
+      "description": "Grilled shrimp served on top of rice noodles with lettuce, herbs, pickled vegetables and peanuts",
+      "image_path": "",
+      "price": 12,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Eggroll Noodles/Bun Cha Gio",
+      "description": "Fried rice paper egg rolls served on top of rice noodles with lettuce, herbs, pickled vegetabled and peanuts",
+      "image_path": "",
+      "price": 12,
+      "category": "Rice & Noodles",
+      "popular": true
+    },
+    {
+      "item_name": "Grilled Filet Mignon Vermicelli/Bun Bo Nuong",
+      "description": "Grilled beef served on top rice noodles, lettuce, herbs, pickled vegetables, and peanuts",
+      "image_path": "",
+      "price": 22,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Grilled Pork Vermicelli-Bun Thit Nuong",
+      "description": "Marinated grilled pork with crispy egg rolls served on top of rice noodles, lettuce, herbs, pickled vegetables, and peanuts",
+      "image_path": "./images/GrilledPortVermicelli.jpg",
+      "price": 28,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Noodle Soup - Bun Ca",
+      "description": "Salmon cooked in tomato broth with rice noodles",
+      "image_path": "",
+      "price": 22,
+      "category": "Seafood",
+      "popular": true
+    },
+    {
+      "item_name": "Famous Central VN Spicy Noodles - Bun Bo Hue",
+      "description": "the bold flavors of Central Vietnam with our B\u00fan B\u00f2 Hu\u1ebf, a fiery and fragrant beef noodle soup, where rich, lemongrass-infused broth meets tender beef slices, pork hocks, and a kick of chili, all harmonized with fresh herbs and vermicelli noodles",
+      "image_path": "./images/BunBoHue.jpg",
+      "price": 16,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Shrimp and Crab Soup/Bun Rieu Tom Cua",
+      "description": "Vietnamese crab and shrimp cooked in tomato broth served with rice noodles",
+      "image_path": "",
+      "price": 27,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Hanoi Styled Vermicelli w/ Grilled Pork - Bun Cha Ha Noi",
+      "description": "Hanoi style marinated pork and pork patty. Served with rice noodles, herbs, and peanuts",
+      "image_path": "./images/HanoiStyledVermicelliwGrilledPork.jpg",
+      "price": 22,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Deep Fried Tofu and Boiled Pork Vermicelli/Bun Dau Thit Luoc",
+      "description": "Pork and tofu served with fresh herbs, noodles, mango and cucumbers. Served with shrimp paste anchovy sauce",
+      "image_path": "./images/DeepFriedTofuandBoiledPorkVermicelli.jpg",
+      "price": 21,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Plain Pho/Banh Pho Only",
+      "description": "Choice of chicken or beef broth served with pho rice noodles",
+      "image_path": "",
+      "price": 23,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Shrimp Rice Porridge/Chao Tom",
+      "description": "Rice simmered in broth with shrimp topped with green onion, ginger and cilantro",
+      "image_path": "",
+      "price": 22,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Minced Beef Porridge/Chao Bo Bam",
+      "description": "Rice simmered in broth with minced beef topped with green onion, ginger and cilantro",
+      "image_path": "",
+      "price": 29,
+      "category": "Meat & Poultry",
+      "popular": true
+    },
+    {
+      "item_name": "Fish Porridge/Chao Ca",
+      "description": "Rice simmered in broth with fish filet topped with green onion, ginger and cilantro",
+      "image_path": "",
+      "price": 20,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Minced Pork/Salted Egg Porridge - Chao Thit Bam/Trung Bach Thao",
+      "description": "Rice simmered in broth with minced pork and salted egg topped with green onion, ginger, and cilantro",
+      "image_path": "",
+      "price": 18,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Combination Rice Porridge/Chao Thap Cam",
+      "description": "Rice simmered in broth with combination seafood topped with green onion, ginger, and cilantro",
+      "image_path": "",
+      "price": 30,
+      "category": "Seafood",
+      "popular": false
+    },
+    {
+      "item_name": "Chicken Porridge/Chao Ga",
+      "description": "a velvety rice porridge simmered to perfection, featuring tender chicken, aromatic ginger, and a sprinkle of fresh herbs, all culminating in a warm, soul-soothing bowl",
+      "image_path": "",
+      "price": 22,
+      "category": "Meat & Poultry",
+      "popular": false
+    },
+    {
+      "item_name": "Plain Rice Porridge/Chao Trang",
+      "description": "Rice simmered in broth",
+      "image_path": "",
+      "price": 23,
+      "category": "Rice & Noodles",
+      "popular": true
+    },
+    {
+      "item_name": "Tofu and Veggie Soup/Dau Hu Chay va Rau",
+      "description": "Soft tofu cooked with mixed vegetables and glass noodles in spicy broth",
+      "image_path": "",
+      "price": 29,
+      "category": "Rice & Noodles",
+      "popular": true
+    },
+    {
+      "item_name": "Stir-Fried Eggplant",
+      "description": "Indulge in the simplicity of our Stir-Fried Eggplant, where tender slices of eggplant are saut\u00e9ed with a savory sauce, capturing a perfect balance of flavors and textures, often enhanced with garlic, soy, and a hint of spice.",
+      "image_path": "",
+      "price": 28,
+      "category": "Specialties",
+      "popular": false
+    },
+    {
+      "item_name": "Fried Tofu - Dau Hu Chien Gion",
+      "description": "Crispy soft tofu topped with crispy garlic and shallots",
+      "image_path": "./images/FriedTofu.jpg",
+      "price": 23,
+      "category": "Vegetables & Sides",
+      "popular": true
+    },
+    {
+      "item_name": "Shaken Tofu - Dau Hu Luc Lac",
+      "description": "Enjoy our Dau Hu Luc Lac, where tofu cubes are seasoned and 'shaken' to perfection, offering a delightful sear and served with fresh greens for a light, flavorful dish.",
+      "image_path": "",
+      "price": 12,
+      "category": "Vegetables & Sides",
+      "popular": true
+    },
+    {
+      "item_name": "Garlic Spinach - Rau Den Xao Toi",
+      "description": "Sauteed spinach with garlic sauce",
+      "image_path": "",
+      "price": 21,
+      "category": "Specialties",
+      "popular": false
+    },
+    {
+      "item_name": "Vegetarian Salad - Goi Chay",
+      "description": "Fried tofu, banana blossom, cabbage, and onions tossed in soy vinaigrette",
+      "image_path": "",
+      "price": 18,
+      "category": "Vegetables & Sides",
+      "popular": false
+    },
+    {
+      "item_name": "Ong choy with Garlic/Rau Muong Xao Toi",
+      "description": "Sauteed ong choy with garlic sauce",
+      "image_path": "./images/OngchoywGarlic.jpg",
+      "price": 28,
+      "category": "Specialties",
+      "popular": true
+    },
+    {
+      "item_name": "Green Beans w/ Garlic - Dau Que Sao Toi",
+      "description": "Green beans sauteed with garlic sauce",
+      "image_path": "./images/GreenBeanswGarlic.jpg",
+      "price": 27,
+      "category": "Specialties",
+      "popular": true
+    },
+    {
+      "item_name": "Stir Fried Bok choy w/ garlic - Bok choy Xao Toi",
+      "description": "Sauteed bok choy with garlic sauce",
+      "image_path": "",
+      "price": 28,
+      "category": "Specialties",
+      "popular": false
+    }
+  ]
+}
