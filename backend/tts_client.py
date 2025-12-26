@@ -3,7 +3,11 @@ import subprocess
 import struct
 import hashlib
 import re
+import logging
 import config
+
+# Configure logging
+logger = logging.getLogger("gac_waiter.tts")
 
 class TTSClient:
     def __init__(self):
@@ -17,10 +21,10 @@ class TTSClient:
         # Verify all models exist
         for lang, model_path in self.piper_models.items():
             if not os.path.exists(model_path):
-                print(f"WARNING: Piper model for '{lang}' not found at {model_path}")
+                logger.warning(f"Piper model for '{lang}' not found at {model_path}")
         
         if not os.path.exists(self.piper_binary):
-            print(f"ERROR: Piper binary not found at {self.piper_binary}")
+            logger.error(f"Piper binary not found at {self.piper_binary}")
 
     def _get_cache_key(self, text):
         """Generate cache key from text."""
@@ -87,12 +91,14 @@ class TTSClient:
             # Map detected language to available models
             if lang_code == 'vi':
                 return 'vi'
+            elif lang_code in ['zh-cn', 'zh-tw', 'zh']:  # Chinese
+                return 'zh'
             elif lang_code in ['es', 'ca', 'gl']:  # Spanish and related
                 return 'es'
             else:
                 return 'en'  # Default to English
         except Exception as e:
-            print(f"Language detection error: {e}, defaulting to English")
+            logger.warning(f"Language detection error: {e}, defaulting to English")
             return 'en'
 
     def generate_audio(self, text):
@@ -114,19 +120,19 @@ class TTSClient:
         detected_lang = self._detect_language(clean_text)
         selected_model = self.piper_models.get(detected_lang, self.piper_models['en'])
         
-        print(f"DEBUG: Detected language: {detected_lang}, using model: {os.path.basename(selected_model)}")
+        logger.debug(f"Detected language: {detected_lang}, using model: {os.path.basename(selected_model)}")
 
         # Check cache (use original text + language for cache key)
         cache_key = self._get_cache_key(f"{detected_lang}:{text}")
         cache_path = self._get_cache_path(cache_key)
         
         if os.path.exists(cache_path):
-            print(f"DEBUG: Using cached audio for: '{text[:50]}...'")
+            logger.debug(f"Using cached audio for: '{text[:50]}...'")
             with open(cache_path, 'rb') as f:
                 yield f.read()
             return
 
-        print(f"DEBUG: Generating audio for: '{clean_text[:50]}...'")
+        logger.debug(f"Generating audio for: '{clean_text[:50]}...'")
         
         cmd = [
             self.piper_binary,
@@ -135,13 +141,21 @@ class TTSClient:
         ]
         
         try:
-            # Use Popen to stream stdout
+            # Use Popen to stream stdout with timeout
             with subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as proc:
-                # Send cleaned text (without markdown)
-                stdout_data, stderr_data = proc.communicate(input=clean_text.encode('utf-8'))
+                # Send cleaned text (without markdown) with 30s timeout
+                try:
+                    stdout_data, stderr_data = proc.communicate(
+                        input=clean_text.encode('utf-8'),
+                        timeout=30  # 30 second timeout
+                    )
+                except subprocess.TimeoutExpired:
+                    proc.kill()
+                    logger.error("TTS generation timed out after 30 seconds")
+                    return
                 
                 if proc.returncode != 0:
-                    print(f"Piper Error: {stderr_data.decode('utf-8')}")
+                    logger.error(f"Piper Error: {stderr_data.decode('utf-8')}")
                     return
                     
                 # Patch WAV Header (Crucial for Browser Playback of Pipe Output)
@@ -152,17 +166,18 @@ class TTSClient:
                      size_bytes = struct.pack('<I', correct_size)
                      # Replace bytes 4-8
                      stdout_data = stdout_data[:4] + size_bytes + stdout_data[8:]
-                     print(f"DEBUG: Patched WAV header size to {correct_size}")
+                     logger.debug(f"Patched WAV header size to {correct_size}")
 
                 if len(stdout_data) > 0:
                     # Save to cache
                     try:
                         with open(cache_path, 'wb') as f:
                             f.write(stdout_data)
-                        print(f"DEBUG: Cached audio at {cache_path}")
+                        logger.debug(f"Cached audio at {cache_path}")
                     except Exception as e:
-                        print(f"Cache write error: {e}")
+                        logger.warning(f"Cache write error: {e}")
                     
                     yield stdout_data
         except Exception as e:
-            print(f"Piper Execution Error: {e}")
+            logger.error(f"Piper Execution Error: {e}")
+

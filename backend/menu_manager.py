@@ -1,6 +1,10 @@
 import json
+import logging
 import config
 import random
+
+# Configure logging
+logger = logging.getLogger("gac_waiter.menu")
 
 class MenuManager:
     def __init__(self):
@@ -12,15 +16,15 @@ class MenuManager:
             with open(config.MENU_PATH, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except Exception as e:
-            print(f"Error loading menu: {e}")
+            logger.error(f"Error loading menu: {e}")
             return {"items": []}
             
     def reload(self):
         """Reloads menu data from disk."""
-        print("Reloading MenuManager...")
+        logger.info("Reloading MenuManager...")
         self.menu_data = self._load_menu()
         self.items = self.menu_data.get("items", [])
-        print(f"MenuManager reloaded with {len(self.items)} items.")
+        logger.info(f"MenuManager reloaded with {len(self.items)} items.")
         
     def get_full_menu_context(self):
         """

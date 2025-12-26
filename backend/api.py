@@ -1,7 +1,19 @@
 import sys
 import os
+import re
 import time
-print(f"CRITICAL: API STARTING - VERSION ID: {time.time()} - SANITIZATION ACTIVE")
+import logging
+from collections import defaultdict
+from functools import wraps
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger("gac_waiter.api")
+
+logger.info(f"API STARTING - VERSION ID: {time.time()}")
 
 # Add project root to path to allow importing config
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -10,20 +22,20 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
-from fastapi import FastAPI, HTTPException, Body
+from fastapi import FastAPI, HTTPException, Body, Request
 from fastapi.responses import JSONResponse, Response
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, validator
 from typing import List, Optional, Dict, Any
 import base64
 import config
 
 # Print config on startup for debugging
-print("=" * 60)
-print("Backend API Starting - Configuration:")
-print(f"LLM_BASE_URL: {config.LLM_BASE_URL}")
-print(f"LLM_MODEL: {config.LLM_MODEL}")
-print(f"API_PORT: {config.API_PORT}")
-print("=" * 60)
+logger.info("=" * 60)
+logger.info("Backend API Starting - Configuration:")
+logger.info(f"LLM_BASE_URL: {config.LLM_BASE_URL}")
+logger.info(f"LLM_MODEL: {config.LLM_MODEL}")
+logger.info(f"API_PORT: {config.API_PORT}")
+logger.info("=" * 60)
 
 # Import logic classes
 from backend.menu_manager import MenuManager
@@ -38,16 +50,61 @@ agent = WaitstaffAgent()
 # Create FastAPI app
 app = FastAPI(title="GAC Waiter Backend")
 
-# Request Models
+# ============== RATE LIMITING ==============
+rate_limit_store = defaultdict(list)
+RATE_LIMIT_REQUESTS = 30  # requests per window
+RATE_LIMIT_WINDOW = 60    # seconds
+
+def rate_limiter(func):
+    """Simple rate limiter decorator."""
+    @wraps(func)
+    async def wrapper(request: Request, *args, **kwargs):
+        client_ip = request.client.host if request.client else "unknown"
+        current_time = time.time()
+        
+        # Clean old requests
+        rate_limit_store[client_ip] = [
+            t for t in rate_limit_store[client_ip] 
+            if current_time - t < RATE_LIMIT_WINDOW
+        ]
+        
+        # Check rate limit
+        if len(rate_limit_store[client_ip]) >= RATE_LIMIT_REQUESTS:
+            logger.warning(f"Rate limit exceeded for {client_ip}")
+            raise HTTPException(status_code=429, detail="Rate limit exceeded. Please slow down.")
+        
+        # Record this request
+        rate_limit_store[client_ip].append(current_time)
+        
+        return await func(request, *args, **kwargs) if hasattr(func, '__await__') else func(*args, **kwargs)
+    return wrapper
+
+# ============== REQUEST MODELS WITH VALIDATION ==============
 class ChatRequest(BaseModel):
-    messages: List[Dict[str, Any]]  # Allow any fields, not just role/content
-    language: Optional[str] = "English"
+    messages: List[Dict[str, Any]] = Field(..., max_items=100, description="Conversation history")
+    language: Optional[str] = Field(default="English", max_length=20)
+    
+    @validator('messages')
+    def validate_messages(cls, v):
+        if not v:
+            raise ValueError('Messages cannot be empty')
+        for msg in v:
+            content = str(msg.get('content', ''))
+            if len(content) > 10000:
+                raise ValueError('Message content too long (max 10000 chars)')
+        return v
     
     class Config:
-        extra = "allow"  # Allow extra fields
+        extra = "allow"
 
 class CheckOutRequest(BaseModel):
-    messages: List[Dict[str, Any]]
+    messages: List[Dict[str, Any]] = Field(..., max_items=100)
+    
+    @validator('messages')
+    def validate_messages(cls, v):
+        if not v:
+            raise ValueError('Messages cannot be empty')
+        return v
     
     class Config:
         extra = "allow"
@@ -84,6 +141,12 @@ def chat_endpoint(request: ChatRequest):
             response_text = str(agent_result)
             detected_lang = request.language
         
+        # FINAL CLEANUP: Strip <think> tags from response before sending to frontend
+        if response_text:
+            response_text = re.sub(r'<think>.*?</think>', '', response_text, flags=re.DOTALL)
+            response_text = re.sub(r'</?think>', '', response_text)
+            response_text = response_text.strip()
+        
         # Find mentioned items (for UI to display images)
         # We prefer the explicitly found items from the agent's tools
         # But we merge with keyword search just in case the agent mentioned something from memory
@@ -107,7 +170,7 @@ def chat_endpoint(request: ChatRequest):
         }
     except Exception as e:
         import traceback
-        print(f"API Error: {e}")
+        logger.error(f"API Error: {e}")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -128,7 +191,7 @@ def tts_endpoint(request: dict = Body(...)):
         }
     except Exception as e:
         import traceback
-        print(f"TTS Error: {e}")
+        logger.error(f"TTS Error: {e}")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -139,27 +202,58 @@ def checkout_endpoint(request: CheckOutRequest):
         import json
         from openai import OpenAI
         
-        sys_p = """You are an Order Parser. 
-Extract the final accepted order from the conversation. 
-Ignore items discussed but rejected.
-Check context for any mentioned allergies.
+        sys_p = """You are an Order Parser for a restaurant. 
+Your job is to extract the final accepted order and ALL special notes from the conversation.
+
+PARSING RULES:
+1. Extract only items that were CONFIRMED by the customer (not just discussed).
+2. Ignore items that were mentioned but rejected or removed.
+3. For each item, extract the exact name, quantity, and price.
+4. Calculate the correct total.
+
+ALLERGY EXTRACTION (CRITICAL):
+- Search the ENTIRE conversation for any mention of allergies.
+- Common allergy mentions: "allergic to", "allergy", "can't eat", "avoid", "intolerant"
+- Common allergens: Peanuts, Tree Nuts, Shellfish, Fish, Milk/Dairy, Eggs, Wheat/Gluten, Soy, Sesame
+- If customer says "no allergies" or "none", set allergies to empty array.
+- If allergies are never discussed, set allergy_checked to false.
+
+SPECIAL NOTES EXTRACTION (IMPORTANT):
+Extract ALL special requests, preferences, and constraints mentioned by the customer:
+- Dietary preferences: "no spicy", "less salt", "extra sauce", "vegetarian", "no onions"
+- Time constraints: "in a hurry", "only have 30 minutes", "need it quick", "rushing"
+- Preparation notes: "well done", "on the side", "no ice", "extra hot"
+- Seating/service: "to go", "for here", "separate checks"
+- Any other customer-specific requests
+
 Output JSON structure: 
 {
   "order": [
-    {"name": "Item Name", "qty": 1, "price": 10.0}
+    {"name": "Item Name", "qty": 1, "price": 10.0, "notes": "no onions, extra spicy"}
   ],
-  "allergies": ["Peanuts", "Shellfish"],
+  "allergies": ["Peanut", "Shellfish"],
+  "allergy_checked": true,
+  "special_notes": [
+    "Customer is in a hurry - only 30 minutes",
+    "No spicy food",
+    "To go order"
+  ],
   "total": 0.0
 }
-If no allergies mentioned, return "allergies": [].
-No markdown, just JSON.
+
+IMPORTANT:
+- allergy_checked: true if allergies were discussed, false if never asked
+- allergies: array of allergies mentioned, empty [] if customer said "none"
+- special_notes: array of ALL special requests/constraints, empty [] if none
+- For item-specific notes (like "Pad Thai no peanuts"), add to item's "notes" field
+- No markdown, just valid JSON.
 """
         full_msgs = [{"role": "system", "content": sys_p}] + request.messages
         
         client = OpenAI(
             base_url=config.LLM_BASE_URL,
             api_key=config.LLM_API_KEY,
-            timeout=60.0
+            timeout=180.0  # 3 minute timeout for slow CPU inference
         )
         
         completion = client.chat.completions.create(
@@ -168,6 +262,13 @@ No markdown, just JSON.
             response_format={"type": "json_object"}
         )
         order_json_str = completion.choices[0].message.content
+        
+        # Clean <think> tags from response
+        if order_json_str:
+            order_json_str = re.sub(r'<think>.*?</think>', '', order_json_str, flags=re.DOTALL)
+            order_json_str = re.sub(r'</?think>', '', order_json_str)
+            order_json_str = order_json_str.strip()
+        
         order_data = json.loads(order_json_str)
         
         # VALIDATION: Ensure all ordered items exist in menu
@@ -178,7 +279,7 @@ No markdown, just JSON.
         is_valid, invalid_items = retriever.validate_items(ordered_items)
         
         if not is_valid:
-            print(f"WARNING: Invalid items in order: {invalid_items}")
+            logger.warning(f"Invalid items in order: {invalid_items}")
             # Filter out invalid items
             order_data['order'] = [
                 item for item in order_data['order']
@@ -192,7 +293,7 @@ No markdown, just JSON.
         
         return order_data
     except Exception as e:
-        print(f"Checkout Error: {e}")
+        logger.error(f"Checkout Error: {e}")
         return {
             "order": [],
             "allergies": [],

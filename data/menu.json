@@ -11,7 +11,8 @@
       "price": 13,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Tôm walnut ngọt và bánh phồng tôm"
+      "item_viet": "Tôm Walnut Mật Ong với Bánh Phồng Tôm",
+      "description_viet": "Hãy thưởng thức Tôm walnut ngọt của chúng tôi, nơi tôm giòn được trộn với sốt ong mịn ngọt ngào, rắc đều hạt walnut caramel, cùng bánh phồng tôm giòn rụm, tạo nên sự kết hợp hương vị và độ giòn tan khó cưỡng."
     },
     {
       "item_name": "Baked Crispy Catfish with Boiled Pork",
@@ -20,8 +21,9 @@
       "price": 22,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Ca Nuong Da Gion Thit Luoc",
-      "pronunciation": "kah noong dah jee-on teet loo-ak"
+      "item_viet": "Cá Nướng Da Giòn Thịt Luộc",
+      "pronunciation": "kah noong dah jee-on teet loo-ak",
+      "description_viet": "Cá nướng da giòn rụm kèm thịt lợn luộc. Xin vui lòng chờ 1 giờ để hoàn tất món."
     },
     {
       "item_name": "Crispy Peking Duck with Crepes",
@@ -30,7 +32,8 @@
       "price": 17,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Vịt Bắc Kinh giòn với bánh crepe"
+      "item_viet": "Vịt Bắc Kinh Giòn với Bánh Crepe",
+      "description_viet": "Vịt mềm ngon với lớp da giòn rụm được phục vụ cùng bánh crepe ấm áp, mỏng manh, nước sốt hoisin ngọt thanh và hành lá tươi, mời bạn tự cuốn từng miếng vịt Bắc Kinh truyền thống, hòa quyện tinh tế giữa hương vị và kết cấu độc đáo."
     },
     {
       "item_name": "Crispy Whole Fish with Mango Sauce or Thai Chili",
@@ -39,7 +42,8 @@
       "price": 24,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Cá nguyên con giòn sốt xoài hoặc ớt Thái"
+      "item_viet": "Cá Nguyên Con Chiên Giòn Sốt Xoài hoặc Ớt Thái",
+      "description_viet": "Món ngon nhiệt đới với cá rán giòn, được thấm đẫm sốt xoài chua ngọt thanh mát hoặc phủ lớp sốt ớt Thái cay nồng sôi động, mang đến sự hòa quyện tinh tế giữa độ giòn rụm và hương vị chua cay kích thích vị giác."
     },
     {
       "item_name": "House Special Pork Chops",
@@ -48,7 +52,8 @@
       "price": 12,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Sườn heo đặc biệt"
+      "item_viet": "Sườn Heo Đặc Biệt",
+      "description_viet": "Hãy thưởng thức món Sườn heo đặc biệt của chúng tôi, với miếng sườn mềm ngọt được ướp kỹ trong hỗn hợp gia vị độc quyền, nướng chín đều trên than, kèm theo sốt đặc biệt của nhà hàng, biến tấu tinh tế khiến món sườn heo trở thành món ăn thượng hạng."
     },
     {
       "item_name": "Salt & Pepper Garlic Butter Pork Chops",
@@ -57,7 +62,8 @@
       "price": 23,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Sườn heo muối tiêu bơ tỏi"
+      "item_viet": "Sườn Heo Muối Tiêu Bơ Tỏi",
+      "description_viet": "Thưởng thức món Sườn heo muối tiêu bơ tỏi, với từng miếng sườn thấm đẫm gia vị, quyện béo bùi của bơ tỏi, chiên giòn vàng ruộm, mang đến bản hòa tấu hương vị tuyệt vời trong từng miếng cắn."
     },
     {
       "item_name": "House Special Squid",
@@ -66,7 +72,8 @@
       "price": 14,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Mực đặc biệt nhà"
+      "item_viet": "Mực Đặc Biệt",
+      "description_viet": "Khám phá món Mực đặc biệt của nhà hàng, với mực tươi ngon được ướp gia vị bí truyền, tẩm bột mỏng và chiên giòn vàng, ăn kèm nước chấm chua ngọt hấp dẫn không thể cưỡng lại."
     },
     {
       "item_name": "House Special Lobster with Garlic Noodles (priced by lbs)",
@@ -75,7 +82,8 @@
       "price": 15,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Tôm hùm đặc biệt với mì tỏi"
+      "item_viet": "Tôm Hùm Đặc Biệt với Mì Tỏi",
+      "description_viet": "Thưởng thức sự xa hoa với món Tôm hùm đặc biệt, thịt tôm hùm ngọt thơm hòa quyện cùng mì tỏi béo ngậy, tất cả được kết hợp với sốt đặc biệt, tạo nên món ăn vừa sang trọng vừa thỏa mãn."
     },
     {
       "item_name": "Grilled Salmon in Seafood Sauce with Garlic Rice",
@@ -84,7 +92,8 @@
       "price": 14,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Cá hồi nướng sốt hải sản và cơm tỏi"
+      "item_viet": "Cá Hồi Nướng Sốt Hải Sản với Cơm Tỏi",
+      "description_viet": "Thưởng thức món Cá hồi nướng với hương vị đậm đà được tôn lên bởi sốt hải sản thơm ngon, ăn kèm cơm tỏi thơm phức, tạo nên món ăn vừa đủ đầy vừa tinh tế."
     },
     {
       "item_name": "Sticky Rice with Mango",
@@ -93,16 +102,18 @@
       "price": 24,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Xôi xoài"
+      "item_viet": "Xôi Xoài",
+      "description_viet": "Xôi nếp dẻo ngọt ăn kèm xoài tươi chín thơm."
     },
     {
       "item_name": "Creme Brulee",
-      "description": "Conclude your meal with our Cr\u00e8me Br\u00fbl\u00e9e, a creamy, vanilla-kissed custard under a perfectly caramelized sugar crust, offering a delightful crunch followed by a smooth, rich finish that's simply divine.",
+      "description": "Conclude your meal with our Crème Brûlée, a creamy, vanilla-kissed custard under a perfectly caramelized sugar crust, offering a delightful crunch followed by a smooth, rich finish that's simply divine.",
       "image_path": "./downloaded_images/Creme_Brulee.jpg",
       "price": 20,
       "category": "Dessert",
       "popular": false,
-      "item_viet": "Kem Brulee"
+      "item_viet": "Kem Brûlée",
+      "description_viet": "Kết thúc bữa ăn với món Crème Brûlée, lớp custard mịn màng hương vani dưới lớp đường caramel giòn tan hoàn hảo, mang đến độ giòn thú vị tiếp nối bởi vị béo ngọt mượt mà tuyệt vời."
     },
     {
       "item_name": "Garlic Butter Chicken",
@@ -111,8 +122,9 @@
       "price": 10,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "C\u00e1nh g\u00e0 chi\u00ean b\u01a1 t\u1ecfi",
-      "pronunciation": "chahn gah chee-en buh twa"
+      "item_viet": "Cánh Gà Chiên Bơ Tỏi",
+      "pronunciation": "chahn gah chee-en buh twa",
+      "description_viet": "Cánh gà chiên giòn xào bơ tỏi thơm phức, rắc tỏi phi giòn lên trên."
     },
     {
       "item_name": "Baked Corn Cheese",
@@ -121,18 +133,20 @@
       "price": 23,
       "category": "Vegetables & Sides",
       "popular": true,
-      "item_viet": "Ph\u00f4 mai ng\u00f4 n\u01b0\u1edbng",
-      "pronunciation": "fo my ngaw noor"
+      "item_viet": "Bắp Nướng Phô Mai",
+      "pronunciation": "fo my ngaw noor",
+      "description_viet": "Bắp nướng trên chảo gang nóng, phủ phô mai mozzarella kéo sợi."
     },
     {
       "item_name": "Egg rolls",
-      "description": "Indulge in our Ch\u1ea3 Gi\u00f2, crispy Vietnamese spring rolls filled with a savory mix of ground pork, shrimp, vegetables, and vermicelli, wrapped and fried to golden perfection, served with nuoc cham sauce for that quintessential balance of crunch and flavor.",
+      "description": "Indulge in our Chả Giò, crispy Vietnamese spring rolls filled with a savory mix of ground pork, shrimp, vegetables, and vermicelli, wrapped and fried to golden perfection, served with nuoc cham sauce for that quintessential balance of crunch and flavor.",
       "image_path": "./images/eggrolls.jpg",
       "price": 30,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ch\u1ea3 gi\u00f2",
-      "pronunciation": "chuh yoh"
+      "item_viet": "Chả Giò",
+      "pronunciation": "chuh yoh",
+      "description_viet": "Thưởng thức Chả giò giòn rụm, nhân thịt heo xay, tôm, rau củ và miến, cuốn và chiên vàng giòn hoàn hảo, ăn kèm nước mắm pha để cân bằng giữa độ giòn và hương vị."
     },
     {
       "item_name": "Chicken Satay",
@@ -141,8 +155,9 @@
       "price": 16,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "G\u00e0 sa t\u1ebf",
-      "pronunciation": "ga sa teh"
+      "item_viet": "Gà Sa Tế",
+      "pronunciation": "ga sa teh",
+      "description_viet": "Thưởng thức món Gà sa tế xiên que, với gà ướp mềm được nướng khói thơm hoàn hảo, ăn kèm sốt đậu phộng béo bùi ngọt ngào."
     },
     {
       "item_name": "Holy Crunchy Chicken wings",
@@ -151,8 +166,9 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Canh Ga Chien",
-      "pronunciation": "Kahn gah chee-en"
+      "item_viet": "Cánh Gà Chiên Giòn",
+      "pronunciation": "Kahn gah chee-en",
+      "description_viet": "Cánh gà chiên giòn tuyệt hảo với sốt chua ngọt cay, rắc tỏi phi giòn lên trên."
     },
     {
       "item_name": "Fried Sweet Potatoes",
@@ -161,8 +177,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Khoai Lang Chien",
-      "pronunciation": "kwhy lahng chee-en"
+      "item_viet": "Khoai Lang Chiên",
+      "pronunciation": "kwhy lahng chee-en",
+      "description_viet": "Khoai lang chiên giòn thơm ngon."
     },
     {
       "item_name": "Salmon Belly Chien Gion",
@@ -171,8 +188,9 @@
       "price": 11,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "B\u1ee5ng c\u00e1 h\u1ed3i chi\u00ean gi\u00f2n",
-      "pronunciation": "Boong kah hoy cheen gyon"
+      "item_viet": "Bụng Cá Hồi Chiên Giòn",
+      "pronunciation": "Boong kah hoy cheen gyon",
+      "description_viet": "Bụng cá hồi tẩm gia vị tỏi và chiên giòn rụm. Ăn kèm sốt đặc biệt của nhà hàng."
     },
     {
       "item_name": "Toothpick Lamb",
@@ -181,18 +199,20 @@
       "price": 22,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Cuu Xien Que",
-      "pronunciation": "Koo Shyen Kay"
+      "item_viet": "Cừu Xiên Que",
+      "pronunciation": "Koo Shyen Kay",
+      "description_viet": "Khám phá hương vị món Cừu xiên que, với những miếng cừu mềm ngon được ướp gia vị, xiên và nướng chín tới hoàn hảo, mang đến hương vị tinh túy trong từng miếng nhỏ."
     },
     {
       "item_name": "Corn with Dried Shrimp",
-      "description": "Saut\u00e9ed corn in house special seasonings topped with dried shrimp",
+      "description": "Sautéed corn in house special seasonings topped with dried shrimp",
       "image_path": "./images/CornWithDriedShrimp.jpg",
       "price": 12,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bap Xao Tom Kho",
-      "pronunciation": "bahp sow tawm koh"
+      "item_viet": "Bắp Xào Tôm Khô",
+      "pronunciation": "bahp sow tawm koh",
+      "description_viet": "Bắp xào gia vị đặc biệt của nhà hàng, rắc tôm khô lên trên."
     },
     {
       "item_name": "Pho French Dip",
@@ -201,17 +221,19 @@
       "price": 15,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Phở French Dip"
+      "item_viet": "Phở French Dip",
+      "description_viet": "Trải nghiệm sự giao thoa văn hóa với món Phở French Dip, nơi nước dùng phở thơm ngon đậm đà kết hợp với bánh mì sandwich kiểu Pháp, kẹp thịt bò thái mỏng và nước dùng phở để chấm."
     },
     {
       "item_name": "Shrimp Roll",
-      "description": "Delight in the freshness of our G\u1ecfi Cu\u1ed1n T\u00f4m, where succulent shrimp, crisp vegetables, and herbs are wrapped in delicate rice paper, served with a tangy peanut dipping sauce for a light, refreshing bite.",
+      "description": "Delight in the freshness of our Gỏi Cuốn Tôm, where succulent shrimp, crisp vegetables, and herbs are wrapped in delicate rice paper, served with a tangy peanut dipping sauce for a light, refreshing bite.",
       "image_path": "./images/ShrimpRolls.jpg",
       "price": 19,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Cuon Tom",
-      "pronunciation": "goy kwon tom"
+      "item_viet": "Gỏi Cuốn Tôm",
+      "pronunciation": "goy kwon tom",
+      "description_viet": "Thưởng thức độ tươi ngon của Gỏi cuốn tôm, với tôm biển, rau giòn và rau thơm cuốn trong bánh tráng mỏng, ăn kèm nước chấm đậu phộng chua ngọt."
     },
     {
       "item_name": "Grilled Pork Sausage Roll",
@@ -220,18 +242,20 @@
       "price": 17,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Goi Cuon Nem Nuong",
-      "pronunciation": "Goy Kwon Nem Nwong"
+      "item_viet": "Gỏi Cuốn Nem Nướng",
+      "pronunciation": "Goy Kwon Nem Nwong",
+      "description_viet": "Nem nướng, rau thơm, bún, hẹ, cuốn trong bánh tráng. Ăn kèm sốt đặc biệt của đầu bếp."
     },
     {
       "item_name": "Vegetable Roll",
-      "description": "Enjoy our G\u1ecfi Cu\u1ed1n Chay, where fresh veggies, herbs, and tofu are snugly wrapped in rice paper, offering a burst of freshness with each bite, served with a savory dipping sauce.",
+      "description": "Enjoy our Gỏi Cuốn Chay, where fresh veggies, herbs, and tofu are snugly wrapped in rice paper, offering a burst of freshness with each bite, served with a savory dipping sauce.",
       "image_path": "./images/VegetarianSpringRolls.jpg",
       "price": 14,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Goi Cuon Chay",
-      "pronunciation": "goy kwoon chay"
+      "item_viet": "Gỏi Cuốn Chay",
+      "pronunciation": "goy kwoon chay",
+      "description_viet": "Thưởng thức Gỏi cuốn chay, với rau củ tươi, rau thơm và đậu hũ cuốn trong bánh tráng, mang đến vị tươi mát trong từng miếng cắn, ăn kèm nước chấm đậm đà."
     },
     {
       "item_name": "Grilled Pork Spring Roll",
@@ -240,8 +264,9 @@
       "price": 10,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Cuon Thit Nuong",
-      "pronunciation": "Goy Kwan Tih Noong"
+      "item_viet": "Gỏi Cuốn Thịt Nướng",
+      "pronunciation": "Goy Kwan Tih Noong",
+      "description_viet": "Thịt nướng, rau xà lách & rau thơm, dưa leo, bún, hẹ cuốn trong bánh tráng, ăn kèm nước mắm pha đặc biệt."
     },
     {
       "item_name": "Salmon Belly Roll",
@@ -250,8 +275,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Cuon Ca Salmon",
-      "pronunciation": "goy kown kah sam-un"
+      "item_viet": "Gỏi Cuốn Cá Hồi",
+      "pronunciation": "goy kown kah sam-un",
+      "description_viet": "Bụng cá hồi, rau thơm, dưa leo, cuốn trong bánh tráng, ăn kèm sốt me."
     },
     {
       "item_name": "Beef Roll",
@@ -260,8 +286,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Cuon Bo Nuong",
-      "pronunciation": "goy koon bow noong"
+      "item_viet": "Gỏi Cuốn Bò Nướng",
+      "pronunciation": "goy koon bow noong",
+      "description_viet": "Bò xào sả, rau xà lách tươi, củ cải và cà rốt ngâm chua, vỏ hoành thánh giòn cuốn trong bánh tráng. Ăn kèm nước mắm pha đặc biệt."
     },
     {
       "item_name": "Poke Roll",
@@ -270,8 +297,9 @@
       "price": 11,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Goi Cuon Ahi Poke",
-      "pronunciation": "goy kwen ah-hee pohk"
+      "item_viet": "Gỏi Cuốn Ahi Poke",
+      "pronunciation": "goy kwen ah-hee pohk",
+      "description_viet": "Cá ngừ Ahi sống, rau xà lách tươi, bơ, củ cải và cà rốt ngâm chua, vỏ hoành thánh giòn cuốn trong bánh tráng. Ăn kèm nước tương đặc biệt và wasabi."
     },
     {
       "item_name": "Pork and Shrimp Roll",
@@ -280,18 +308,20 @@
       "price": 30,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Cuon Tom Thit",
-      "pronunciation": "goy kown tom teet"
+      "item_viet": "Gỏi Cuốn Tôm Thịt",
+      "pronunciation": "goy kown tom teet",
+      "description_viet": "Tôm biển, thịt heo, rau thơm, bún, hẹ, ăn kèm sốt đậu phộng của đầu bếp."
     },
     {
       "item_name": "Shrimp and Pork Mustard Green",
-      "description": "Shrimp and Pork Wrapped Mustard Green Leaf - C\u1ea3i B\u1eb9 Xanh Cu\u1ed1n T\u00f4m Th\u1ecbt",
+      "description": "Shrimp and Pork Wrapped Mustard Green Leaf - Cải Bẹ Xanh Cuốn Tôm Thịt",
       "image_path": "./images/ShrimpandPorkMustardGreen.jpg",
       "price": 15,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Cai Bao Xanh Cuon Tom Thit",
-      "pronunciation": "tsigh bow sen kwon tom tih"
+      "item_viet": "Cải Bẹ Xanh Cuốn Tôm Thịt",
+      "pronunciation": "tsigh bow sen kwon tom tih",
+      "description_viet": "Tôm và thịt heo cuốn trong lá cải bẹ xanh."
     },
     {
       "item_name": "Tiger Shrimp and Mango Salad",
@@ -300,8 +330,9 @@
       "price": 21,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Xoai Tom Xu",
-      "pronunciation": "Goy Swoy Tom Soo"
+      "item_viet": "Gỏi Xoài Tôm Sú",
+      "pronunciation": "Goy Swoy Tom Soo",
+      "description_viet": "Tôm sú đen ướp gia vị ăn kèm gỏi xoài."
     },
     {
       "item_name": "Ahi Poke Salad (Seared)",
@@ -310,8 +341,9 @@
       "price": 29,
       "category": "Vegetables & Sides",
       "popular": true,
-      "item_viet": "Goi Ca Ahi",
-      "pronunciation": "goy kah ah-hee"
+      "item_viet": "Gỏi Cá Ahi Áp Chảo",
+      "pronunciation": "goy kah ah-hee",
+      "description_viet": "Cá ngừ áp chảo trên nền rau xà lách, rong biển, hành tây và hẹ giòn. Ăn kèm sốt wasabi."
     },
     {
       "item_name": "Green Papaya Beef Jerky Salad",
@@ -320,8 +352,9 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Du Du Kho Bo",
-      "pronunciation": "doo doo koh boh"
+      "item_viet": "Gỏi Đu Đủ Khô Bò",
+      "pronunciation": "doo doo koh boh",
+      "description_viet": "Gỏi đu đủ xanh với khô bò, rau thơm và đậu phộng rang."
     },
     {
       "item_name": "Thai Calamari Salad",
@@ -330,8 +363,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Goi Muc Thailand",
-      "pronunciation": "goy mooc THY-lan"
+      "item_viet": "Gỏi Mực Thái Lan",
+      "pronunciation": "goy mooc THY-lan",
+      "description_viet": "Mực nướng với đu đủ, xoài thái sợi, hành tây, rau thơm, đậu phộng và hành phi, trộn nước mắm chua ngọt."
     },
     {
       "item_name": "Baby Clam Salad",
@@ -340,8 +374,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Hen",
-      "pronunciation": "Goy hen"
+      "item_viet": "Gỏi Hến",
+      "pronunciation": "Goy hen",
+      "description_viet": "Nghêu, bắp cải, bông chuối, rau thơm, đậu phộng và hành phi. Ăn kèm nước mắm chua ngọt."
     },
     {
       "item_name": "Grilled Salmon Salad",
@@ -350,7 +385,8 @@
       "price": 17,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Salad cá hồi nướng"
+      "item_viet": "Gỏi Cá Hồi Nướng",
+      "description_viet": "Cá hồi nướng trên nền rau xanh, rau thơm và hành tây với sốt kem."
     },
     {
       "item_name": "Ahi Poke Salad",
@@ -359,8 +395,9 @@
       "price": 30,
       "category": "Vegetables & Sides",
       "popular": false,
-      "item_viet": "Salad c\u00e1 h\u1ed3i n\u01b0\u1edbng",
-      "pronunciation": "suh-LAD kah hoy noong"
+      "item_viet": "Gỏi Cá Ahi",
+      "pronunciation": "suh-LAD kah hoy noong",
+      "description_viet": "Cá ngừ ướp mè trên nền rau xanh với sốt wasabi."
     },
     {
       "item_name": "Lotus Root Salad",
@@ -369,8 +406,9 @@
       "price": 10,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Goi Ngo Sen",
-      "pronunciation": "goy ngaw sen"
+      "item_viet": "Gỏi Ngó Sen",
+      "pronunciation": "goy ngaw sen",
+      "description_viet": "Ngó sen, thịt heo, tôm, hành tây, đậu phộng, cà rốt, dưa leo, cần tây trộn nước mắm chua ngọt."
     },
     {
       "item_name": "Beef Ong Choy Salad",
@@ -379,8 +417,9 @@
       "price": 24,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Goi Rau Moung Bo Xao",
-      "pronunciation": "goy raw mung bo sow"
+      "item_viet": "Gỏi Rau Muống Bò Xào",
+      "pronunciation": "goy raw mung bo sow",
+      "description_viet": "Rau muống xé nhỏ, rau thơm, củ cải và cà rốt ngâm chua, hành tây và đậu phộng trộn nước mắm chua ngọt."
     },
     {
       "item_name": "Thai Beef Salad",
@@ -389,8 +428,9 @@
       "price": 21,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Goi Bo Thailand",
-      "pronunciation": "goy bow thy-land"
+      "item_viet": "Gỏi Bò Thái Lan",
+      "pronunciation": "goy bow thy-land",
+      "description_viet": "Thăn bò ướp kiểu Thái nướng trên nền rau xanh, dưa leo, cần tây, hành tây, đậu phộng và trộn nước mắm chua ngọt."
     },
     {
       "item_name": "Rice paper Salad",
@@ -399,8 +439,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Banh Trang Tron",
-      "pronunciation": "BAN-yang TRON"
+      "item_viet": "Bánh Tráng Trộn",
+      "pronunciation": "BAN-yang TRON",
+      "description_viet": "Khô bò thái sợi, xoài xanh, rau thơm, đậu phộng trộn nước mắm chua ngọt."
     },
     {
       "item_name": "Lime Beef Salad",
@@ -409,8 +450,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bo Tai Chanh",
-      "pronunciation": "Baw tie chahn"
+      "item_viet": "Bò Tái Chanh",
+      "pronunciation": "Baw tie chahn",
+      "description_viet": "Thăn bò thái mỏng ngâm chanh trộn với rau thơm, hành tây, đậu phộng và nước mắm chua ngọt."
     },
     {
       "item_name": "Pomelo Salad",
@@ -419,8 +461,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Goi Buoi",
-      "pronunciation": "goy bwai"
+      "item_viet": "Gỏi Bưởi",
+      "pronunciation": "goy bwai",
+      "description_viet": "Bưởi, tôm biển, thịt heo, bông chuối, cà rốt, hành tây, rau thơm, đậu phộng trộn nước mắm đặc biệt."
     },
     {
       "item_name": "Hamachi Yellowtail Sashimi Salad",
@@ -429,8 +472,9 @@
       "price": 15,
       "category": "Vegetables & Sides",
       "popular": false,
-      "item_viet": "Goi Ca Yellowtail",
-      "pronunciation": "goy kah Yellowtail"
+      "item_viet": "Gỏi Cá Cam Sashimi",
+      "pronunciation": "goy kah Yellowtail",
+      "description_viet": "Cá cam tươi sashimi, rau thơm, bông chuối, ngó sen, đậu phộng ăn kèm nước tương và wasabi."
     },
     {
       "item_name": "Mango and Papaya Salad",
@@ -439,8 +483,9 @@
       "price": 25,
       "category": "Vegetables & Sides",
       "popular": false,
-      "item_viet": "Goi Xoai and Du Du",
-      "pronunciation": "goy swoy and doo doo"
+      "item_viet": "Gỏi Xoài Đu Đủ",
+      "pronunciation": "goy swoy and doo doo",
+      "description_viet": "Xoài, đu đủ thái sợi, rau thơm, hành tây, cà chua và đậu phộng trộn nước mắm đặc biệt."
     },
     {
       "item_name": "Pineapple Salad",
@@ -449,18 +494,20 @@
       "price": 17,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Goi Thom",
-      "pronunciation": "Goy Thom"
+      "item_viet": "Gỏi Thơm",
+      "pronunciation": "Goy Thom",
+      "description_viet": "Dứa tươi, rau thơm, rau xà lách, thịt heo, tôm, khô cá và đậu phộng trộn nước mắm đặc biệt."
     },
     {
       "item_name": "Chicken Salad",
-      "description": "Relish the zest of our G\u1ecfi G\u00e0, a refreshing Vietnamese chicken salad that combines shredded chicken with crisp vegetables, tangy lime, fresh herbs, and a sprinkle of peanuts for a delightful crunch.",
+      "description": "Relish the zest of our Gỏi Gà, a refreshing Vietnamese chicken salad that combines shredded chicken with crisp vegetables, tangy lime, fresh herbs, and a sprinkle of peanuts for a delightful crunch.",
       "image_path": "./downloaded_images/Chicken_SaladGoi_Ga.jpg",
       "price": 19,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Goi Ga",
-      "pronunciation": "Goy ga"
+      "item_viet": "Gỏi Gà",
+      "pronunciation": "Goy ga",
+      "description_viet": "Thưởng thức hương vị tươi ngon của Gỏi gà, với gà xé sợi trộn cùng rau củ giòn, chanh, rau thơm và đậu phộng rang."
     },
     {
       "item_name": "Tamarind Crab",
@@ -469,8 +516,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Cua Rang Me (1 Con)",
-      "pronunciation": "Chwa Raang May (wun kon)"
+      "item_viet": "Cua Rang Me",
+      "pronunciation": "Chwa Raang May (wun kon)",
+      "description_viet": "Cua rang me cay."
     },
     {
       "item_name": "Ong Choy with Pork Belly and Seasnails",
@@ -479,8 +527,9 @@
       "price": 20,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Rau Muong Xao Oc Ba Roi",
-      "pronunciation": "Raw moong sow ock bah roy"
+      "item_viet": "Rau Muống Xào Ốc Ba Chỉ",
+      "pronunciation": "Raw moong sow ock bah roy",
+      "description_viet": "Rau muống xào ba chỉ và ốc biển."
     },
     {
       "item_name": "Baked Clams with Chili Garlic",
@@ -489,8 +538,9 @@
       "price": 15,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ngheu Xao Toi Ot",
-      "pronunciation": "Nuh sow twa ot"
+      "item_viet": "Nghêu Nướng Tỏi Ớt",
+      "pronunciation": "Nuh sow twa ot",
+      "description_viet": "Nghêu nướng rắc đậu phộng, hành phi giòn và dầu tỏi ớt."
     },
     {
       "item_name": "Sauteed Sea Snails",
@@ -499,8 +549,9 @@
       "price": 12,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Oc Huong Xao",
-      "pronunciation": "awk hwong sow"
+      "item_viet": "Ốc Hương Xào",
+      "pronunciation": "awk hwong sow",
+      "description_viet": "Ốc hương xào bơ tỏi trên nền hành tây xèo xèo."
     },
     {
       "item_name": "Clams in Lemongrass Soup",
@@ -509,8 +560,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ngheu Hap Xa",
-      "pronunciation": "NGUH HAP SA"
+      "item_viet": "Nghêu Hấp Sả",
+      "pronunciation": "NGUH HAP SA",
+      "description_viet": "Nghêu hấp trong nước dùng sả cay."
     },
     {
       "item_name": "Chili Lemongrass Sea Snail Soup",
@@ -519,8 +571,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Oc Huong Hap Xa Ot",
-      "pronunciation": "awk hwong hap sa ot"
+      "item_viet": "Ốc Hương Hấp Sả Ớt",
+      "pronunciation": "awk hwong hap sa ot",
+      "description_viet": "Ốc hương hấp trong nước dùng sả ớt cay."
     },
     {
       "item_name": "Deep Fried Calamari",
@@ -529,8 +582,9 @@
       "price": 28,
       "category": "Specialties",
       "popular": false,
-      "item_viet": "Muc Lan Bot",
-      "pronunciation": "Mook lawn bot"
+      "item_viet": "Mực Lăn Bột",
+      "pronunciation": "Mook lawn bot",
+      "description_viet": "Mực lăn bột gia vị tỏi và xào bơ tỏi với ớt jalapeño và hành tây."
     },
     {
       "item_name": "Baked Clams",
@@ -539,8 +593,9 @@
       "price": 20,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Ngheu Nuong Mo Hanh Toi",
-      "pronunciation": "Nuh new-ong moh han toy"
+      "item_viet": "Nghêu Nướng Mỡ Hành Tỏi",
+      "pronunciation": "Nuh new-ong moh han toy",
+      "description_viet": "Nghêu nướng rắc đậu phộng, hành phi giòn và hành tây."
     },
     {
       "item_name": "Basil Clams",
@@ -549,8 +604,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ngheu Xao La Que",
-      "pronunciation": "nguh sow lah kweh"
+      "item_viet": "Nghêu Xào Lá Quế",
+      "pronunciation": "nguh sow lah kweh",
+      "description_viet": "Nghêu xào húng quế, hành tây và ớt jalapeño."
     },
     {
       "item_name": "Chili Dungeness Crab",
@@ -559,8 +615,9 @@
       "price": 24,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Cua Singapore (1 con)",
-      "pronunciation": "Kwa Sing-a-poor (kawn)"
+      "item_viet": "Cua Singapore",
+      "pronunciation": "Kwa Sing-a-poor (kawn)",
+      "description_viet": "Cua Singapore rang ớt - ăn kèm quẩy và bánh mì baguette."
     },
     {
       "item_name": "Charbroiled Blk Tiger on Garlic Noodles",
@@ -569,8 +626,9 @@
       "price": 10,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Mi Toi Tom Xu Nuong",
-      "pronunciation": "Mee Twa Tom Soo Noo-ong"
+      "item_viet": "Mì Tỏi Tôm Sú Nướng",
+      "pronunciation": "Mee Twa Tom Soo Noo-ong",
+      "description_viet": "Tôm sú đen ướp gia vị nướng than, ăn kèm mì xào bơ tỏi."
     },
     {
       "item_name": "Salt and Pepper Shrimp",
@@ -579,8 +637,9 @@
       "price": 22,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Tom Rang Muoi",
-      "pronunciation": "tomm rahng moo-ee"
+      "item_viet": "Tôm Rang Muối",
+      "pronunciation": "tomm rahng moo-ee",
+      "description_viet": "Tôm lớn chiên giòn xào bơ tỏi, hành tây và ớt jalapeño."
     },
     {
       "item_name": "Ong Choy with Seasnails",
@@ -589,8 +648,9 @@
       "price": 24,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Rau Muong Xao Oc Huong",
-      "pronunciation": "raw moong sow ock hwong"
+      "item_viet": "Rau Muống Xào Ốc Hương",
+      "pronunciation": "raw moong sow ock hwong",
+      "description_viet": "Rau muống xào ốc biển."
     },
     {
       "item_name": "Grilled Blood Clams",
@@ -599,8 +659,9 @@
       "price": 12,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "So Long Nuong Mo Hanh",
-      "pronunciation": "so lawn nuong mo han"
+      "item_viet": "Sò Huyết Nướng Mỡ Hành",
+      "pronunciation": "so lawn nuong mo han",
+      "description_viet": "Sò huyết nướng rắc đậu phộng, tỏi phi và hẹ giòn."
     },
     {
       "item_name": "Shrimp Skewers",
@@ -609,8 +670,9 @@
       "price": 24,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Tom Xien Nuong",
-      "pronunciation": "tawm shyen noong"
+      "item_viet": "Tôm Xiên Nướng",
+      "pronunciation": "tawm shyen noong",
+      "description_viet": "Tôm lớn ướp gia vị nướng xiên que, phục vụ trên chảo gang nóng."
     },
     {
       "item_name": "Baked King Crab Legs",
@@ -619,8 +681,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Cua Hoi Nuong",
-      "pronunciation": "kwa hoy nuong"
+      "item_viet": "Càng Cua Hoàng Đế Nướng",
+      "pronunciation": "kwa hoy nuong",
+      "description_viet": "Chân cua hoàng đế nướng phủ sốt aioli, tỏi phi và hẹ giòn."
     },
     {
       "item_name": "Grilled Calamari",
@@ -629,18 +692,20 @@
       "price": 25,
       "category": "Specialties",
       "popular": false,
-      "item_viet": "Muc Nuong Thailand",
-      "pronunciation": "Mook Noong Thailand"
+      "item_viet": "Mực Nướng Thái",
+      "pronunciation": "Mook Noong Thailand",
+      "description_viet": "Mực ướp kiểu Thái nướng với hành tây, tỏi giòn và ớt jalapeño."
     },
     {
       "item_name": "Grilled Scallops",
-      "description": "Indulge in our S\u00f2 \u0110i\u1ec7p N\u01b0\u1edbng, where succulent scallops are perfectly grilled, often seasoned with a delicate mix of Vietnamese spices, served on the half shell for an elegant, flavorful seafood experience.",
+      "description": "Indulge in our Sò Điệp Nướng, where succulent scallops are perfectly grilled, often seasoned with a delicate mix of Vietnamese spices, served on the half shell for an elegant, flavorful seafood experience.",
       "image_path": "./images/GrilledScallops.jpg",
       "price": 15,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "So Diep Nuong",
-      "pronunciation": "soh dyehp noong"
+      "item_viet": "Sò Điệp Nướng",
+      "pronunciation": "soh dyehp noong",
+      "description_viet": "Thưởng thức món Sò điệp nướng, với sò điệp tươi được nướng hoàn hảo, ướp gia vị đặc trưng Việt Nam, phục vụ trên vỏ sò mang đến trải nghiệm hải sản thanh lịch đầy hương vị."
     },
     {
       "item_name": "Razor Clams",
@@ -649,8 +714,9 @@
       "price": 30,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Oc Mong Tay",
-      "pronunciation": "awk mawng tie"
+      "item_viet": "Ốc Móng Tay",
+      "pronunciation": "awk mawng tie",
+      "description_viet": "Ốc móng tay nướng rắc đậu phộng, tỏi ớt và ớt chuông."
     },
     {
       "item_name": "Coconut Seasnails",
@@ -659,8 +725,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Oc Len Xao Dua",
-      "pronunciation": "awk len sow dwa"
+      "item_viet": "Ốc Len Xào Dừa",
+      "pronunciation": "awk len sow dwa",
+      "description_viet": "Ốc len nhỏ nấu trong nước dừa với hành tây, tỏi và ớt."
     },
     {
       "item_name": "Spicy Baby Clams on Rice Chips",
@@ -669,8 +736,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Hen Xao Xuc Banh Trang",
-      "pronunciation": "hen sow suk bahn chang"
+      "item_viet": "Hến Xào Xúc Bánh Tráng",
+      "pronunciation": "hen sow suk bahn chang",
+      "description_viet": "Hến xào đậu phộng, hành tây, tỏi và rau thơm, ăn kèm bánh tráng mè giòn."
     },
     {
       "item_name": "Lemongrass Seafood Soup",
@@ -679,8 +747,9 @@
       "price": 18,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Do Bien Hap Xa",
-      "pronunciation": "daw bee-en hap sa"
+      "item_viet": "Đồ Biển Hấp Sả",
+      "pronunciation": "daw bee-en hap sa",
+      "description_viet": "Nghêu, mực và tôm hấp trong nước dùng hải sản sả cay."
     },
     {
       "item_name": "House-Special Garlic Crab",
@@ -689,8 +758,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Cua Dac Biet (1 Con)",
-      "pronunciation": "Kwa Dak Byet (1 Kahn)"
+      "item_viet": "Cua Đặc Biệt",
+      "pronunciation": "Kwa Dak Byet (1 Kahn)",
+      "description_viet": "Cua Dungeness chiên gia vị đặc biệt của nhà hàng, xào bơ tỏi, hành tây và ớt jalapeño, rắc tỏi phi giòn."
     },
     {
       "item_name": "House Special Squid",
@@ -699,8 +769,9 @@
       "price": 17,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Muc Dac Biet",
-      "pronunciation": "Mook Dak Byet"
+      "item_viet": "Mực Đặc Biệt",
+      "pronunciation": "Mook Dak Byet",
+      "description_viet": "Khám phá món Mực đặc biệt của nhà hàng, với mực tươi ngon được ướp gia vị bí truyền, tẩm bột mỏng và chiên giòn vàng, ăn kèm nước chấm chua ngọt hấp dẫn không thể cưỡng lại."
     },
     {
       "item_name": "House Special Lobster",
@@ -709,8 +780,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Tom Hum Dac Biet",
-      "pronunciation": "tome hum dak byet"
+      "item_viet": "Tôm Hùm Đặc Biệt",
+      "pronunciation": "tome hum dak byet",
+      "description_viet": "Tôm hùm xào với sốt đặc biệt của nhà hàng cùng tỏi, hành tây và ớt jalapeño."
     },
     {
       "item_name": "Baked Crispy Catfish w. Boiled Pork",
@@ -719,8 +791,9 @@
       "price": 14,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Ca Nuong Da Gion Thit Luoc",
-      "pronunciation": "kah noong da jee-on tih loh"
+      "item_viet": "Cá Nướng Da Giòn Thịt Luộc",
+      "pronunciation": "kah noong da jee-on tih loh",
+      "description_viet": "Cá nướng da giòn với thịt heo luộc. Vui lòng chờ 1 giờ để chuẩn bị."
     },
     {
       "item_name": "Charbroiled Blk Tiger on Garlic Noodles",
@@ -729,8 +802,9 @@
       "price": 13,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Mi Toi Tom Xu Nuong",
-      "pronunciation": "Mee Twa Tom Soo Noong"
+      "item_viet": "Mì Tỏi Tôm Sú Nướng",
+      "pronunciation": "Mee Twa Tom Soo Noong",
+      "description_viet": "Tôm sú đen ướp gia vị nướng than, ăn kèm mì xào bơ tỏi."
     },
     {
       "item_name": "Ong choy with Beef",
@@ -739,18 +813,20 @@
       "price": 14,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Rau Muong Xao Bo",
-      "pronunciation": "raw moong shao bow"
+      "item_viet": "Rau Muống Xào Bò",
+      "pronunciation": "raw moong shao bow",
+      "description_viet": "Rau muống xào thịt bò thái lát."
     },
     {
       "item_name": "Shaken Tofu",
-      "description": "Fried tofu saut\u00e9ed with onions, bell peppers, and mushrooms. Served with rice",
+      "description": "Fried tofu sautéed with onions, bell peppers, and mushrooms. Served with rice",
       "image_path": "./downloaded_images/Shaken_tofuDau_hu_luc_lac.jpg",
       "price": 14,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Dau Hu Luc Lac",
-      "pronunciation": "dow hoo look lack"
+      "item_viet": "Đậu Hũ Lúc Lắc",
+      "pronunciation": "dow hoo look lack",
+      "description_viet": "Đậu hũ chiên xào hành tây, ớt chuông và nấm. Ăn kèm cơm."
     },
     {
       "item_name": "Lamb Chops",
@@ -759,8 +835,9 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "S\u01b0\u1eddn c\u1eebu",
-      "pronunciation": "Suon cuh"
+      "item_viet": "Sườn Cừu",
+      "pronunciation": "Suon cuh",
+      "description_viet": "Sườn cừu nướng thơm ngon."
     },
     {
       "item_name": "Chicken Curry",
@@ -769,8 +846,9 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Cari Ga",
-      "pronunciation": "kah-ree GAH"
+      "item_viet": "Cà Ri Gà",
+      "pronunciation": "kah-ree GAH",
+      "description_viet": "Gà còn xương om cà ri kiểu Việt với khoai môn và khoai tây. Ăn kèm bánh mì, cơm hoặc bún."
     },
     {
       "item_name": "Sizzling Filet Mignon",
@@ -779,68 +857,75 @@
       "price": 19,
       "category": "Rice & Noodles",
       "popular": true,
-      "item_viet": "Bo Ne",
-      "pronunciation": "Baw nay"
+      "item_viet": "Bò Né",
+      "pronunciation": "Baw nay",
+      "description_viet": "Thăn bò ướp gia vị nướng với trứng ốp la, xúc xích và pate. Chọn bánh mì hoặc cơm."
     },
     {
       "item_name": "Seafood Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with combination seafood, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with combination seafood, bean sprouts, and green onion",
       "image_path": "./images/SeafoodChowfun.jpg",
       "price": 18,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Ap Chao Do Bien",
-      "pronunciation": "ahp chow doh bee-en"
+      "item_viet": "Hủ Tiếu Xào Hải Sản",
+      "pronunciation": "ahp chow doh bee-en",
+      "description_viet": "Hủ tiếu xào hải sản tổng hợp, giá đỗ và hành lá."
     },
     {
       "item_name": "Chicken Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with chicken, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with chicken, bean sprouts, and green onion",
       "image_path": "./downloaded_images/Chicken_ChowfunAp_Chao_Thit_Ga.jpg",
       "price": 16,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Ap Chao Thit Ga",
-      "pronunciation": "ahp chow tih gah"
+      "item_viet": "Hủ Tiếu Xào Gà",
+      "pronunciation": "ahp chow tih gah",
+      "description_viet": "Hủ tiếu xào gà, giá đỗ và hành lá."
     },
     {
       "item_name": "Sauteed Beef and Garlic Noodles",
-      "description": "Garlic butter noodles saut\u00e9ed with sliced beef and onions",
+      "description": "Garlic butter noodles sautéed with sliced beef and onions",
       "image_path": "./downloaded_images/Sauteed_Beef_and_Garlic_NoodlesBo_Xao_Mi_Toi.jpg",
       "price": 20,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Bo Xao Mi Toi",
-      "pronunciation": "Baw shao mee toy"
+      "item_viet": "Bò Xào Mì Tỏi",
+      "pronunciation": "Baw shao mee toy",
+      "description_viet": "Bò thái lát xào mì tỏi thơm phức."
     },
     {
       "item_name": "Vegetarian Egg Noodles",
-      "description": "Saut\u00e9ed yellow noodles with tofu and vegetables",
+      "description": "Sautéed yellow noodles with tofu and vegetables",
       "image_path": "./images/VegetarianEggNoodles.jpg",
       "price": 16,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Mi Xao Chay",
-      "pronunciation": "Mee sow chai"
+      "item_viet": "Mì Xào Chay",
+      "pronunciation": "Mee sow chai",
+      "description_viet": "Mì trứng chay với rau củ xào."
     },
     {
       "item_name": "Chicken Egg Noodles",
-      "description": "Saut\u00e9ed yellow noodles with chicken and vegetables",
+      "description": "Sautéed yellow noodles with chicken and vegetables",
       "image_path": "./images/ChickenEggNoodles.jpg",
       "price": 15,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Mi Xao Ga",
-      "pronunciation": "Mee sow ga"
+      "item_viet": "Mì Xào Gà",
+      "pronunciation": "Mee sow ga",
+      "description_viet": "Mì trứng xào gà và rau củ."
     },
     {
       "item_name": "Seafood Egg Noodles",
-      "description": "Saut\u00e9ed yellow noodles with combination seafood and mixed vegetables",
+      "description": "Sautéed yellow noodles with combination seafood and mixed vegetables",
       "image_path": "./images/SeafoodEggNoodles.jpg",
       "price": 15,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Mi Xao Do Bien",
-      "pronunciation": "Mee sow daw bee-en"
+      "item_viet": "Mì Xào Hải Sản",
+      "pronunciation": "Mee sow daw bee-en",
+      "description_viet": "Mì trứng xào hải sản tổng hợp."
     },
     {
       "item_name": "Pork Chop/Egg/Garlic Fries",
@@ -849,58 +934,64 @@
       "price": 27,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Suon Heo Cot Let",
-      "pronunciation": "Swon Huh-oh Cot Let"
+      "item_viet": "Sườn Heo Cốt Lết",
+      "pronunciation": "Swon Huh-oh Cot Let",
+      "description_viet": "Sườn heo nướng với trứng ốp la và khoai tây chiên tỏi."
     },
     {
       "item_name": "Combination Egg Noodles",
-      "description": "Saut\u00e9ed yellow noodles with combination seafood, beef and mixed vegetables",
+      "description": "Sautéed yellow noodles with combination seafood, beef and mixed vegetables",
       "image_path": "./images/CombinationEggNoodes.jpg",
       "price": 30,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Mi Xao Thap Cam",
-      "pronunciation": "Mee sow tap cam"
+      "item_viet": "Mì Xào Thập Cẩm",
+      "pronunciation": "Mee sow tap cam",
+      "description_viet": "Mì trứng xào thập cẩm với hải sản và thịt."
     },
     {
       "item_name": "Chicken Garlic Noodles",
-      "description": "Garlic butter noodles saut\u00e9ed with sliced chicken and onions",
+      "description": "Garlic butter noodles sautéed with sliced chicken and onions",
       "image_path": "./downloaded_images/Chicken_Garlic_Noodles_-_Mi_Toi_Ga.png",
       "price": 13,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Mi Toi Ga",
-      "pronunciation": "Mee toy gah"
+      "item_viet": "Mì Tỏi Gà",
+      "pronunciation": "Mee toy gah",
+      "description_viet": "Mì tỏi xào gà."
     },
     {
       "item_name": "Beef Egg Noodles",
-      "description": "Saut\u00e9ed yellow noodles with beef and mixed vegetables",
+      "description": "Sautéed yellow noodles with beef and mixed vegetables",
       "image_path": "./downloaded_images/Beef_Egg_NoodlesMi_Xao_Bo.jpg",
       "price": 27,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Mi Xao Bo",
-      "pronunciation": "Mee sow boh"
+      "item_viet": "Mì Xào Bò",
+      "pronunciation": "Mee sow boh",
+      "description_viet": "Mì trứng xào bò."
     },
     {
       "item_name": "Beef Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with beef, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with beef, bean sprouts, and green onion",
       "image_path": "./downloaded_images/Beef_ChowfunAp_Chao_Thit_Bo.jpg",
       "price": 11,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Ap Chao Thit Bo",
-      "pronunciation": "ap chow teet boh"
+      "item_viet": "Hủ Tiếu Xào Bò",
+      "pronunciation": "ap chow teet boh",
+      "description_viet": "Hủ tiếu xào bò, giá đỗ và hành lá."
     },
     {
       "item_name": "Shaken Filet Mignon",
-      "description": "Seared cubed filet mignon saut\u00e9ed with onions, bell peppers, and mushrooms.",
+      "description": "Seared cubed filet mignon sautéed with onions, bell peppers, and mushrooms.",
       "image_path": "./images/ShakenFiletMignon.jpg",
       "price": 11,
       "category": "Specialties",
       "popular": false,
-      "item_viet": "Bo Luc Lac",
-      "pronunciation": "Baw Look Lak"
+      "item_viet": "Bò Lúc Lắc",
+      "pronunciation": "Baw Look Lak",
+      "description_viet": "Thăn bò lúc lắc xào hành tây và ớt chuông. Ăn kèm cơm."
     },
     {
       "item_name": "Goat Curry",
@@ -909,58 +1000,64 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Cari De",
-      "pronunciation": "Kah-ree deh"
+      "item_viet": "Cà Ri Dê",
+      "pronunciation": "Kah-ree deh",
+      "description_viet": "Dê còn xương om cà ri kiểu Việt với khoai môn và khoai tây. Ăn kèm bánh mì, cơm hoặc bún."
     },
     {
       "item_name": "Combination Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with calamari, fish, shrimp, beef, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with calamari, fish, shrimp, beef, bean sprouts, and green onion",
       "image_path": "./images/CombinationChowfun.jpg",
       "price": 10,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ap Chao Thap Cam",
-      "pronunciation": "ahp chow tap cahm"
+      "item_viet": "Hủ Tiếu Xào Thập Cẩm",
+      "pronunciation": "ahp chow tap cahm",
+      "description_viet": "Hủ tiếu xào thập cẩm với hải sản và thịt."
     },
     {
       "item_name": "Pad Thai",
-      "description": "Rice noodles saut\u00e9ed in Thai sauce. Choice of chicken, shrimp or tofu.",
+      "description": "Rice noodles sautéed in Thai sauce. Choice of chicken, shrimp or tofu.",
       "image_path": "./images/Padthai.jpg",
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Pad Th\u00e1i",
-      "pronunciation": "pahd tie"
+      "item_viet": "Phở Xào Thái",
+      "pronunciation": "pahd tie",
+      "description_viet": "Mì xào Thái với tôm, đậu phộng, giá đỗ và trứng."
     },
     {
       "item_name": "Stir Fried Glass Noodles Crab & Shrimp",
-      "description": "Glass noodles, minced crab, shrimp, eggs, celery, carrots, and bean sprouts saut\u00e9ed in seasonings",
+      "description": "Glass noodles, minced crab, shrimp, eggs, celery, carrots, and bean sprouts sautéed in seasonings",
       "image_path": "./downloaded_images/Stir_Fried_Glass_noodles_CrabShrimp_-_Mien_Xao_Tom_Cua.jpg",
       "price": 23,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Mien Xao Tom Cua",
-      "pronunciation": "mee-en shao tom kwa"
+      "item_viet": "Miến Xào Tôm Cua",
+      "pronunciation": "mee-en shao tom kwa",
+      "description_viet": "Miến xào cua và tôm."
     },
     {
       "item_name": "Shrimp Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with Shrimp, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with Shrimp, bean sprouts, and green onion",
       "image_path": "./downloaded_images/Shrimp_ChowfunAp_Chao_Mem_Tom.jpg",
       "price": 15,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ap Chao Mem Tom",
-      "pronunciation": "ap chow mem tom"
+      "item_viet": "Hủ Tiếu Xào Tôm",
+      "pronunciation": "ap chow mem tom",
+      "description_viet": "Hủ tiếu xào tôm, giá đỗ và hành lá."
     },
     {
       "item_name": "Vegetarian Chowfun",
-      "description": "Saut\u00e9ed flat rice noodles with tofu, bean sprouts, and green onion",
+      "description": "Sautéed flat rice noodles with tofu, bean sprouts, and green onion",
       "image_path": "./downloaded_images/Vegetarian_ChowfunAp_Chao_Chay.jpg",
       "price": 18,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Ap Chao Chay",
-      "pronunciation": "ahp chow chy"
+      "item_viet": "Hủ Tiếu Xào Chay",
+      "pronunciation": "ahp chow chy",
+      "description_viet": "Hủ tiếu xào chay với đậu hũ và rau củ."
     },
     {
       "item_name": "Grilled Chicken Garlic Noodles",
@@ -969,8 +1066,9 @@
       "price": 17,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Ga Nuong Mi Xao Toi",
-      "pronunciation": "Gah noong mee sow twa"
+      "item_viet": "Gà Nướng Mì Tỏi",
+      "pronunciation": "Gah noong mee sow twa",
+      "description_viet": "Gà nướng ăn kèm mì tỏi."
     },
     {
       "item_name": "Stir-Fried Eggplant with Crispy Pork",
@@ -979,7 +1077,8 @@
       "price": 13,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": ""
+      "item_viet": "Cà Tím Xào Thịt Heo Giòn",
+      "description_viet": "Cà tím xào thịt heo chiên giòn."
     },
     {
       "item_name": "Fried Rice",
@@ -988,18 +1087,20 @@
       "price": 26,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Com Chien",
-      "pronunciation": "kawm cheyn"
+      "item_viet": "Cơm Chiên",
+      "pronunciation": "kawm cheyn",
+      "description_viet": "Cơm chiên với trứng và rau củ."
     },
     {
       "item_name": "Salted Fish Rice",
-      "description": "Experience the robust flavors of Vietnam with our C\u01a1m C\u00e1 M\u1eb7n, where the unique saltiness of preserved fish melds with the subtle sweetness of stir-fried rice, creating a dish that's both comforting and exotic. Each grain of rice is infused with the savory essence of salted fish, complemented by the freshness of vegetables and the richness of scrambled eggs, making for a simple yet unforgettable meal.",
+      "description": "Experience the robust flavors of Vietnam with our Cơm Cá Mặn, where the unique saltiness of preserved fish melds with the subtle sweetness of stir-fried rice, creating a dish that's both comforting and exotic. Each grain of rice is infused with the savory essence of salted fish, complemented by the freshness of vegetables and the richness of scrambled eggs, making for a simple yet unforgettable meal.",
       "image_path": "./downloaded_images/Salted_Fish_RiceCom_Ca_Man.jpg",
       "price": 19,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Com Ca Man",
-      "pronunciation": "Kawm kah mahn"
+      "item_viet": "Cơm Cá Mặn",
+      "pronunciation": "Kawm kah mahn",
+      "description_viet": "Cơm chiên cá mặn."
     },
     {
       "item_name": "Grilled Pork Rice",
@@ -1008,18 +1109,20 @@
       "price": 30,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Com Thit Nuong",
-      "pronunciation": "kahm teet noong"
+      "item_viet": "Cơm Thịt Nướng",
+      "pronunciation": "kahm teet noong",
+      "description_viet": "Cơm thịt heo nướng."
     },
     {
       "item_name": "Ong Choy with Pork Belly",
-      "description": "Delight in the simplicity and flavor of our Rau Mu\u1ed1ng X\u00e0o B\u00e0 R\u00f2i, where fresh water spinach is quickly stir-fried with an abundance of fragrant garlic, capturing the essence of Vietnamese home cooking in every crisp, green bite.",
+      "description": "Delight in the simplicity and flavor of our Rau Muống Xào Bà Ròi, where fresh water spinach is quickly stir-fried with an abundance of fragrant garlic, capturing the essence of Vietnamese home cooking in every crisp, green bite.",
       "image_path": "./images/OngChoywPorkBelly.jpg",
       "price": 24,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Rau Muong Xao Ba Roi",
-      "pronunciation": "raw moo-ung sow bah roy"
+      "item_viet": "Rau Muống Xào Ba Chỉ",
+      "pronunciation": "raw moo-ung sow bah roy",
+      "description_viet": "Rau muống xào ba chỉ."
     },
     {
       "item_name": "Thai Hotpot",
@@ -1028,8 +1131,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Lau Thai",
-      "pronunciation": "low tie"
+      "item_viet": "Lẩu Thái",
+      "pronunciation": "low tie",
+      "description_viet": "Lẩu Thái cay nồng với hải sản và rau củ."
     },
     {
       "item_name": "Fish Head Hotpot",
@@ -1038,8 +1142,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Lau Dau Ca Bap Chuoi",
-      "pronunciation": "low dow kah bahp choo-ee"
+      "item_viet": "Lẩu Đầu Cá Bắp Chuối",
+      "pronunciation": "low dow kah bahp choo-ee",
+      "description_viet": "Lẩu đầu cá với rau củ tươi."
     },
     {
       "item_name": "Fish Hotpot",
@@ -1048,8 +1153,9 @@
       "price": 12,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Lau Canh Chua Ca",
-      "pronunciation": "low kahn chwa kah"
+      "item_viet": "Lẩu Canh Chua Cá",
+      "pronunciation": "low kahn chwa kah",
+      "description_viet": "Lẩu cá với nước dùng đậm đà và rau củ tươi."
     },
     {
       "item_name": "Lobster and Seafood Hotpot",
@@ -1058,8 +1164,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Lau Tom Hum Hai San",
-      "pronunciation": "low tom hum high sun"
+      "item_viet": "Lẩu Tôm Hùm Hải Sản",
+      "pronunciation": "low tom hum high sun",
+      "description_viet": "Lẩu tôm hùm và hải sản tổng hợp."
     },
     {
       "item_name": "Salmon Hotpot",
@@ -1068,8 +1175,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Lau Ca Salmon",
-      "pronunciation": "low kah sam-un"
+      "item_viet": "Lẩu Cá Hồi",
+      "pronunciation": "low kah sam-un",
+      "description_viet": "Lẩu cá hồi với rau củ tươi."
     },
     {
       "item_name": "Seabass w. Prawn Hot Pot",
@@ -1078,8 +1186,9 @@
       "price": 11,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Lau Ca Seabass Tom Cang",
-      "pronunciation": "low kah see-bass tom chang"
+      "item_viet": "Lẩu Cá Chẽm Tôm Càng",
+      "pronunciation": "low kah see-bass tom chang",
+      "description_viet": "Lẩu cá vược và tôm với rau củ tươi."
     },
     {
       "item_name": "Szechwan Hotpot",
@@ -1088,8 +1197,9 @@
       "price": 26,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Lau Trieu Chau",
-      "pronunciation": "low tray-uh chow"
+      "item_viet": "Lẩu Tứ Xuyên",
+      "pronunciation": "low tray-uh chow",
+      "description_viet": "Lẩu Tứ Xuyên cay nồng the."
     },
     {
       "item_name": "Goat Hot Pot",
@@ -1098,28 +1208,31 @@
       "price": 11,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Lau De Dac Biet Binh Dan",
-      "pronunciation": "low day dak byet been dan"
+      "item_viet": "Lẩu Dê",
+      "pronunciation": "low day dak byet been dan",
+      "description_viet": "Lẩu dê với nước dùng đậm đà."
     },
     {
       "item_name": "Filet Mignon Hot Pot",
-      "description": "Dive into the luxury of our L\u1ea9u Ph\u1edf Filet Mignon, where tender slices of filet mignon are the star in a fragrant, simmering pho broth, accompanied by fresh herbs, noodles, and vegetables for a sumptuous, interactive dining experience.",
+      "description": "Dive into the luxury of our Lẩu Phở Filet Mignon, where tender slices of filet mignon are the star in a fragrant, simmering pho broth, accompanied by fresh herbs, noodles, and vegetables for a sumptuous, interactive dining experience.",
       "image_path": "./downloaded_images/Filet_Mignon_Hot_PotLau_Pho_Filet_Mignon.jpg",
       "price": 10,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Lau Pho Filet Mignon",
-      "pronunciation": "Low fuh fee-lay mee-yon"
+      "item_viet": "Lẩu Bò Thăn",
+      "pronunciation": "Low fuh fee-lay mee-yon",
+      "description_viet": "Lẩu thăn bò với nước dùng đậm đà."
     },
     {
       "item_name": "Oxtail Hotpot",
-      "description": "Dive into the rich, comforting depths of our L\u1ea9u \u0110u\u00f4i B\u00f2, an oxtail hot pot where tender, fall-off-the-bone oxtail pieces are simmered with aromatic spices, vegetables, and noodles in a hearty broth, offering a soul-warming meal that's both luxurious and homely.",
+      "description": "Dive into the rich, comforting depths of our Lẩu Đuôi Bò, an oxtail hot pot where tender, fall-off-the-bone oxtail pieces are simmered with aromatic spices, vegetables, and noodles in a hearty broth, offering a soul-warming meal that's both luxurious and homely.",
       "image_path": "./downloaded_images/Oxtail_HotpotLau_Duoi_Bo.jpg",
       "price": 14,
       "category": "Rice & Noodles",
       "popular": false,
-      "item_viet": "Lau Duoi Bo",
-      "pronunciation": "low doy boh"
+      "item_viet": "Lẩu Đuôi Bò",
+      "pronunciation": "low doy boh",
+      "description_viet": "Lẩu đuôi bò với nước dùng đậm đà."
     },
     {
       "item_name": "Vietnamese Soup",
@@ -1128,8 +1241,9 @@
       "price": 17,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Pho",
-      "pronunciation": "Fuh"
+      "item_viet": "Phở",
+      "pronunciation": "Fuh",
+      "description_viet": "Canh Việt Nam truyền thống với rau củ tươi."
     },
     {
       "item_name": "Water Spinach Noodle Soup",
@@ -1138,8 +1252,9 @@
       "price": 16,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Canh Bun",
-      "pronunciation": "kahn boon"
+      "item_viet": "Canh Bún",
+      "pronunciation": "kahn boon",
+      "description_viet": "Mì rau muống trong nước dùng trong."
     },
     {
       "item_name": "Vietnamese Hot and Sour Soup",
@@ -1149,7 +1264,8 @@
       "category": "Seafood",
       "popular": false,
       "item_viet": "Canh Chua",
-      "pronunciation": "kahn chwa"
+      "pronunciation": "kahn chwa",
+      "description_viet": "Canh chua Việt Nam với rau củ và tôm."
     },
     {
       "item_name": "Purple Yam Soup",
@@ -1158,8 +1274,9 @@
       "price": 18,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Canh Khoai Mo",
-      "pronunciation": "kahn koy moh"
+      "item_viet": "Canh Khoai Mỡ",
+      "pronunciation": "kahn koy moh",
+      "description_viet": "Chè khoai môn tím ngọt thanh."
     },
     {
       "item_name": "Tofu and Fish Soup",
@@ -1168,8 +1285,9 @@
       "price": 26,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Soup Ca va Dau Hu Cay",
-      "pronunciation": "soop kah vah dow hoo chye"
+      "item_viet": "Canh Cá và Đậu Hũ",
+      "pronunciation": "soop kah vah dow hoo chye",
+      "description_viet": "Canh đậu hũ và cá với rau thơm."
     },
     {
       "item_name": "Mustard Green Soup",
@@ -1178,8 +1296,9 @@
       "price": 25,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Canh Chua Cai",
-      "pronunciation": "Kahn chwa kai"
+      "item_viet": "Canh Cải Chua",
+      "pronunciation": "Kahn chwa kai",
+      "description_viet": "Canh cải bẹ xanh với thịt bằm."
     },
     {
       "item_name": "Fried Rice",
@@ -1188,8 +1307,9 @@
       "price": 10,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Com Chien",
-      "pronunciation": "kawm chee-en"
+      "item_viet": "Cơm Chiên",
+      "pronunciation": "kawm chee-en",
+      "description_viet": "Cơm chiên với trứng và rau củ."
     },
     {
       "item_name": "Carmelized Salmon",
@@ -1198,8 +1318,9 @@
       "price": 25,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Salmon Kho To",
-      "pronunciation": "SAM-un KHO tow"
+      "item_viet": "Cá Hồi Kho Tộ",
+      "pronunciation": "SAM-un KHO tow",
+      "description_viet": "Cá hồi kho tộ đậm vị."
     },
     {
       "item_name": "Grilled Salmon w. Tamarind Sauce",
@@ -1208,8 +1329,9 @@
       "price": 14,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Com Chay Ca Salmon Nuong Sot Me",
-      "pronunciation": "kahm chai ka sam-on noong sot may"
+      "item_viet": "Cơm Cá Hồi Nướng Sốt Me",
+      "pronunciation": "kahm chai ka sam-on noong sot may",
+      "description_viet": "Cá hồi nướng với sốt me chua ngọt."
     },
     {
       "item_name": "Caramelized Catfish w. Pork Belly",
@@ -1218,8 +1340,9 @@
       "price": 22,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Ca Kho To Ba Roi",
-      "pronunciation": "kah khor taw bah roy"
+      "item_viet": "Cá Kho Tộ Ba Chỉ",
+      "pronunciation": "kah khor taw bah roy",
+      "description_viet": "Cá basa kho tộ với ba chỉ."
     },
     {
       "item_name": "Caramelized Peppered Pork Belly",
@@ -1228,8 +1351,9 @@
       "price": 21,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Com Chay Thit Ba Roi Kho To",
-      "pronunciation": "kahm chigh teet bah roy koh tow"
+      "item_viet": "Thịt Ba Chỉ Kho Tiêu",
+      "pronunciation": "kahm chigh teet bah roy koh tow",
+      "description_viet": "Thịt ba chỉ kho tiêu trong nồi đất."
     },
     {
       "item_name": "Grilled Salmon",
@@ -1238,8 +1362,9 @@
       "price": 19,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ca Salmon Nuong",
-      "pronunciation": "kah sah-lom noong"
+      "item_viet": "Cá Hồi Nướng",
+      "pronunciation": "kah sah-lom noong",
+      "description_viet": "Cá hồi nướng thơm ngon."
     },
     {
       "item_name": "Lemongrass Pork Ribs",
@@ -1248,8 +1373,9 @@
       "price": 15,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Suon Non Nuong XO",
-      "pronunciation": "soon nawn nyong eks-oh"
+      "item_viet": "Sườn Non Nướng Sả",
+      "pronunciation": "soon nawn nyong eks-oh",
+      "description_viet": "Sườn heo nướng sả thơm lừng."
     },
     {
       "item_name": "Rotisserie Chicken",
@@ -1258,8 +1384,9 @@
       "price": 29,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Com Chay Ga Roti",
-      "pronunciation": "kawm chye gah roh-tee"
+      "item_viet": "Gà Quay",
+      "pronunciation": "kawm chye gah roh-tee",
+      "description_viet": "Gà quay giòn da."
     },
     {
       "item_name": "Sticky Rice w. Chinese Sausage, Eggs, Shredded Pork",
@@ -1268,8 +1395,9 @@
       "price": 19,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Xoi Lap Xuong Trung Cha Bong",
-      "pronunciation": "soy lap soong trung cha bong"
+      "item_viet": "Xôi Lạp Xưởng Trứng Chà Bông",
+      "pronunciation": "soy lap soong trung cha bong",
+      "description_viet": "Xôi với lạp xưởng, trứng và thịt heo xé sợi."
     },
     {
       "item_name": "Carmelized Catfish",
@@ -1278,8 +1406,9 @@
       "price": 17,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Ca Kho",
-      "pronunciation": "kah koh"
+      "item_viet": "Cá Kho Tộ",
+      "pronunciation": "kah koh",
+      "description_viet": "Cá basa kho tộ đậm vị."
     },
     {
       "item_name": "Caramelized Pork Ribs",
@@ -1288,8 +1417,9 @@
       "price": 11,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Cam Chay Suon Ram",
-      "pronunciation": "Kahm chigh swon rahm"
+      "item_viet": "Sườn Ram",
+      "pronunciation": "Kahm chigh swon rahm",
+      "description_viet": "Sườn heo kho tộ trong nồi đất."
     },
     {
       "item_name": "Salmon w. House Special Sauce",
@@ -1298,8 +1428,9 @@
       "price": 15,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Com Chay Ca Salmon",
-      "pronunciation": "Kahm chay kah sam-un"
+      "item_viet": "Cá Hồi Sốt Đặc Biệt",
+      "pronunciation": "Kahm chay kah sam-un",
+      "description_viet": "Cá hồi với sốt đặc biệt của nhà hàng."
     },
     {
       "item_name": "Fried Chili Lemongrass Salmon",
@@ -1308,18 +1439,20 @@
       "price": 15,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Cam Chay Ca Salmon Xa Ot",
-      "pronunciation": "Kahm chye kah sam-un sa ot"
+      "item_viet": "Cá Hồi Chiên Sả Ớt",
+      "pronunciation": "Kahm chye kah sam-un sa ot",
+      "description_viet": "Cá hồi chiên sả ớt cay thơm."
     },
     {
       "item_name": "Dill and Tumeric Fish",
-      "description": "Savor the iconic flavors of Hanoi with our B\u00fan Ch\u1ea3 C\u00e1 Th\u0103ng Long, featuring chunks of fish marinated in turmeric, grilled to perfection, and served over vermicelli noodles with an abundance of fresh dill, spring onions, and a side of tangy dipping sauce.",
+      "description": "Savor the iconic flavors of Hanoi with our Bún Chả Cá Thăng Long, featuring chunks of fish marinated in turmeric, grilled to perfection, and served over vermicelli noodles with an abundance of fresh dill, spring onions, and a side of tangy dipping sauce.",
       "image_path": "./images/DillsandTumericFishWNoodles.jpg",
       "price": 28,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Bun Cha Ca Thang Long",
-      "pronunciation": "boon cha ca tang long"
+      "item_viet": "Chả Cá Thăng Long",
+      "pronunciation": "boon cha ca tang long",
+      "description_viet": "Chả cá Lã Vọng - Cá chiên nghệ thì là."
     },
     {
       "item_name": "Sauteed Filet Mignon Vermicelli",
@@ -1328,8 +1461,9 @@
       "price": 15,
       "category": "Rice & Noodles",
       "popular": true,
-      "item_viet": "Bun Bo Xao",
-      "pronunciation": "Boon Baw Sow"
+      "item_viet": "Bún Bò Xào",
+      "pronunciation": "Boon Baw Sow",
+      "description_viet": "Bún thăn bò xào với rau thơm."
     },
     {
       "item_name": "Grilled Salmon Noodles",
@@ -1338,8 +1472,9 @@
       "price": 29,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bun Ca Salmon Nuong",
-      "pronunciation": "boon kah sahl-mon noong"
+      "item_viet": "Bún Cá Hồi Nướng",
+      "pronunciation": "boon kah sahl-mon noong",
+      "description_viet": "Bún cá hồi nướng."
     },
     {
       "item_name": "Grilled Shrimp Noodles",
@@ -1348,8 +1483,9 @@
       "price": 12,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bun Tom Nuong",
-      "pronunciation": "Boon Tom Noong"
+      "item_viet": "Bún Tôm Nướng",
+      "pronunciation": "Boon Tom Noong",
+      "description_viet": "Bún tôm nướng."
     },
     {
       "item_name": "Eggroll Noodles",
@@ -1358,8 +1494,9 @@
       "price": 12,
       "category": "Rice & Noodles",
       "popular": true,
-      "item_viet": "Bun Cha Gio",
-      "pronunciation": "Boon chah yoh"
+      "item_viet": "Bún Chả Giò",
+      "pronunciation": "Boon chah yoh",
+      "description_viet": "Bún chả giò giòn rụm."
     },
     {
       "item_name": "Grilled Filet Mignon Vermicelli",
@@ -1368,8 +1505,9 @@
       "price": 22,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Bun Bo Nuong",
-      "pronunciation": "boon baw nyong"
+      "item_viet": "Bún Bò Nướng",
+      "pronunciation": "boon baw nyong",
+      "description_viet": "Bún thăn bò nướng thơm lừng."
     },
     {
       "item_name": "Grilled Pork Vermicelli",
@@ -1378,8 +1516,9 @@
       "price": 28,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Bun Thit Nuong",
-      "pronunciation": "Boon Teet Noong"
+      "item_viet": "Bún Thịt Nướng",
+      "pronunciation": "Boon Teet Noong",
+      "description_viet": "Bún thịt heo nướng."
     },
     {
       "item_name": "Noodle Soup",
@@ -1388,18 +1527,20 @@
       "price": 22,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Bun Ca",
-      "pronunciation": "Boon Kah"
+      "item_viet": "Bún Cá",
+      "pronunciation": "Boon Kah",
+      "description_viet": "Phở hoặc bún với nước dùng trong veo."
     },
     {
       "item_name": "Famous Central VN Spicy Noodles",
-      "description": "the bold flavors of Central Vietnam with our B\u00fan B\u00f2 Hu\u1ebf, a fiery and fragrant beef noodle soup, where rich, lemongrass-infused broth meets tender beef slices, pork hocks, and a kick of chili, all harmonized with fresh herbs and vermicelli noodles",
+      "description": "the bold flavors of Central Vietnam with our Bún Bò Huế, a fiery and fragrant beef noodle soup, where rich, lemongrass-infused broth meets tender beef slices, pork hocks, and a kick of chili, all harmonized with fresh herbs and vermicelli noodles",
       "image_path": "./images/BunBoHue.jpg",
       "price": 16,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Bun Bo Hue",
-      "pronunciation": "Boon Baw Hwee"
+      "item_viet": "Bún Bò Huế",
+      "pronunciation": "Boon Baw Hwee",
+      "description_viet": "Bún bò Huế cay nồng nổi tiếng."
     },
     {
       "item_name": "Shrimp and Crab Soup",
@@ -1408,8 +1549,9 @@
       "price": 27,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bun Rieu Tom Cua",
-      "pronunciation": "Boon ree-uh tom kwa"
+      "item_viet": "Bún Riêu Tôm Cua",
+      "pronunciation": "Boon ree-uh tom kwa",
+      "description_viet": "Súp tôm cua thơm ngon."
     },
     {
       "item_name": "Hanoi Styled Vermicelli with Grilled Pork",
@@ -1418,8 +1560,9 @@
       "price": 22,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Bun Cha Ha Noi",
-      "pronunciation": "Boon cha ha-noy"
+      "item_viet": "Bún Chả Hà Nội",
+      "pronunciation": "Boon cha ha-noy",
+      "description_viet": "Bún chả Hà Nội với thịt heo nướng than."
     },
     {
       "item_name": "Deep Fried Tofu and Boiled Pork Vermicelli",
@@ -1428,8 +1571,9 @@
       "price": 21,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Bun Dau Thit Luoc",
-      "pronunciation": "Boon dow teet loak"
+      "item_viet": "Bún Đậu Mắm Tôm",
+      "pronunciation": "Boon dow teet loak",
+      "description_viet": "Bún đậu mắm tôm với đậu hũ chiên và thịt heo luộc."
     },
     {
       "item_name": "Plain Pho",
@@ -1438,8 +1582,9 @@
       "price": 23,
       "category": "Seafood",
       "popular": true,
-      "item_viet": "Banh Pho Only",
-      "pronunciation": "Bahn fuh only"
+      "item_viet": "Phở Không",
+      "pronunciation": "Bahn fuh only",
+      "description_viet": "Phở không thịt với nước dùng xương bò đậm đà."
     },
     {
       "item_name": "Shrimp Rice Porridge",
@@ -1448,8 +1593,9 @@
       "price": 22,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Chao Tom",
-      "pronunciation": "chow tom"
+      "item_viet": "Cháo Tôm",
+      "pronunciation": "chow tom",
+      "description_viet": "Cháo tôm nóng hổi."
     },
     {
       "item_name": "Minced Beef Porridge",
@@ -1458,8 +1604,9 @@
       "price": 29,
       "category": "Meat & Poultry",
       "popular": true,
-      "item_viet": "Chao Bo Bam",
-      "pronunciation": "chow bow bahm"
+      "item_viet": "Cháo Bò Bằm",
+      "pronunciation": "chow bow bahm",
+      "description_viet": "Cháo bò bằm thơm ngon."
     },
     {
       "item_name": "Fish Porridge",
@@ -1468,8 +1615,9 @@
       "price": 20,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Chao Ca",
-      "pronunciation": "chow kah"
+      "item_viet": "Cháo Cá",
+      "pronunciation": "chow kah",
+      "description_viet": "Cháo cá nóng hổi."
     },
     {
       "item_name": "Minced Pork/Salted Egg Porridge",
@@ -1478,8 +1626,9 @@
       "price": 18,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Chao Thit Bam/Trung Bach Thao",
-      "pronunciation": "chow tih bam / troong bahk tao"
+      "item_viet": "Cháo Thịt Bằm Trứng Bách Thảo",
+      "pronunciation": "chow tih bam / troong bahk tao",
+      "description_viet": "Cháo thịt heo bằm với trứng muối."
     },
     {
       "item_name": "Combination Rice Porridge",
@@ -1488,8 +1637,9 @@
       "price": 30,
       "category": "Seafood",
       "popular": false,
-      "item_viet": "Chao Thap Cam",
-      "pronunciation": "chow tap kam"
+      "item_viet": "Cháo Thập Cẩm",
+      "pronunciation": "chow tap kam",
+      "description_viet": "Cháo thập cẩm với nhiều loại thịt."
     },
     {
       "item_name": "Chicken Porridge",
@@ -1498,8 +1648,9 @@
       "price": 22,
       "category": "Meat & Poultry",
       "popular": false,
-      "item_viet": "Chao Ga",
-      "pronunciation": "chow gah"
+      "item_viet": "Cháo Gà",
+      "pronunciation": "chow gah",
+      "description_viet": "Cháo gà nóng hổi thơm ngon."
     },
     {
       "item_name": "Plain Rice Porridge",
@@ -1508,8 +1659,9 @@
       "price": 23,
       "category": "Rice & Noodles",
       "popular": true,
-      "item_viet": "Chao Trang",
-      "pronunciation": "Chow Tran"
+      "item_viet": "Cháo Trắng",
+      "pronunciation": "Chow Tran",
+      "description_viet": "Cháo trắng với gia vị."
     },
     {
       "item_name": "Tofu and Veggie Soup",
@@ -1518,17 +1670,19 @@
       "price": 29,
       "category": "Rice & Noodles",
       "popular": true,
-      "item_viet": "Dau Hu Chay va Rau",
-      "pronunciation": "dow hoo chay vah row"
+      "item_viet": "Canh Đậu Hũ Rau Củ",
+      "pronunciation": "dow hoo chay vah row",
+      "description_viet": "Canh đậu hũ và rau củ thanh đạm."
     },
     {
       "item_name": "Stir-Fried Eggplant",
-      "description": "Indulge in the simplicity of our Stir-Fried Eggplant, where tender slices of eggplant are saut\u00e9ed with a savory sauce, capturing a perfect balance of flavors and textures, often enhanced with garlic, soy, and a hint of spice.",
+      "description": "Indulge in the simplicity of our Stir-Fried Eggplant, where tender slices of eggplant are sautéed with a savory sauce, capturing a perfect balance of flavors and textures, often enhanced with garlic, soy, and a hint of spice.",
       "image_path": "./downloaded_images/Stir-Fried_Eggplant.jpg",
       "price": 28,
       "category": "Specialties",
       "popular": false,
-      "item_viet": ""
+      "item_viet": "Cà Tím Xào Tỏi",
+      "description_viet": "Cà tím xào tỏi thơm ngon."
     },
     {
       "item_name": "Fried Tofu",
@@ -1537,8 +1691,9 @@
       "price": 23,
       "category": "Vegetables & Sides",
       "popular": true,
-      "item_viet": "Dau Hu Chien Gion",
-      "pronunciation": "dow hoo chyen jee-ahn"
+      "item_viet": "Đậu Hũ Chiên Giòn",
+      "pronunciation": "dow hoo chyen jee-ahn",
+      "description_viet": "Đậu hũ chiên giòn."
     },
     {
       "item_name": "Shaken Tofu",
@@ -1547,8 +1702,9 @@
       "price": 12,
       "category": "Vegetables & Sides",
       "popular": true,
-      "item_viet": "Dau Hu Luc Lac",
-      "pronunciation": "Dow hoo look lack"
+      "item_viet": "Đậu Hũ Lúc Lắc",
+      "pronunciation": "Dow hoo look lack",
+      "description_viet": "Đậu hũ chiên xào hành tây, ớt chuông và nấm. Ăn kèm cơm."
     },
     {
       "item_name": "Garlic Spinach",
@@ -1557,8 +1713,9 @@
       "price": 21,
       "category": "Specialties",
       "popular": false,
-      "item_viet": "Rau Den Xao Toi",
-      "pronunciation": "raw den sow toy"
+      "item_viet": "Rau Dền Xào Tỏi",
+      "pronunciation": "raw den sow toy",
+      "description_viet": "Rau bina xào tỏi."
     },
     {
       "item_name": "Vegetarian Salad",
@@ -1567,8 +1724,9 @@
       "price": 18,
       "category": "Vegetables & Sides",
       "popular": false,
-      "item_viet": "Goi Chay",
-      "pronunciation": "goy chai"
+      "item_viet": "Gỏi Chay",
+      "pronunciation": "goy chai",
+      "description_viet": "Gỏi chay với rau củ tươi."
     },
     {
       "item_name": "Ong choy with Garlic",
@@ -1577,8 +1735,9 @@
       "price": 28,
       "category": "Specialties",
       "popular": true,
-      "item_viet": "Rau Muong Xao Toi",
-      "pronunciation": "raw moong sow toy"
+      "item_viet": "Rau Muống Xào Tỏi",
+      "pronunciation": "raw moong sow toy",
+      "description_viet": "Rau muống xào tỏi."
     },
     {
       "item_name": "Green Beans with Garlic",
@@ -1587,8 +1746,9 @@
       "price": 27,
       "category": "Specialties",
       "popular": true,
-      "item_viet": "Dau Que Sao Toi",
-      "pronunciation": "dow kweh sow toy"
+      "item_viet": "Đậu Que Xào Tỏi",
+      "pronunciation": "dow kweh sow toy",
+      "description_viet": "Đậu que xào tỏi."
     },
     {
       "item_name": "Stir Fried Bok choy with Garlic",
@@ -1597,8 +1757,9 @@
       "price": 28,
       "category": "Specialties",
       "popular": false,
-      "item_viet": "Bok choy Xao Toi",
-      "pronunciation": "bawk choy shao twa"
+      "item_viet": "Cải Thìa Xào Tỏi",
+      "pronunciation": "bawk choy shao twa",
+      "description_viet": "Cải thìa xào tỏi."
     }
   ]
 }

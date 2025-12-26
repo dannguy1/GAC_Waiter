@@ -203,3 +203,12 @@ See [`docs/UI_Design_Guide.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/UI_De
 - **Theme**: "Garlic & Chives" Green (#4CAF50) & Dark Mode
 - **Typography**: Playfair Display (Headers) + Inter (Body)
 - **Components**: Custom CSS for buttons, chat bubbles, and layout
+
+## 10. Image & Data Flow
+
+See [`docs/Image_Data_Flow.md`](./Image_Data_Flow.md) for documentation on:
+- **Data Flow Architecture**: How menu items and images flow through the system
+- **LLM Isolation**: Images are NEVER sent to the LLM - used only for local UI display
+- **Message Sanitization**: How conversation data is cleaned before LLM calls
+- **RAG Chunk Structure**: Text-only contextual chunks for retrieval
+- **Image Storage**: Location and organization of menu images

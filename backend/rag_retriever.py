@@ -10,6 +10,10 @@ This prevents hallucinations by ensuring only real menu items are retrieved.
 """
 
 import json
+import os
+import hashlib
+import pickle
+import logging
 import numpy as np
 from typing import List, Dict, Any, Tuple
 from sentence_transformers import SentenceTransformer
@@ -17,9 +21,17 @@ import faiss
 from rank_bm25 import BM25Okapi
 import config
 
+# Configure logging
+logger = logging.getLogger("gac_waiter.rag")
+
 
 class RAGRetriever:
     """Hybrid retrieval system for menu items using semantic + keyword search."""
+    
+    # Cache directory for persisted indexes
+    CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cache", "rag")
+    FAISS_INDEX_PATH = os.path.join(CACHE_DIR, "faiss_index.bin")
+    METADATA_PATH = os.path.join(CACHE_DIR, "metadata.pkl")
     
     def _sanitize_for_json(self, obj):
         """Recursively convert numpy types to Python native types."""
@@ -37,7 +49,10 @@ class RAGRetriever:
 
     def __init__(self):
         """Initialize the retriever with embedding model and indexes."""
-        print("Initializing RAG Retriever...")
+        logger.info("Initializing RAG Retriever...")
+        
+        # Ensure cache directory exists
+        os.makedirs(self.CACHE_DIR, exist_ok=True)
         
         # Load lightweight embedding model (all-MiniLM-L6-v2: 80MB, fast)
         self.embedding_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
@@ -49,16 +64,79 @@ class RAGRetriever:
         self.faiss_index = None
         self.bm25_index = None
         
-        # Index the menu on initialization
-        self._load_and_index_menu()
+        # Try to load from cache, otherwise build fresh
+        if not self._load_cached_index():
+            self._load_and_index_menu()
         
-        print(f"RAG Retriever initialized with {len(self.menu_items)} menu items")
+        logger.info(f"RAG Retriever initialized with {len(self.menu_items)} menu items")
+
+    def _get_data_hash(self) -> str:
+        """Generate hash of menu data to detect changes."""
+        try:
+            with open(config.MENU_PATH, 'rb') as f:
+                return hashlib.md5(f.read()).hexdigest()
+        except:
+            return ""
+    
+    def _load_cached_index(self) -> bool:
+        """Try to load FAISS index and metadata from cache."""
+        try:
+            if not os.path.exists(self.FAISS_INDEX_PATH) or not os.path.exists(self.METADATA_PATH):
+                logger.info("No cached index found, will build fresh")
+                return False
+            
+            # Load metadata
+            with open(self.METADATA_PATH, 'rb') as f:
+                metadata = pickle.load(f)
+            
+            # Check if menu data has changed
+            current_hash = self._get_data_hash()
+            if metadata.get('data_hash') != current_hash:
+                logger.info("Menu data changed, rebuilding index")
+                return False
+            
+            # Load FAISS index
+            self.faiss_index = faiss.read_index(self.FAISS_INDEX_PATH)
+            self.menu_items = metadata['menu_items']
+            self.item_chunks = metadata['item_chunks']
+            self.embeddings = metadata['embeddings']
+            
+            # Rebuild BM25 (fast, not worth caching)
+            tokenized_chunks = [chunk.lower().split() for chunk in self.item_chunks]
+            self.bm25_index = BM25Okapi(tokenized_chunks)
+            
+            logger.info(f"Loaded cached index with {len(self.menu_items)} items")
+            return True
+            
+        except Exception as e:
+            logger.warning(f"Failed to load cached index: {e}")
+            return False
+    
+    def _save_cached_index(self):
+        """Save FAISS index and metadata to cache."""
+        try:
+            # Save FAISS index
+            faiss.write_index(self.faiss_index, self.FAISS_INDEX_PATH)
+            
+            # Save metadata
+            metadata = {
+                'data_hash': self._get_data_hash(),
+                'menu_items': self.menu_items,
+                'item_chunks': self.item_chunks,
+                'embeddings': self.embeddings
+            }
+            with open(self.METADATA_PATH, 'wb') as f:
+                pickle.dump(metadata, f)
+            
+            logger.info(f"Saved index cache to {self.CACHE_DIR}")
+        except Exception as e:
+            logger.warning(f"Failed to save index cache: {e}")
 
     def reload(self):
         """Re-indexes all data from disk."""
-        print("Reloading RAGRetriever...")
+        logger.info("Reloading RAGRetriever...")
         self._load_and_index_menu()
-        print("RAGRetriever reloaded.")
+        logger.info("RAGRetriever reloaded.")
     
     def _load_and_index_menu(self):
         """Load menu and facts data from JSON and build search indexes."""
@@ -74,7 +152,7 @@ class RAGRetriever:
                         item['type'] = 'menu_item'
                         self.menu_items.append(item)
             except Exception as e:
-                print(f"Error loading menu: {e}")
+                logger.error(f"Error loading menu: {e}")
 
             # 2. Load General Facts/Info
             try:
@@ -88,10 +166,10 @@ class RAGRetriever:
                         self.menu_items.append(item)
             except Exception as e:
                  # Facts file might not exist yet or be empty, which is fine
-                print(f"Note: Facts data not loaded: {e}")
+                logger.debug(f"Facts data not loaded: {e}")
             
             if not self.menu_items:
-                print("Warning: No items found to index!")
+                logger.warning("No items found to index!")
                 return
             
             # Build contextual chunks for each item
@@ -103,8 +181,11 @@ class RAGRetriever:
             # Build keyword search index (BM25)
             self._build_bm25_index()
             
+            # Save to cache for faster startup next time
+            self._save_cached_index()
+            
         except Exception as e:
-            print(f"Critical error indexing data: {e}")
+            logger.error(f"Critical error indexing data: {e}")
             self.menu_items = []
             self.item_chunks = []
     
@@ -136,7 +217,7 @@ Description: {item.get('description', '')}
     
     def _build_semantic_index(self):
         """Build FAISS index for semantic similarity search."""
-        print("Building semantic search index...")
+        logger.info("Building semantic search index...")
         
         # Generate embeddings for all chunks
         self.embeddings = self.embedding_model.encode(
@@ -150,11 +231,11 @@ Description: {item.get('description', '')}
         self.faiss_index = faiss.IndexFlatL2(dimension)
         self.faiss_index.add(self.embeddings)
         
-        print(f"Semantic index built with {len(self.embeddings)} embeddings")
+        logger.info(f"Semantic index built with {len(self.embeddings)} embeddings")
     
     def _build_bm25_index(self):
         """Build BM25 index for keyword search."""
-        print("Building BM25 keyword index...")
+        logger.info("Building BM25 keyword index...")
         
         # Tokenize chunks (simple whitespace tokenization)
         tokenized_chunks = [chunk.lower().split() for chunk in self.item_chunks]
@@ -162,7 +243,7 @@ Description: {item.get('description', '')}
         # Build BM25 index
         self.bm25_index = BM25Okapi(tokenized_chunks)
         
-        print("BM25 index built")
+        logger.info("BM25 index built")
     
     def retrieve_items(
         self,

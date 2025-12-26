@@ -116,6 +116,17 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Helper function to normalize image paths
+def normalize_image_path(path: str) -> str:
+    """Convert relative image paths to correct data directory paths."""
+    if not path:
+        return path
+    if path.startswith('./images/'):
+        return path.replace('./images/', 'data/images/')
+    elif path.startswith('./downloaded_images/'):
+        return path.replace('./downloaded_images/', 'data/downloaded_images/')
+    return path
+
 # API Helper
 def api_get_menu():
     try:
@@ -134,7 +145,7 @@ def api_chat(messages):
             "messages": messages,
             "language": st.session_state.get("language", "English")
         }
-        resp = requests.post(f"{config.BACKEND_URL}/v1/chat", json=payload, timeout=30)
+        resp = requests.post(f"{config.BACKEND_URL}/v1/chat", json=payload, timeout=180)
         if resp.status_code == 200:
             return resp.json()
     except requests.exceptions.Timeout:
@@ -147,7 +158,7 @@ def api_chat(messages):
 def api_checkout(messages):
     try:
         payload = {"messages": messages}
-        resp = requests.post(f"{config.BACKEND_URL}/v1/checkout", json=payload, timeout=15)
+        resp = requests.post(f"{config.BACKEND_URL}/v1/checkout", json=payload, timeout=180)
         if resp.status_code == 200:
             return resp.json()
     except requests.exceptions.Timeout:
@@ -279,11 +290,8 @@ with chat_container:
                 for item in msg["showcase_items"]:
                     img_path = item.get('image_path')
                     if img_path:
-                         # Normalize path
-                        if img_path.startswith('./images/'):
-                            img_path = img_path.replace('./images/', 'data/images/')
-                        elif img_path.startswith('./downloaded_images/'):
-                            img_path = img_path.replace('./downloaded_images/', 'data/downloaded_images/')
+                        # Normalize path using helper
+                        img_path = normalize_image_path(img_path)
                         
                         if os.path.exists(img_path):
                             col_img, col_desc = st.columns([1, 2])
@@ -293,11 +301,22 @@ with chat_container:
                                 except Exception as e:
                                     st.error("Image Error")
                             with col_desc:
-                                st.markdown(f"**{item.get('item_name')}**")
-                                st.markdown(f"**Price:** ${item.get('price')}")
-                                st.write(item.get('description', ''))
-                                if item.get('item_viet') and st.session_state.get('language') == "Vietnamese":
-                                    st.markdown(f"*{item.get('item_viet')}*")
+                                # Vietnamese mode: Show Vietnamese name first
+                                if st.session_state.get('language') == "Vietnamese" and item.get('item_viet'):
+                                    st.markdown(f"**{item.get('item_viet')}**")
+                                    st.markdown(f"*EN: {item.get('item_name')}*")
+                                    st.markdown(f"**Giá:** ${item.get('price')}")
+                                    # Show Vietnamese description if available
+                                    if item.get('description_viet'):
+                                        st.write(item.get('description_viet'))
+                                    else:
+                                        st.write(item.get('description', ''))
+                                else:
+                                    st.markdown(f"**{item.get('item_name')}**")
+                                    if item.get('item_viet'):
+                                        st.markdown(f"*VN: {item.get('item_viet')}*")
+                                    st.markdown(f"**Price:** ${item.get('price')}")
+                                    st.write(item.get('description', ''))
                         else:
                              st.warning(f"Image not found: {item.get('item_name')}")
             
@@ -305,11 +324,8 @@ with chat_container:
                 # Legacy support or fallback
                 for img_path in msg["images"]:
                     if img_path:
-                        # Normalize path
-                        if img_path.startswith('./images/'):
-                            img_path = img_path.replace('./images/', 'data/images/')
-                        elif img_path.startswith('./downloaded_images/'):
-                            img_path = img_path.replace('./downloaded_images/', 'data/downloaded_images/')
+                        # Normalize path using helper
+                        img_path = normalize_image_path(img_path)
                         
                         if os.path.exists(img_path):
                             st.image(img_path, width=300)
@@ -329,24 +345,58 @@ with col1:
 # Display Order Summary if exists
 if 'order_summary' in st.session_state:
     st.divider()
-    st.subheader("Order Summary")
+    st.subheader("🧾 Order Summary")
+    
     order = st.session_state.order_summary.get("order", [])
     total = st.session_state.order_summary.get("total", 0)
+    allergies = st.session_state.order_summary.get("allergies", [])
+    allergy_checked = st.session_state.order_summary.get("allergy_checked", False)
+    special_notes = st.session_state.order_summary.get("special_notes", [])
     
+    # === CRITICAL INFO AT TOP ===
+    
+    # ALLERGIES FIRST - Most important for safety
+    if allergies:
+        st.error(f"🚨 **ALLERGIES:** {', '.join(allergies)}")
+    elif allergy_checked:
+        st.success("✅ No allergies - Customer confirmed")
+    else:
+        st.warning("⚠️ **ALLERGIES NOT CHECKED** - Please verify with customer!")
+    
+    # SPECIAL NOTES - Important for kitchen
+    if special_notes:
+        st.warning("📝 **SPECIAL NOTES:**")
+        for note in special_notes:
+            st.write(f"  ⚡ {note}")
+    
+    st.markdown("---")
+    
+    # === ORDER ITEMS ===
     if not order:
         st.write("No items identified.")
     else:
+        st.markdown("**Items Ordered:**")
         for item in order:
-            st.write(f"- {item.get('qty')}x {item.get('name')} (${item.get('price')})")
+            qty = item.get('qty', 1)
+            name = item.get('name', 'Unknown')
+            price = item.get('price', 0)
+            item_notes = item.get('notes', '')
+            
+            # Display item with any notes
+            if item_notes:
+                st.write(f"  • {qty}x **{name}** — ${price:.2f}")
+                st.write(f"    📝 *{item_notes}*")
+            else:
+                st.write(f"  • {qty}x {name} — ${price:.2f}")
         
-        allergies = st.session_state.order_summary.get("allergies", [])
-        if allergies:
-            st.warning(f"⚠️ **Allergies Recorded:** {', '.join(allergies)}")
+        st.markdown("---")
+        st.markdown(f"### 💰 Total: ${total:.2f}")
+        
+        # Only show ready for POS if allergies were checked
+        if allergy_checked or allergies:
+            st.success("✅ Ready for POS")
         else:
-            st.info("No allergies recorded.")
-
-        st.write(f"**Total: ${total}**")
-        st.success("Ready for POS")
+            st.warning("⚠️ Verify allergies before sending to kitchen")
 
 # Process Input
 final_input = None
