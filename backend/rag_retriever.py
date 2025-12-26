@@ -21,6 +21,20 @@ import config
 class RAGRetriever:
     """Hybrid retrieval system for menu items using semantic + keyword search."""
     
+    def _sanitize_for_json(self, obj):
+        """Recursively convert numpy types to Python native types."""
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, dict):
+            return {k: self._sanitize_for_json(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._sanitize_for_json(i) for i in obj]
+        return obj
+
     def __init__(self):
         """Initialize the retriever with embedding model and indexes."""
         print("Initializing RAG Retriever...")
@@ -39,16 +53,45 @@ class RAGRetriever:
         self._load_and_index_menu()
         
         print(f"RAG Retriever initialized with {len(self.menu_items)} menu items")
+
+    def reload(self):
+        """Re-indexes all data from disk."""
+        print("Reloading RAGRetriever...")
+        self._load_and_index_menu()
+        print("RAGRetriever reloaded.")
     
     def _load_and_index_menu(self):
-        """Load menu from JSON and build search indexes."""
+        """Load menu and facts data from JSON and build search indexes."""
         try:
-            with open(config.MENU_PATH, 'r', encoding='utf-8') as f:
-                menu_data = json.load(f)
-                self.menu_items = menu_data.get('items', [])
+            self.menu_items = []
+            
+            # 1. Load Menu Items
+            try:
+                with open(config.MENU_PATH, 'r', encoding='utf-8') as f:
+                    menu_data = json.load(f)
+                    items = menu_data.get('items', [])
+                    for item in items:
+                        item['type'] = 'menu_item'
+                        self.menu_items.append(item)
+            except Exception as e:
+                print(f"Error loading menu: {e}")
+
+            # 2. Load General Facts/Info
+            try:
+                with open(config.FACTS_PATH, 'r', encoding='utf-8') as f:
+                    facts_data = json.load(f)
+                    fact_items = facts_data.get('info', [])
+                    for item in fact_items:
+                        item['type'] = 'general_info'
+                        # Normalize fields for creating chunks
+                        item['item_name'] = item.get('topic')
+                        self.menu_items.append(item)
+            except Exception as e:
+                 # Facts file might not exist yet or be empty, which is fine
+                print(f"Note: Facts data not loaded: {e}")
             
             if not self.menu_items:
-                print("Warning: No menu items found!")
+                print("Warning: No items found to index!")
                 return
             
             # Build contextual chunks for each item
@@ -61,7 +104,7 @@ class RAGRetriever:
             self._build_bm25_index()
             
         except Exception as e:
-            print(f"Error loading menu: {e}")
+            print(f"Critical error indexing data: {e}")
             self.menu_items = []
             self.item_chunks = []
     
@@ -74,9 +117,17 @@ class RAGRetriever:
         """
         restaurant_info = "Garlic & Chives restaurant in Garden Grove, CA"
         
-        chunk = f"""This menu item is from {restaurant_info}.
+        if item.get('type') == 'general_info':
+             chunk = f"""This is general information about {restaurant_info}.
+Topic: {item.get('topic', 'General')}
+Details: {item.get('content', '')}
+"""
+        else:
+            # Menu Item
+            chunk = f"""This menu item is from {restaurant_info}.
 Category: {item.get('category', 'Other')}
 Item Name: {item.get('item_name', 'Unknown')}
+ Vietnamese Name: {item.get('item_viet', '')}
 Price: ${item.get('price', 0):.2f}
 {f"[POPULAR ITEM]" if item.get('popular') else ""}
 Description: {item.get('description', '')}
@@ -149,8 +200,9 @@ Description: {item.get('description', '')}
             bm25_weight
         )
         
-        # 4. Return top K with metadata
-        return fused_results[:top_k]
+        # 4. Return top K with metadata (and sanitize)
+        final_results = fused_results[:top_k]
+        return self._sanitize_for_json(final_results)
     
     def _semantic_search(self, query: str, top_k: int) -> List[Tuple[int, float]]:
         """
@@ -255,7 +307,7 @@ Description: {item.get('description', '')}
         results = []
         for idx, score in sorted_indices:
             item = self.menu_items[idx].copy()
-            item['relevance_score'] = score
+            item['relevance_score'] = float(score)
             results.append(item)
         
         return results
@@ -270,7 +322,11 @@ Description: {item.get('description', '')}
         Returns:
             (all_valid, invalid_items) tuple
         """
-        valid_names = {item['item_name'].lower() for item in self.menu_items}
+        valid_names = {
+            item['item_name'].lower() 
+            for item in self.menu_items 
+            if item.get('type') == 'menu_item'
+        }
         invalid = [name for name in item_names if name.lower() not in valid_names]
         
         return (len(invalid) == 0, invalid)

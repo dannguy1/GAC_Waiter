@@ -17,7 +17,7 @@ if [ -f api.pid ]; then
 fi
 
 echo "Starting Backend API on port $API_PORT..."
-nohup uvicorn backend.api:app --host 0.0.0.0 --port $API_PORT > api.log 2>&1 &
+nohup ./venv/bin/uvicorn backend.api:app --host 127.0.0.1 --port $API_PORT > api.log 2>&1 &
 API_PID=$!
 echo $API_PID > api.pid
 echo "API started (PID $API_PID)"
@@ -32,7 +32,7 @@ if [ -f app.pid ]; then
 fi
 
 echo "Starting Frontend UI on $APP_HOST:$APP_PORT..."
-nohup streamlit run app.py --server.port $APP_PORT --server.address $APP_HOST > app.log 2>&1 &
+nohup ./venv/bin/streamlit run app.py --server.port $APP_PORT --server.address $APP_HOST > app.log 2>&1 &
 APP_PID=$!
 echo $APP_PID > app.pid
 echo "Frontend started (PID $APP_PID)"

@@ -1,0 +1,29 @@
+{
+    "info": [
+        {
+            "topic": "Restaurant Overview",
+            "content": "Garlic & Chives, nestled in Garden Grove, California, offers an inventive take on Vietnamese cuisine, led by the culinary artistry of Chef Kristin Nguyen. This eatery stands out with its unique fusion of flavors, where traditional dishes are transformed through modern techniques and a signature emphasis on garlic. From the crispy Peking duck served with delicate crepes to the meticulously prepared baked catfish, each dish is a testament to Nguyen's heritage and innovative spirit. The ambiance complements the culinary experience, making Garlic & Chives not just a meal, but a dining destination in Little Saigon.",
+            "type": "general_info"
+        },
+        {
+            "topic": "Owner Bio",
+            "content": "Chef Kristin Nguyen leads Garlic & Chives in Garden Grove, infusing traditional Vietnamese cuisine with innovative flavors, notably her use of garlic. Originally from Vietnam, she transitioned from a finance background to culinary arts, opening her acclaimed restaurant in 2014. Her dishes, like the popular deep-fried salmon belly, reflect both creativity and an homage to her heritage. Garlic & Chives has become a culinary landmark, known for its unique ambiance and Nguyen's meticulous cooking techniques. Her work has significantly influenced the dining scene in Little Saigon.",
+            "type": "general_info"
+        },
+        {
+            "topic": "Location",
+            "content": "Garden Grove and Artesia California",
+            "type": "general_info"
+        },
+        {
+            "topic": "Specials of the Day",
+            "content": "Our current specials include: \n- Monday: Grilled Pork Belly with Sticky Rice\n- Tuesday: Spicy Lemongrass Chicken\n- Weekend: Roasted Duck with Bao Buns",
+            "type": "general_info"
+        },
+        {
+            "topic": "Popular Dishes Highlights",
+            "content": "Our most celebrated dishes are the Roasted Garlic Dungeness Crab, known for its buttery richness, and the Pomelo Salad, a refreshing mix of citrus and shrimp. The Salmon Belly Roll is also a crowd favorite.",
+            "type": "general_info"
+        }
+    ]
+}

@@ -1,0 +1,592 @@
+Restaurant: Garlic and Chives
+Restaurant Location: Garden Grove and Artesia California
+Restaurant Overview: Garlic & Chives, nestled in Garden Grove, California, offers an inventive take on Vietnamese cuisine, led by the culinary artistry of Chef Kristin Nguyen. This eatery stands out with its unique fusion of flavors, where traditional dishes are transformed through modern techniques and a signature emphasis on garlic. From the crispy Peking duck served with delicate crepes to the meticulously prepared baked catfish, each dish is a testament to Nguyen's heritage and innovative spirit. The ambiance complements the culinary experience, making Garlic & Chives not just a meal, but a dining destination in Little Saigon.
+
+Owner: Kristin Nguyen
+Owner Bio: Chef Kristin Nguyen leads Garlic & Chives in Garden Grove, infusing traditional Vietnamese cuisine with innovative flavors, notably her use of garlic. Originally from Vietnam, she transitioned from a finance background to culinary arts, opening her acclaimed restaurant in 2014. Her dishes, like the popular deep-fried salmon belly, reflect both creativity and an homage to her heritage. Garlic & Chives has become a culinary landmark, known for its unique ambiance and Nguyen's meticulous cooking techniques. Her work has significantly influenced the dining scene in Little Saigon. 
+
+The Menu: each item has an Item Name and Item Description and, if available, may include Item Image
+
+Item Name: Honey Walnut Shrimps w/ Chips
+Item Description: Indulge in our Honey Walnut Shrimp, where crispy shrimp are tossed in a creamy, sweet honey sauce, sprinkled with candied walnuts, and served alongside crunchy shrimp chips for an irresistible blend of textures and flavors.
+
+Item Name: Baked Crispy Catfish w. Boiled Pork/Ca Nuong Da Gion Thit Luoc
+Item Description: Crispy baked catfish with poached pork. Please allow 1 hour for preparation.
+Item Image: ./images/BakedCrispyCatfishWBoiledPorkCaNuongDaGionThitLuoc.jpg 
+
+Item Name: Crispy Peking Duck w/ Crepes
+Item Description: Succulent duck with shatteringly crisp skin is served alongside delicate, warm crepes, sweet hoisin sauce, and fresh scallions, inviting you to wrap your own bite of this traditional delicacy, bursting with flavors and textures
+
+Item Name: Crispy Whole Fish w/ Mango Sauce or Thai Chili
+Item Description: A tropical delight with our Fried Fish, either bathed in a tangy-sweet mango sauce or kicked up with a vibrant Thai chili glaze, offering a perfect harmony of crispy textures and zesty, spicy flavors that dance on the palate.
+
+Item Name: House Special Pork Chops
+Item Description: Savor our House Special Pork Chops, where juicy chops are marinated in a signature blend of spices, grilled to perfection, and served with a unique house sauce that elevates the humble pork chop to a gourmet delight.
+
+Item Name: Salt & Pepper Garlic Butter Pork Chops
+Item Description: Savor our Salt & Pepper Garlic Butter Pork Chops, where juicy chops are seasoned to perfection, kissed with the richness of garlic butter, and crisped to a golden delight, offering a symphony of flavors with every bite.
+
+Item Name: House Special Squid
+Item Description: Dive into our House Special Squid, where tender squid meets a secret blend of spices, lightly battered and fried to a golden crisp, served with a zesty dipping sauce that promises an irresistible dance of flavors.
+
+Item Name: House Special Lobster with Garlic Noodles (priced by lbs)
+Item Description: Indulge in luxury with our House Special Lobster, where succulent lobster meat meets buttery garlic noodles, all intertwined with a special house sauce, creating a dish that's both lavish and deeply satisfying.
+Item Image: ./images/LobsterwithNoodles.jpg
+
+Item Name: Grilled Salmon in Seafood Sauce w/ Garlic Rice
+Item Description: Savor our Grilled Salmon, where the fish's rich flavors are enhanced by a luscious seafood sauce, served alongside fragrant garlic rice, creating a dish that's both hearty and exquisitely refined.
+
+Item Name: Sticky Rice with Mango
+Item Description: Sweetened sticky rice with fresh mangoes
+Item Image: ./images/stickyricemango.jpg
+
+Item Name: Creme Brulee
+Item Description: Conclude your meal with our Crème Brûlée, a creamy, vanilla-kissed custard under a perfectly caramelized sugar crust, offering a delightful crunch followed by a smooth, rich finish that's simply divine.
+
+Item Name: Garlic Butter Chicken/Canh Ga Bo Chien
+Item Description: Crispy chicken wings tossed in garlic butter and topped with crispy garlic
+Item Image: ./images/garlicbutterchicken.jpg
+
+Item Name: Baked Corn Cheese
+Item Description: Baked corn served on a hot skillet topped with mozzarella
+Item Image: ./images/bakecorncheese.jpg
+
+Item Name: Egg rolls/Cha Gio
+Item Description: Indulge in our Chả Giò, crispy Vietnamese spring rolls filled with a savory mix of ground pork, shrimp, vegetables, and vermicelli, wrapped and fried to golden perfection, served with nuoc cham sauce for that quintessential balance of crunch and flavor.
+Item Image: ./images/eggrolls.jpg
+
+Item Name: Chicken Satay
+Item Description: Savor the exotic with our Chicken Satay Skewers, where tender, marinated chicken is grilled to smoky perfection, served with a rich peanut sauce that adds a sweet and nutty depth to each bite.
+Item Image: ./images/ChickenSatay.jpg
+
+Item Name: Holy Crunchy Chicken wings/Canh Ga Chien
+Item Description: Heavenly crispy fried chicken wings with sweet and spicy sauce topped with fried garlic chips
+Item Image: ./images/HolyCrunchyChickenWings.jpg
+
+Item Name: Fried Sweet Potatoes/Khoai Lang Chien
+Item Description: Salmon Belly, mint, vermicelli, cucumber, rolled in rice paper and served with tamarind sauce
+Item Image: ./images/FriedSweetPotatoes.jpg
+
+Item Name: Salmon Belly Chien Gion
+Item Description: Salmon Belly battered in garlic seasonings and fried crisp. Served with house special sauce
+Item Image: ./images/SalmonBellyChienGion.jpg
+
+Item Name: Toothpick Lamb/Cuu Xien Que
+Item Description: Discover the flavors of our Toothpick Lamb, where succulent pieces of lamb are seasoned with a blend of spices, skewered, and grilled to tender perfection, offering a bite-sized taste of culinary craftsmanship.
+Item Image: ./images/TootpickLamb.jpg 
+
+Item Name: Corn with Dried Shrimp/Bap Xao Tom Kho
+Item Description: Sautéed corn in house special seasonings topped with dried shrimp
+Item Image: ./images/CornWithDriedShrimp.jpg
+
+Item Name: Pho French Dip
+Item Description: Experience a fusion of cultures with our Pho French Dip, where the rich, aromatic broth of traditional Vietnamese pho meets the classic French dip sandwich, featuring thinly sliced beef and a side of pho broth for dipping, creating a unique, flavorful twist on two beloved dishes.
+Item Image: ./images/PhoFrenchDip.jpg
+
+Item Name: Shrimp Roll/Goi Cuon Tom
+Item Description: Delight in the freshness of our Gỏi Cuốn Tôm, where succulent shrimp, crisp vegetables, and herbs are wrapped in delicate rice paper, served with a tangy peanut dipping sauce for a light, refreshing bite.
+Item Image: ./images/ShrimpRolls.jpg
+
+Item Name: Grilled Pork Sausage Roll/Goi Cuon Nem Nuong
+Item Description: Grilled pork sausage, mint, vermicelli, chives, served with Chef's special sauce
+Item Image: ./images/GrilledPorkSausageRolls.jpg
+
+Item Name: Veggie Roll/Goi Cuon Chay
+Item Description: Enjoy our Gỏi Cuốn Chay, where fresh veggies, herbs, and tofu are snugly wrapped in rice paper, offering a burst of freshness with each bite, served with a savory dipping sauce.
+Item Image: ./images/VegetarianSpringRolls.jpg
+
+Item Name: Grilled Pork Spring Roll/Goi Cuon Thit Nuong
+Item Description: Grilled pork, fresh lettuce & herbs, cucumber, vermicelli, chives rolled in rice paper, served with house special fish sauce
+Item Image: ./images/GrillPorkRolls.jpg
+
+Item Name: Salmon Belly Roll/Goi Cuon Ca Salmon
+Item Description: Salmon Belly, mint, cucumber, rolled in rice paper and served with tamarind sauce
+Item Image: ./images/SalmonBellyRolls.jpg
+
+Item Name: Beef Roll/Goi Cuon Bo Nuong
+Item Description: Lemongrass beef, fresh lettuce, pickled daikon and carrots, crispy wonton wrapper rolled up in rice paper. Served with house special fish sauce.
+Item Image: ./images/BeefRolls.jpg 
+
+Item Name: Poke Roll/Goi Cuon Ahi Poke
+Item Description: Raw Ahi Tuna, fresh lettuce, avocado, pickled daikon and carrots, crispy wonton wrapper rolled up in rice paper. Served with house special soy sauce and wasabi
+Item Image: ./images/PokeRolls.jpg
+
+Item Name: Pork and Shrimp Roll/Goi Cuon Tom Thit
+Item Description: Gulf shrimp, pork, mint, vermicelli, chives, served with Chef's peanut sauce
+Item Image: ./images/PorkandShrimpRolls.jpg
+
+Item Name: Shrimp and Pork Mustard Green
+Item Description: Shrimp and Pork Wrapped Mustard Green Leaf - Cải Bẹ Xanh Cuốn Tôm Thịt
+Item Image: ./images/ShrimpandPorkMustardGreen.jpg
+
+Item Name: Tiger Shrimp and Mango Salad - Goi Xoai Tom Xu
+Item Description: Marinated black tiger shrimp served with mango salad
+
+Item Name: Ahi Poke Salad (Seared) - Goi Ca Ahi
+Item Description: Seared tuna topped on a bed of lettuce, seaweed, onions, and crispy chives. Served with wasabi dressing
+Item Image: ./images/AhiPokeSalad.jpg
+
+Item Name: Green Papaya Beef Jerky Salad - Du Du Kho Bo
+Item Description: Caramelized peppered pork belly served in claypot with pickled mustard greens
+Item Image: ./images/GreenPapayaBeefJerkySalad.jpg
+
+Item Name: Thai Calamari Salad - Goi Muc Thailand
+Item Description: Grilled calamari with sliced papaya, mango, onion, mint, peanuts, and shallots tossed in fish sauce vinaigrette
+Item Image: ./images/ThaiCalamariSalad.jpg
+
+Item Name: Baby Clam Salad - Goi Hen
+Item Description: Baby clams, cabbage, banana blossom, fresh herbs, peanuts, and shallots. Served with house fish sauce vinaigrette
+Item Image: ./images/BabyClamSalad.jpg
+
+Item Name: Grilled Salmon Salad
+Item Description: Grilled salmon served on a bed of greens, herbs, and onions topped with creamy dressing
+
+Item Name: Ahi Poke Salad
+Item Description: Sesame marinated tuna on bed of field greens and topped with wasabi dressing
+Item Image: ./images/AhiPokeSalad.jpg
+
+Item Name: Lotus Root Salad - Goi Ngo Sen
+Item Description: Lotus root, pork, shrimp, onions, peanuts, carrots, cucumber, celery tossed in house fish sauce vinaigrette
+Item Image: ./images/LotusRootSalad.jpg
+
+Item Name: Beef Ong Choy Salad - Goi Rau Moung Bo Xao
+Item Description: Shredded ong choy, fresh herbs, pickled daikon and carrots, onions, and peanuts tossed in house fish sauce vinaigrette
+Item Image: ./images/BeefOngChoySalad.jpg
+
+Item Name: Thai Beef Salad - Goi Bo Thailand
+Item Description: Thai marinated filet mignon grilled and served on top of greens, cucumber, celery, onion, peanuts and tossed in house fish sauce vinaigrette
+Item Image: ./images/ThaiBeefSalad.jpg
+
+Item Name: Rice paper Salad - Banh Trang Tron
+Item Description: Sliced beef jerky, julienne mango, fresh herbs, peanuts tossed in house fish sauce vinaigrette
+Item Image: ./images/RicePaperSalad.jpg
+
+Item Name: Lime Beef Salad - Bo Tai Chanh
+Item Description: Beef tenderloin marinated in lime juice tossed with mint, onion, peanuts and house fish sauce vinaigrette
+
+Item Name: Pomelo Salad - Goi Buoi
+Item Description: Grapefruit, gulf shrimp, pork, banana blossom, carrots, onion, mint, peanuts tossed in house special vinaigrette
+Item Image: ./images/PomeloSalad.jpg
+
+Item Name: Hamachi Yellowtail Sashimi Salad/Goi Ca Yellowtail
+Item Description: Fresh yellowtail shashimi, herbs, banana blossom, lotus root, peanuts served with soy sauce and wasabi
+Item Image: ./images/HamachiYellowTailSashimiSalad.jpg
+
+Item Name: Mango and Papaya Salad - Goi Xoai and Du Du
+Item Description: Sliced mango, papaya, herbs, onions, tomatoes and peanuts tossed in house special vinaigrette
+Item Image: ./images/
+
+Item Name: Pineapple Salad - Goi Thom
+Item Description: Fresh pineapple, herbs, lettuce, pork, shrimp, fish jerky, and peanuts tossed in house special vinaigrette
+Item Image: ./images/PineappleSalad.jpg
+
+Item Name: Chicken Salad/Goi Ga
+Item Description: Relish the zest of our Gỏi Gà, a refreshing Vietnamese chicken salad that combines shredded chicken with crisp vegetables, tangy lime, fresh herbs, and a sprinkle of peanuts for a delightful crunch.
+
+Item Name: Tamarind Crab/Cua Rang Me (1 Con)
+Item Description: Spicy Crab in tamarind sauce
+Item Image: ./images/TamarindCrab.jpg
+
+Item Name: Ong Choy w/ Pork Belly and Seasnails - Rau Muong Xao Oc Ba Roi
+Item Description: Ong choy sauteed with pork belly and sliced seasnails
+Item Image: ./images/OngChoywPorkBelly.jpg
+
+Item Name: Baked Clams with Chili Garlic/Ngheu Xao Toi Ot
+Item Description: Baked clams topped with peanuts, crispy shallots, and chili garlic oil
+Item Image: ./images/BakedClams.jpg
+
+Item Name: Sauteed Sea Snails/Oc Huong Xao
+Item Description: Sauteed Garlic Butter Seasnails served on top of sizzling onions
+Item Image: ./images/SauteedSeaSnails.jpg
+
+Item Name: Clams in Lemongrass soup/Ngheu Hap Xa
+Item Description: Steamed clams in spicy lemongrass soup
+Item Image: ./images/ClamsInLemongrassSoup.jpg
+
+Item Name: Chili Lemongrass Seasnail Soup/Oc Huong Hap Xa Ot
+Item Description: Steamed seasnails in spicy lemongrass soup
+Item Image: ./images/ChiliLemongrassSeasnailSoup.jpg
+
+Item Name: Deep Fried Calamari/Muc Lan Bot
+Item Description: Calamari encrusted in garlic seasonings and tossed in garlic butter with jalepenos and onions
+Item Image: ./images/DeepFriedCalamari.jpg
+
+Item Name: Baked Clams/Ngheu Nuong Mo Hanh Toi
+Item Description: Baked clams topped with peanuts, crispy shallots, and onions
+Item Image: ./images/BakedClams.jpg
+
+Item Name: Basil Clams/Ngheu Xao La Que
+Item Description: Sauteed Clams with basil, onions and jalepenos
+Item Image: ./images/BasilClams.jpg
+
+Item Name: Chili Dungeness Crab/Cua Singapore (1 con)
+Item Description: Singaporean style Chili Crab - served with fried Chinese Donut and baguette
+Item Image: ./images/ChiliDungenessCrab.jpg
+
+Item Name: Charbroiled Blk Tiger on Garlic Noodles/Mi Toi Tom Xu Nuong
+Item Description: Marinated black tiger shrimp served with garlic butter noodles
+Item Image: ./images/CharbroiedBlkTigeronGarlicNoodles.jpg
+
+Item Name: Salt and Pepper Shrimp/Tom Rang Muoi
+Item Description: Deep fried colossal shrimp sauteed in garlic butter, onions and jalepenos
+Item Image: ./images/SaltandPepperShrimp.jpg
+
+Item Name: Ong Choy with Seasnails/Rau Muong Xao Oc Huong
+Item Description: Ong choy sauteed with sliced seasnails
+Item Image: ./images/OngChoyWithSeasnails.jpg
+
+Item Name: Grilled Blood clams/So Long Nuong Mo Hanh
+Item Description: Baked blood clams topped with peanuts, crispy garlic and chives
+Item Image: ./images/GrilledBloodClams.jpg
+
+Item Name: Shrimp Skewers/Tom Xien Nuong
+Item Description: Marinated colossal shrimp grilled with and served on sizzling skillet
+Item Image: ./images/ShrimpSkewers.jpg
+
+Item Name: Baked King Crab Legs
+Item Description: Baked King Crab Legs topped with house aoili, crispy garlic and chives
+
+Item Name: Grilled Calamari/Muc Nuong Thailand
+Item Description: Thai marinated calamari served with onions, crispy garlic and jalepenos
+Item Image: ./images/GrilledCalamari.jpg
+
+Item Name: Grilled Scallops/So Diep Nuong
+Item Description: Indulge in our Sò Điệp Nướng, where succulent scallops are perfectly grilled, often seasoned with a delicate mix of Vietnamese spices, served on the half shell for an elegant, flavorful seafood experience.
+Item Image: ./images/GrilledScallops.jpg
+
+Item Name: Razor Clams - Oc Mong Tay
+Item Description: Baked razor clams topped with peanuts, chili garlic, and bell peppers
+Item Image: ./images/RazorClams.jpg
+
+Item Name: Coconut Seasnails/Oc Len Xao Dua
+Item Description: Small seasnails cooked in coconut broth, onions, garlic and chili
+Item Image: ./images/CoconutSeasnails.jpg
+
+Item Name: Spicy Baby Clams on Rice Chips/Hen Xao Xuc Banh Trang
+Item Description: Baby clams sauteed with peanuts, onions, garlic and herbs, served with crispy sesame cracker
+Item Image: ./images/SpicyBabyClamsonRiceChips.jpg
+
+Item Name: Lemongrass Seafood Soup/Do Bien Hap Xa
+Item Description: Clams, calamari and shrimp steamed in spicy lemongrass seafood soup
+Item Image: ./images/LemongrassSeafoodSoup.jpg
+
+Item Name: House-Special Garlic Crab/Cua Dac Biet (1 Con)
+Item Description: Dungeness Crab fried in house seasonings, sauteed in garlic butter, onions, and jalepenos, and topped with crispy garlic
+Item Image: ./images/HouseSpecialGarlicCrab.jpg
+
+Item Name: House Special Squid
+Item Description: Dive into our House Special Squid, where tender squid is masterfully seasoned and crisply fried, served with a unique house sauce that elevates its natural flavors to an unforgettable culinary delight.
+
+Item Name: House Special Lobster
+Item Description: Lobster sauteed in our house special sauce with garlic, onion and jalapenos
+Item Image: ./images/HouseSpecialLobster.jpg
+
+Item Name: Baked Crispy Catfish w. Boiled Pork/Ca Nuong Da Gion Thit Luoc
+Item Description: Crispy baked catfish with poached pork. Please allow 1 hour for preparation.
+Item Image: ./images/BakedCrispyCatfishWBoiledPorkCaNuongDaGionThitLuoc.jpg
+
+Item Name: Charbroiled Blk Tiger on Garlic Noodles/Mi Toi Tom Xu Nuong
+Item Description: Marinated black tiger shrimp served with garlic butter noodles
+Item Image: ./images/CharbroiedBlkTigeronGarlicNoodles.jpg
+
+Item Name: Ong choy with Beef/Rau Muong Xao Bo
+Item Description: Sauteed ong choy with sliced beef
+Item Image: ./images/OngChoywithBeef.jpg
+
+Item Name: Shaken tofu/Dau hu luc lac
+Item Description: Fried tofu sautéed with onions, bell peppers, and mushrooms. Served with rice
+
+Item Name: Lamb Chops
+Item Description: Fresh crispy noodles topped with beef or chicken, vegetables, and hearty sauce
+Item Image: ./images/LambChops.jpg
+
+Item Name: Chicken Curry/Cari Ga
+Item Description: Bone-in chicken simmered in Vietnamese style curry with taro and potatoes. Served with bread, rice or noodles.
+Item Image: ./images/ChickenCurry.jpg
+
+Item Name: Sizzling Filet Mignon/Bo Ne
+Item Description: Marinated filet mignon grilled with egg, sausage and pate. Choice of bread or rice
+Item Image: ./images/SizzlingFiletMignon.jpg
+
+Item Name: Seafood Chowfun/Ap Chao Do Bien
+Item Description: Sautéed flat rice noodles with combination seafood, bean sprouts, and green onion
+Item Image: ./images/SeafoodChowfun.jpg
+
+Item Name: Chicken Chowfun/Ap Chao Thit Ga
+Item Description: Sautéed flat rice noodles with chicken, bean sprouts, and green onion
+
+Item Name: Sauteed Beef and Garlic Noodles/Bo Xao Mi Toi
+Item Description: Garlic butter noodles sautéed with sliced beef and onions
+
+Item Name: Vegetarian Egg Noodles/Mi Xao Chay
+Item Description: Sautéed yellow noodles with tofu and vegetables
+Item Image: ./images/VegetarianEggNoodles.jpg
+
+Item Name: Chicken Egg Noodles/Mi Xao Ga
+Item Description: Sautéed yellow noodles with chicken and vegetables
+Item Image: ./images/ChickenEggNoodles.jpg
+
+Item Name: Seafood Egg Noodles/Mi Xao Do Bien
+Item Description: Sautéed yellow noodles with combination seafood and mixed vegetables
+Item Image: ./images/SeafoodEggNoodles.jpg
+
+Item Name: Pork Chop/Egg/Garlic Fries - Suon Heo Cot Let
+Item Description: Grilled marinated pork chop and egg. Served with French fries
+
+Item Name: Combination Egg Noodles/Mi Xao Thap Cam
+Item Description: Sautéed yellow noodles with combination seafood, beef and mixed vegetables
+Item Image: ./images/CombinationEggNoodes.jpg
+
+Item Name: Chicken Garlic Noodles - Mi Toi Ga
+Item Description: Garlic butter noodles sautéed with sliced chicken and onions
+
+Item Name: Beef Egg Noodles/Mi Xao Bo
+Item Description: Sautéed yellow noodles with beef and mixed vegetables
+
+Item Name: Beef Chowfun/Ap Chao Thit Bo
+Item Description: Sautéed flat rice noodles with beef, bean sprouts, and green onion
+
+Item Name: Shaken Filet Mignon/Bo Luc Lac
+Item Description: Seared cubed filet mignon sautéed with onions, bell peppers, and mushrooms.
+Item Image: ./images/ShakenFiletMignon.jpg
+
+Item Name: Goat Curry/Cari De
+Item Description: Tender beef shank, pork hocks, pork paste, thick rice noodles in a spicy and flavorful central Vietnam style soup
+Item Image: ./images/GoatCurry.jpg
+
+Item Name: Combination Chowfun/Ap Chao Thap Cam
+Item Description: Sautéed flat rice noodles with calamari, fish, shrimp, beef, bean sprouts, and green onion
+Item Image: ./images/CombinationChowfun.jpg
+
+Item Name: Pad Thai
+Item Description: Rice noodles sautéed in Thai sauce. Choice of chicken, shrimp or tofu.
+Item Image: ./images/Padthai.jpg
+
+Item Name: Stir Fried Glass noodles Crab/Shrimp - Mien Xao Tom Cua
+Item Description: Glass noodles, minced crab, shrimp, eggs, celery, carrots, and bean sprouts sautéed in seasonings
+
+Item Name: Shrimp Chowfun/Ap Chao Mem Tom
+Item Description: Sautéed flat rice noodles with Shrimp, bean sprouts, and green onion
+
+Item Name: Vegetarian Chowfun/Ap Chao Chay
+Item Description: Sautéed flat rice noodles with tofu, bean sprouts, and green onion
+
+Item Name: Grilled Chicken Garlic Noodles/Ga Nuong Mi Xao Toi
+Item Description: Grilled chicken served with steamed vegetables and garlic noodles.
+Item Image: ./images/GrilledChickenGarlicNoodles.jpg
+
+Item Name: Stir-Fried Eggplant with Crispy Pork
+Item Description: Savor the harmony of soft, savory eggplant stir-fried to perfection, paired with the delightful crunch of crispy pork, all melded together in a rich, flavorful sauce.
+
+Item Name: Fried Rice/Com Chien
+Item Description: Vietnamese styled fried rice prepared with egg, peas and carrots plus your choice of shrimp, salted fish or combination. 
+Item Image: ./images/YoungChowFriedRice.jpg
+
+Item Name: Salted Fish Rice/Com Ca Man
+Item Description: Experience the robust flavors of Vietnam with our Cơm Cá Mặn, where the unique saltiness of preserved fish melds with the subtle sweetness of stir-fried rice, creating a dish that's both comforting and exotic. Each grain of rice is infused with the savory essence of salted fish, complemented by the freshness of vegetables and the richness of scrambled eggs, making for a simple yet unforgettable meal.
+
+Item Name: Grilled Pork Rice/Com Thit Nuong
+Item Description: Grilled marinated pork served with rice, pickled vegetables, and lettuce
+
+Item Name: Ong Choy w/ Pork Belly - Rau Muong Xao Ba Roi
+Item Description: Delight in the simplicity and flavor of our Rau Muống Xào Bà Ròi, where fresh water spinach is quickly stir-fried with an abundance of fragrant garlic, capturing the essence of Vietnamese home cooking in every crisp, green bite.
+Item Image: ./images/OngChoywPorkBelly.jpg
+
+Item Name: Thai Hotpot/Lau Thai
+Item Description: Seafood mix served with noodles and vegetables
+Item Image: ./images/ThaiHotpot.jpg
+
+Item Name: Fish Head Hotpot/Lau Dau Ca Bap Chuoi
+Item Description: Salmon fish head simmered in broth served with noodles and vegetables
+Item Image: ./images/FishHeadHotpot.jpg
+
+Item Name: Fish Hotpot/Lau Canh Chua Ca
+Item Description: Small catfish simmered in sweet and sour soup with beansprouts, herbs, pineapple, okra, and tomatoes
+
+Item Name: Lobster and Seafood hotpot/Lau Tom Hum Hai San
+Item Description: Lobster and seafood mix served with noodles and vegetables
+Item Image: ./images/LobsterAndSeafoodHotpot.jpg
+
+Item Name: Salmon Hotpot - Lau Ca Salmon
+Item Description: Sliced salmon simmered in broth served with noodles and vegetables
+
+Item Name: Seabass w. Prawn Hot Pot - Lau Ca Seabass Tom Cang
+Item Description: Filet seabass simmered in broth served with noodles and vegetables
+
+Item Name: Szechwan Hotpot/Lau Trieu Chau
+Item Description: Very spicy Szechwan style broth served with mixed seafood and beef, noodles and vegetables
+Item Image: ./images/SzechwanHotpot.jpg 
+
+Item Name: Goat Hot Pot / Lau De Dac Biet Binh Dan
+Item Description: Goat meat simmered in broth, served with noodles and vegetables
+
+Item Name: Filet Mignon Hot Pot/Lau Pho Filet Mignon
+Item Description: Dive into the luxury of our Lẩu Phở Filet Mignon, where tender slices of filet mignon are the star in a fragrant, simmering pho broth, accompanied by fresh herbs, noodles, and vegetables for a sumptuous, interactive dining experience.
+
+Item Name: Oxtail Hotpot/Lau Duoi Bo
+Item Description: Dive into the rich, comforting depths of our Lẩu Đuôi Bò, an oxtail hot pot where tender, fall-off-the-bone oxtail pieces are simmered with aromatic spices, vegetables, and noodles in a hearty broth, offering a soul-warming meal that's both luxurious and homely.
+
+Item Name: Vietnamese Soup/Pho
+Item Description: Vietnamese noodle soup that's made with broth, rice noodles, meat, and fresh garnishes.
+
+Item Name: Water Spinach Noodle Soup - Canh Bun
+Item Description: Vietnamese tomato, crab, shrimp, water spinach noodle soup
+
+Item Name: Vietnamese Hot and Sour Soup/Canh Chua
+Item Description: Large catfish simmered in sweet and sour soup with beansprouts, herbs, pineapple, okra, and tomatoes
+Item Image: ./images/CanhChuaCa.jpg
+
+Item Name: Purple Yam Soup/Canh Khoai Mo
+Item Description: Large grated purple yam simmered in broth with shrimp
+Item Image: ./images/PurpleYamSoup.jpg
+
+Item Name: Tofu and Fish Soup/Soup Ca va Dau Hu Cay
+Item Description: Small soft tofu and sole filet cooked in spicy broth
+Item Image: ./images/TofuandFishSoup.jpg 
+
+Item Name: Mustard Green Soup - Canh Chua Cai
+Item Description: Small beef and mustard green sweet and sour soup
+
+Item Name: Fried Rice/Com Chien
+Item Description: Vietnamese styled fried rice prepared with egg, peas and carrots plus your choice of shrimp, salted fish or combination. 
+
+Item Name: Carmelized Salmon/Salmon Kho To
+Item Description: Filet of salmon caramelized. Served with crispy rice 
+Item Image: ./images/CarmelizedSalmon.jpg
+
+Item Name: Grilled Salmon w. Tamarind Sauce/Com Chay Ca Salmon Nuong Sot Me
+Item Description: A delightful Vietnamese dish featuring grilled salmon glazed with a tangy tamarind sauce, served alongside vegetarian accompaniments.
+
+Item Name: Caramelized Catfish w. Pork Belly/Ca Kho To Ba Roi
+Item Description: Catfish and pork belly caramelized. Served with crispy rice
+Item Image: ./images/CarmelizedCatfishwPorkBelly.jpg
+
+Item Name: Caramelized Peppered Pork Belly/Com Chay Thit Ba Roi Kho To
+Item Description: Pork belly caramelized in sauce. Served with crispy rice
+Item Image: ./images/CaramelizedPepperedPorkBelly.jpg
+
+Item Name: Grilled Salmon - Ca Salmon Nuong
+Item Description: Grilled salmon with Thai basil sauce served on top of onions. Served with crispy rice
+
+Item Name: Lemongrass Pork Ribs/Suon Non Nuong XO
+Item Description: Braised lemongrass pork ribs served on top of onions. Served with crispy rice
+Item Image: ./images/LemongrassPorkRibs.jpg
+
+Item Name: Rotisserie Chicken/Com Chay Ga Roti
+Item Description: Braised chicken in house seasonings. Served with crispy rice
+Item Image: ./images/RotisserieChicken.jpg
+
+Item Name: Sticky Rice w. Chinese Sausage, Eggs, Shredded Pork / Xoi Lap Xuong Trung Cha Bong
+Item Description: Coconut sweet rice topped with chicken wing, pork floss, Chinese sausage, and egg
+Item Image: ./images/StickyRicewChineseSausagesEggsShreddedPork.jpg
+
+Item Name: Carmelized Catfish/Ca Kho
+Item Description: Catfish caramelized in sauce. Served with crispy rice
+
+Item Name: Caramelized Pork Ribs/Cam Chay Suon Ram
+Item Description: Bone in pork ribs caramelized in sweet sauce. Served with crispy rice
+Item Image: ./images/CaramelizedPorkRibs.jpg 
+
+Item Name: Salmon w. House Special Sauce/Com Chay Ca Salmon
+Item Description: Glazed fried salmon filet topped with bell peppers and onions. Served with crispy rice
+Item Image: ./images/SalmonwHouseSpecialSauce.jpg
+
+Item Name: Fried Chili Lemongrass Salmon - Cam Chay Ca Salmon Xa Ot
+Item Description: Chili lemongrass fried salmon filet topped with bell peppers and onions. Served with crispy rice
+Item Image: ./images/FriedChiliLemongrassSalmon.jpg 
+
+Item Name: Dill and Tumeric Fish/Bun Cha Ca Thang Long
+Item Description: Savor the iconic flavors of Hanoi with our Bún Chả Cá Thăng Long, featuring chunks of fish marinated in turmeric, grilled to perfection, and served over vermicelli noodles with an abundance of fresh dill, spring onions, and a side of tangy dipping sauce.
+Item Image: ./images/DillsandTumericFishWNoodles.jpg
+
+Item Name: Sauteed Filet Mignon Vermicelli/Bun Bo Xao
+Item Description: Filet mignon sauteed in lemongrass, garlic and onion. Served on top rice noodles with pickled vegetables, herbs, lettuce, and peanuts
+Item Image: ./images/SauteedFiletMignonVermicelli.jpg
+
+Item Name: Grilled Salmon Noodles/Bun Ca Salmon Nuong
+Item Description: Grilled salmon served on top of rice noodles with lettuce, herbs, pickled vegetables, and peanuts
+
+Item Name: Grilled Shrimp Noodles/Bun Tom Nuong
+Item Description: Grilled shrimp served on top of rice noodles with lettuce, herbs, pickled vegetables and peanuts
+
+Item Name: Eggroll Noodles/Bun Cha Gio
+Item Description: Fried rice paper egg rolls served on top of rice noodles with lettuce, herbs, pickled vegetabled and peanuts
+
+Item Name: Grilled Filet Mignon Vermicelli/Bun Bo Nuong
+Item Description: Grilled beef served on top rice noodles, lettuce, herbs, pickled vegetables, and peanuts
+
+Item Name: Grilled Pork Vermicelli-Bun Thit Nuong
+Item Description: Marinated grilled pork with crispy egg rolls served on top of rice noodles, lettuce, herbs, pickled vegetables, and peanuts
+Item Image: ./images/GrilledPortVermicelli.jpg
+
+Item Name: Noodle Soup - Bun Ca
+Item Description: Salmon cooked in tomato broth with rice noodles
+
+Item Name: Famous Central VN Spicy Noodles - Bun Bo Hue
+Item Description: the bold flavors of Central Vietnam with our Bún Bò Huế, a fiery and fragrant beef noodle soup, where rich, lemongrass-infused broth meets tender beef slices, pork hocks, and a kick of chili, all harmonized with fresh herbs and vermicelli noodles
+Item Image: ./images/BunBoHue.jpg
+
+Item Name: Shrimp and Crab Soup/Bun Rieu Tom Cua
+Item Description: Vietnamese crab and shrimp cooked in tomato broth served with rice noodles
+
+Item Name: Hanoi Styled Vermicelli w/ Grilled Pork - Bun Cha Ha Noi
+Item Description: Hanoi style marinated pork and pork patty. Served with rice noodles, herbs, and peanuts
+Item Image: ./images/HanoiStyledVermicelliwGrilledPork.jpg
+
+Item Name: Deep Fried Tofu and Boiled Pork Vermicelli/Bun Dau Thit Luoc
+Item Description: Pork and tofu served with fresh herbs, noodles, mango and cucumbers. Served with shrimp paste anchovy sauce
+Item Image: ./images/DeepFriedTofuandBoiledPorkVermicelli.jpg
+
+Item Name: Plain Pho/Banh Pho Only
+Item Description: Choice of chicken or beef broth served with pho rice noodles
+
+Item Name: Shrimp Rice Porridge/Chao Tom
+Item Description: Rice simmered in broth with shrimp topped with green onion, ginger and cilantro
+
+Item Name: Minced Beef Porridge/Chao Bo Bam
+Item Description: Rice simmered in broth with minced beef topped with green onion, ginger and cilantro
+
+Item Name: Fish Porridge/Chao Ca
+Item Description: Rice simmered in broth with fish filet topped with green onion, ginger and cilantro
+
+Item Name: Minced Pork/Salted Egg Porridge - Chao Thit Bam/Trung Bach Thao
+Item Description: Rice simmered in broth with minced pork and salted egg topped with green onion, ginger, and cilantro
+
+Item Name: Combination Rice Porridge/Chao Thap Cam
+Item Description: Rice simmered in broth with combination seafood topped with green onion, ginger, and cilantro
+
+Item Name: Chicken Porridge/Chao Ga
+Item Description: a velvety rice porridge simmered to perfection, featuring tender chicken, aromatic ginger, and a sprinkle of fresh herbs, all culminating in a warm, soul-soothing bowl
+
+Item Name: Plain Rice Porridge/Chao Trang
+Item Description: Rice simmered in broth
+
+Item Name: Tofu and Veggie Soup/Dau Hu Chay va Rau
+Item Description: Soft tofu cooked with mixed vegetables and glass noodles in spicy broth
+
+Item Name: Stir-Fried Eggplant
+Item Description: Indulge in the simplicity of our Stir-Fried Eggplant, where tender slices of eggplant are sautéed with a savory sauce, capturing a perfect balance of flavors and textures, often enhanced with garlic, soy, and a hint of spice.
+
+Item Name: Fried Tofu - Dau Hu Chien Gion
+Item Description: Crispy soft tofu topped with crispy garlic and shallots
+Item Image: ./images/FriedTofu.jpg
+
+Item Name: Shaken Tofu - Dau Hu Luc Lac
+Item Description: Enjoy our Dau Hu Luc Lac, where tofu cubes are seasoned and 'shaken' to perfection, offering a delightful sear and served with fresh greens for a light, flavorful dish.
+
+Item Name: Garlic Spinach - Rau Den Xao Toi
+Item Description: Sauteed spinach with garlic sauce
+
+Item Name: Vegetarian Salad - Goi Chay
+Item Description: Fried tofu, banana blossom, cabbage, and onions tossed in soy vinaigrette
+
+Item Name: Ong choy with Garlic/Rau Muong Xao Toi
+Item Description: Sauteed ong choy with garlic sauce
+Item Image: ./images/OngchoywGarlic.jpg
+
+Item Name: Green Beans w/ Garlic - Dau Que Sao Toi
+Item Description: Green beans sauteed with garlic sauce
+Item Image: ./images/GreenBeanswGarlic.jpg
+
+Item Name: Stir Fried Bok choy w/ garlic - Bok choy Xao Toi
+Item Description: Sauteed bok choy with garlic sauce

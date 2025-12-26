@@ -12,7 +12,8 @@ The system uses a **Client-Server Architecture** to support scalability and mult
 - **Safety**: Strict workflows for allergy verification and order confirmation.
 - **Menu Accuracy**: RAG (Retrieval-Augmented Generation) system prevents hallucinations and ensures only real menu items are recommended.
 - **Efficiency**: 99% token reduction through targeted retrieval instead of full menu embedding.
-- **Rich Experience**: Visual menu grid, real-time voice synthesis, and image display.
+- **Rich Experience**: Visual menu grid with side-by-side image/description layout, real-time voice synthesis, and bilingual menu display.
+- **Multi-Language**: Full support for English, Vietnamese, Chinese, and Spanish (text + voice).
 - **POS Ready**: Structured checkout data generation with validation.
 
 ## 2. Requirements
@@ -29,11 +30,15 @@ The system uses a **Client-Server Architecture** to support scalability and mult
   - Persona: Kristin - Friendly, helpful, knowledgeable waiter.
 - **Voice Interaction**:
   - **On-Demand TTS**: User clicks 🔊 button to hear waiter responses.
-  - **Multi-Language Support**: Automatic language detection (English, Vietnamese, Spanish).
+  - **Multi-Language Support**: English, Vietnamese, Chinese (Mandarin), and Spanish.
   - **Piper TTS**: Local, low-latency voice synthesis with language-specific models.
   - **Markdown Stripping**: Removes formatting symbols for natural speech.
   - **Continuous Speech**: Speaks through entire message without stopping at line breaks.
   - Speech-to-Text (STT) ready (via UI hooks).
+- **Bilingual Menu Display**:
+  - In Vietnamese mode, menu items show Vietnamese names first with English secondary.
+  - Pronunciation guides included for Vietnamese dishes.
+  - Labels translated (e.g., [PHỔ BIẾN] instead of [POPULAR]).
 - **Ordering**:
   - Cart management via conversation.
   - POS Integration endpoint (`/v1/checkout`) returning JSON order summary.
@@ -66,7 +71,7 @@ graph TD
   - **RAG Retriever**: Hybrid search (semantic + BM25) for menu item retrieval.
   - **LLM Client**: Manages conversation history, injects system prompts with retrieved items, enforces workflow constraints. Waiter persona is "Kristin".
   - **TTS Client**: On-demand multi-language audio generation.
-    - Automatic language detection (English, Vietnamese, Spanish)
+    - 4 supported languages: English, Vietnamese, Chinese (Mandarin), Spanish
     - Markdown stripping for clean speech
     - Continuous speech through line breaks
     - Language-specific caching
@@ -124,26 +129,34 @@ graph TD
   {
     "items": [
       {
-        "item_name": "...",
-        "description": "...",
-        "price": 20,
-        "category": "Seafood",
-        "popular": true,
-        "image_path": "..."
+        "item_name": "Vegetarian Chowfun",
+        "item_viet": "Ap Chao Chay",
+        "pronunciation": "ahp chow chy",
+        "description": "Sautéed flat rice noodles with tofu...",
+        "price": 18,
+        "category": "Rice & Noodles",
+        "popular": false,
+        "image_path": "./downloaded_images/Vegetarian_ChowfunAp_Chao_Chay.jpg"
       }
     ]
   }
   ```
+- **Fields**:
+  - `item_name`: English name (primary identifier)
+  - `item_viet`: Vietnamese name (optional)
+  - `pronunciation`: Phonetic pronunciation for Vietnamese name (optional)
+  - `image_path`: Relative path to item image
 
 ### 5.2 Configuration (`.env`)
 - `LLM_BASE_URL`: Endpoint for intelligence.
 - `BACKEND_URL`: URL for API.
 - `APP_PORT` / `API_PORT`: Configurable ports.
-- `MENU_PATH`: Path to menu.json.
+- `MENU_PATH`: Path to data/menu.json.
 - `PIPER_BINARY`: Path to Piper TTS binary.
 - `PIPER_MODEL_EN`: Path to English voice model.
 - `PIPER_MODEL_VI`: Path to Vietnamese voice model.
 - `PIPER_MODEL_ES`: Path to Spanish voice model.
+- `PIPER_MODEL_ZH`: Path to Chinese (Mandarin) voice model.
 
 ### 5.3 Dependencies
 **RAG**:
@@ -153,7 +166,11 @@ graph TD
 
 **TTS**:
 - `langdetect`: Automatic language detection
-- Piper binary with ONNX models (English, Vietnamese, Spanish)
+- Piper binary with ONNX models:
+  - `en_US-amy-medium.onnx` (English)
+  - `vi_VN-vais1000-medium.onnx` (Vietnamese)
+  - `es_ES-sharvard-medium.onnx` (Spanish)
+  - `zh_CN-huayan-medium.onnx` (Chinese Mandarin)
 
 ## 6. Operations
 - **Start**: `./scripts/start.sh` (Launches API then UI).
@@ -174,7 +191,7 @@ See [`docs/RAG_Integration.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/RAG_I
 
 See [`docs/TTS_System.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/TTS_System.md) for comprehensive documentation on:
 - On-demand audio generation architecture
-- Multi-language support (English, Vietnamese, Spanish)
+- Multi-language support (English, Vietnamese, Chinese, Spanish)
 - Automatic language detection
 - Markdown stripping and text processing
 - Caching strategy

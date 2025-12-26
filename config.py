@@ -22,7 +22,8 @@ def get_path(env_var, default_relative):
 # Data Directories
 DATA_DIR = os.path.join(BASE_DIR, "data") # Default fallback if needed
 IMAGES_DIR = get_path("IMAGES_DIR", "data/images")
-MENU_PATH = get_path("MENU_PATH", "menu.json")
+MENU_PATH = get_path("MENU_PATH", "data/menu.json")
+FACTS_PATH = get_path("FACTS_PATH", "data/facts.json")
 
 # TTS Configuration
 PIPER_BINARY = get_path("PIPER_BINARY", "piper/piper")
@@ -33,6 +34,7 @@ PIPER_MODELS = {
     "en": get_path("PIPER_MODEL_EN", "models/piper/en_US-amy-medium.onnx"),
     "vi": get_path("PIPER_MODEL_VI", "models/piper/vi_VN-vais1000-medium.onnx"),
     "es": get_path("PIPER_MODEL_ES", "models/piper/es_ES-sharvard-medium.onnx"),
+    "zh": get_path("PIPER_MODEL_ZH", "models/piper/zh_CN-huayan-medium.onnx"),
 }
 TTS_SAMPLE_RATE = 22050 
 
@@ -47,5 +49,7 @@ APP_PORT = int(os.getenv("APP_PORT", 8501))
 ENABLE_SERVER_AUDIO = os.getenv("ENABLE_SERVER_AUDIO", "false").lower() == "true"
 
 # Backend Configuration
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
 API_PORT = int(os.getenv("API_PORT", 8000))
+if "localhost" in BACKEND_URL:
+    BACKEND_URL = BACKEND_URL.replace("localhost", "127.0.0.1")

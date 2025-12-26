@@ -1,5 +1,7 @@
 import sys
 import os
+import time
+print(f"CRITICAL: API STARTING - VERSION ID: {time.time()} - SANITIZATION ACTIVE")
 
 # Add project root to path to allow importing config
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -26,10 +28,12 @@ print("=" * 60)
 # Import logic classes
 from backend.menu_manager import MenuManager
 from backend.tts_client import TTSClient
+from backend.agent import WaitstaffAgent
 
 # Initialize singletons
 menu_manager = MenuManager()
 tts_client = TTSClient()
+agent = WaitstaffAgent()
 
 # Create FastAPI app
 app = FastAPI(title="GAC Waiter Backend")
@@ -37,6 +41,7 @@ app = FastAPI(title="GAC Waiter Backend")
 # Request Models
 class ChatRequest(BaseModel):
     messages: List[Dict[str, Any]]  # Allow any fields, not just role/content
+    language: Optional[str] = "English"
     
     class Config:
         extra = "allow"  # Allow extra fields
@@ -60,74 +65,44 @@ def chat_endpoint(request: ChatRequest):
         if request.messages:
             user_message = request.messages[-1].get('content', '')
         
-        # RAG RETRIEVAL: Get only relevant menu items (not entire menu)
-        from backend.rag_retriever import get_retriever
-        retriever = get_retriever()
-        relevant_items = retriever.retrieve_items(user_message, top_k=5)
-        
-        # Build focused menu context from retrieved items
-        menu_context = "RELEVANT MENU ITEMS:\n\n"
-        if relevant_items:
-            for item in relevant_items:
-                menu_context += f"- {item.get('item_name')} (${item.get('price', 0):.2f})"
-                if item.get('popular'):
-                    menu_context += " [POPULAR]"
-                menu_context += f"\n  {item.get('description', '')}\n"
-                menu_context += f"  Category: {item.get('category', 'Other')}\n\n"
-        else:
-            # Fallback: show a few popular items if no relevant items found
-            popular_items = [item for item in menu_manager.items if item.get('popular')][:5]
-            for item in popular_items:
-                menu_context += f"- {item.get('item_name')} (${item.get('price', 0):.2f}) [POPULAR]\n"
-                menu_context += f"  {item.get('description', '')}\n\n"
-
-        
-        # DIRECT LLM CALL - NO WRAPPER
-        from openai import OpenAI
-        
-        system_prompt = f"""You are Kristin, a friendly restaurant waiter at Garlic & Chives.
-
-{menu_context}
-
-CRITICAL RULES:
-- ONLY recommend items from the "RELEVANT MENU ITEMS" list above
-- NEVER invent or suggest items not explicitly listed above
-- If asked for something not in the list above, politely say you'll check and ask them to rephrase or be more specific
-- When customers greet you, introduce yourself as Kristin warmly
-- Before finalizing orders, ask about allergies
-- Repeat orders back to confirm with exact prices
-- Keep responses brief and friendly
-- If you're unsure about an item, admit it rather than making up information"""
-
-        # Clean messages - remove 'images' field (only for UI, not for LLM)
+        # Prepare messages
         clean_messages = []
         for msg in request.messages:
             clean_msg = {"role": msg.get("role"), "content": msg.get("content")}
             clean_messages.append(clean_msg)
         
-        full_messages = [{"role": "system", "content": system_prompt}] + clean_messages
+        # AGENT RUN
+        # The agent handles tool-use, retrieval, and prompts internally
+        # response_text is now a DICT: {"text": str, "language": str}
+        agent_result = agent.run(clean_messages, current_language=request.language)
         
-        print(f"Calling LLM: {config.LLM_BASE_URL} / {config.LLM_MODEL}")
-        
-        client = OpenAI(
-            base_url=config.LLM_BASE_URL,
-            api_key=config.LLM_API_KEY,
-            timeout=60.0
-        )
-        
-        response = client.chat.completions.create(
-            model=config.LLM_MODEL,
-            messages=full_messages
-        )
-        
-        response_text = response.choices[0].message.content
-        print(f"LLM Response: {response_text[:100]}...")
+        if isinstance(agent_result, dict):
+            response_text = agent_result.get("text", "")
+            detected_lang = agent_result.get("language", request.language)
+        else:
+            # Fallback if agent returns string (should not happen with new code)
+            response_text = str(agent_result)
+            detected_lang = request.language
         
         # Find mentioned items (for UI to display images)
-        mentioned = menu_manager.find_items_in_text(response_text)
+        # We prefer the explicitly found items from the agent's tools
+        # But we merge with keyword search just in case the agent mentioned something from memory
+        explicit_items = agent_result.get("mentioned_items", [])
+        keyword_items = menu_manager.find_items_in_text(response_text)
+        
+        # Merge (deduplicate by item_name)
+        seen_names = set()
+        mentioned = []
+        
+        for item in explicit_items + keyword_items:
+            name = item.get('item_name')
+            if name and name not in seen_names:
+                seen_names.add(name)
+                mentioned.append(item)
         
         return {
             "text": response_text,
+            "language": detected_lang,
             "mentioned_items": mentioned
         }
     except Exception as e:
@@ -224,6 +199,26 @@ No markdown, just JSON.
             "total": 0.0
         }
 
+@app.post("/v1/reload")
+def reload_endpoint():
+    """Reloads all data (Menu and RAG) from disk."""
+    try:
+        menu_manager.reload()
+        
+        from backend.rag_retriever import get_retriever
+        retriever = get_retriever()
+        retriever.reload()
+        
+        # Also re-initialize agent's retriever reference if needed, 
+        # though agent calls get_retriever() or uses the singleton which is mutated.
+        # Ideally agent should check for staleness or we rely on the mutable singleton.
+        
+        return {"status": "success", "message": "Data reloaded successfully"}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=config.API_PORT)
+    uvicorn.run(app, host="127.0.0.1", port=config.API_PORT)

@@ -73,7 +73,7 @@ def parse_menu_file(file_path):
 
 def main():
     input_file = "data/GarlicAndChives.txt"
-    output_file = "menu.json"
+    output_file = "data/menu.json"
     
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")

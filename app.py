@@ -130,7 +130,10 @@ def api_get_menu():
 
 def api_chat(messages):
     try:
-        payload = {"messages": messages}
+        payload = {
+            "messages": messages,
+            "language": st.session_state.get("language", "English")
+        }
         resp = requests.post(f"{config.BACKEND_URL}/v1/chat", json=payload, timeout=30)
         if resp.status_code == 200:
             return resp.json()
@@ -167,10 +170,22 @@ def api_tts(text):
         st.error(f"TTS service error: {e}")
     return None
 
+def api_reload():
+    """Trigger backend data reload."""
+    try:
+        resp = requests.post(f"{config.BACKEND_URL}/v1/reload", timeout=30)
+        if resp.status_code == 200:
+            return True
+    except Exception as e:
+        st.error(f"Reload failed: {e}")
+    return False
+
 # State Initialization
 if 'conversation' not in st.session_state:
     # Start with empty conversation - waiter will greet on first interaction
     st.session_state.conversation = []
+if 'language' not in st.session_state:
+    st.session_state.language = "English"
     st.session_state.session_stage = "greeting"  # greeting -> ordering -> checkout -> complete
 if 'menu_items' not in st.session_state:
     st.session_state.menu_items = api_get_menu()
@@ -187,25 +202,40 @@ for item in st.session_state.menu_items:
 # Main Layout - Centered Header
 col_header, col_logo = st.columns([4, 1.5])
 with col_header:
-    st.title("Garlic & Chives")
+    st.title("Garlic & Chives Waiter 🦐")
     st.markdown("*A Taste of Vietnam • Digital Experience*")
 with col_logo:
     if os.path.exists("data/gac_logo.png"):
         st.image("data/gac_logo.png", width=140)
 
+
+
 # Category Quick Selection
 st.subheader("Browse by Category")
-cat_cols = st.columns(len(categories))
-for idx, (cat_name, items) in enumerate(categories.items()):
-    with cat_cols[idx]:
-        if st.button(f"{cat_name} ({len(items)})", key=f"cat_{idx}", use_container_width=True):
-            # Auto-send message to waiter
-            st.session_state.pending_message = f"What do you have in {cat_name}?"
+if len(categories) > 0:
+    cat_cols = st.columns(len(categories))
+    for idx, (cat_name, items) in enumerate(categories.items()):
+        with cat_cols[idx]:
+            if st.button(f"{cat_name} ({len(items)})", key=f"cat_{idx}", use_container_width=True):
+                # Auto-send message to waiter
+                st.session_state.pending_message = f"What do you have in {cat_name}?"
+else:
+    st.info("Menu is loading or empty. Please check connection.")
 
 st.divider()
 
 # Conversation Area
-st.subheader("💬 Conversation")
+col_chat_header, col_chat_reset = st.columns([4, 1])
+with col_chat_header:
+    st.subheader("💬 Conversation")
+with col_chat_reset:
+    if st.button("Start New Session", key="reset_chat", type="primary", use_container_width=True):
+        st.session_state.conversation = []
+        st.session_state.session_stage = "greeting"
+        st.session_state.language = "English"
+        if 'order_summary' in st.session_state:
+            del st.session_state.order_summary
+        st.rerun()
 
 # Chat History
 chat_container = st.container(height=500, border=True)
@@ -244,18 +274,45 @@ with chat_container:
             else:
                 st.write(msg["content"])
             
-            if "images" in msg and msg["images"]:
-                # Display images inline in conversation
+            # Rich Item Display
+            if "showcase_items" in msg and msg["showcase_items"]:
+                for item in msg["showcase_items"]:
+                    img_path = item.get('image_path')
+                    if img_path:
+                         # Normalize path
+                        if img_path.startswith('./images/'):
+                            img_path = img_path.replace('./images/', 'data/images/')
+                        elif img_path.startswith('./downloaded_images/'):
+                            img_path = img_path.replace('./downloaded_images/', 'data/downloaded_images/')
+                        
+                        if os.path.exists(img_path):
+                            col_img, col_desc = st.columns([1, 2])
+                            with col_img:
+                                try:
+                                    st.image(img_path, use_container_width=True)
+                                except Exception as e:
+                                    st.error("Image Error")
+                            with col_desc:
+                                st.markdown(f"**{item.get('item_name')}**")
+                                st.markdown(f"**Price:** ${item.get('price')}")
+                                st.write(item.get('description', ''))
+                                if item.get('item_viet') and st.session_state.get('language') == "Vietnamese":
+                                    st.markdown(f"*{item.get('item_viet')}*")
+                        else:
+                             st.warning(f"Image not found: {item.get('item_name')}")
+            
+            elif "images" in msg and msg["images"]:
+                # Legacy support or fallback
                 for img_path in msg["images"]:
                     if img_path:
                         # Normalize path
                         if img_path.startswith('./images/'):
                             img_path = img_path.replace('./images/', 'data/images/')
+                        elif img_path.startswith('./downloaded_images/'):
+                            img_path = img_path.replace('./downloaded_images/', 'data/downloaded_images/')
+                        
                         if os.path.exists(img_path):
-                            try:
-                                st.image(img_path, width=300)
-                            except:
-                                pass
+                            st.image(img_path, width=300)
 
 # Input Area
 user_input = st.chat_input("Ask about the menu, order items, or request your check...")
@@ -310,15 +367,21 @@ if final_input:
     if response:
         # 3. Process Response
         text = response.get("text", "")
+        
+        # Update language if changed
+        if "language" in response:
+            st.session_state.language = response["language"]
+
         mentioned_items = response.get("mentioned_items", [])
         
-        # 4. Find images
-        image_paths = [i.get('image_path') for i in mentioned_items if i.get('image_path')]
+        # 4. Filter items with images for showcase
+        showcase_items = [i for i in mentioned_items if i.get('image_path')]
 
         st.session_state.conversation.append({
             "role": "assistant", 
             "content": text,
-            "images": image_paths
+            "showcase_items": showcase_items,
+            "images": [] # Keep empty legacy field to prevent errors if code expects it
         })
         
         st.rerun()
