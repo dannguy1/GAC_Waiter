@@ -175,11 +175,12 @@ export default function ChatTab() {
     }, [isListening]);
 
     const playAudio = useCallback(async (text: string, idx: number) => {
-        // Stop currently playing audio
+        // Stop currently playing audio or speech
         if (audioRef.current) {
             audioRef.current.pause();
             audioRef.current = null;
         }
+        window.speechSynthesis.cancel();
 
         // If clicking the same one that's playing, just stop
         if (playingIdx === idx) {
@@ -188,6 +189,40 @@ export default function ChatTab() {
         }
 
         setLoadingIdx(idx);
+
+        // Try client-side TTS first
+        if ('speechSynthesis' in window) {
+            try {
+                const utterance = new SpeechSynthesisUtterance(text);
+
+                // Optional: Select a voice (preferably English female/neutral if available)
+                // const voices = window.speechSynthesis.getVoices();
+                // utterance.voice = voices.find(v => v.lang === 'en-US') || null;
+
+                utterance.onstart = () => {
+                    setLoadingIdx(null);
+                    setPlayingIdx(idx);
+                };
+
+                utterance.onend = () => {
+                    setPlayingIdx(null);
+                };
+
+                utterance.onerror = (e) => {
+                    console.error("Speech synthesis error:", e);
+                    setPlayingIdx(null);
+                    setLoadingIdx(null);
+                };
+
+                window.speechSynthesis.speak(utterance);
+                return; // Successfully started client-side TTS
+            } catch (e) {
+                console.warn("Client-side TTS failed, falling back to server:", e);
+                // Fallthrough to server-side
+            }
+        }
+
+        // Server-side fallback (Piper TTS)
         try {
             const response = await requestTTS(text);
             if (response.audio_base64) {
@@ -235,6 +270,7 @@ export default function ChatTab() {
             audioRef.current.pause();
             audioRef.current = null;
         }
+        window.speechSynthesis.cancel();
         setPlayingIdx(null);
     }, []);
 
