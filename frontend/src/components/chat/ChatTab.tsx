@@ -65,6 +65,7 @@ export default function ChatTab() {
     const recognitionRef = useRef<SpeechRecognition | null>(null);
     const transcriptRef = useRef<string>(""); // Track transcript for auto-submit
     const [shouldAutoPlay, setShouldAutoPlay] = useState(false); // Auto-play response if voice was used
+    const [errorMessage, setErrorMessage] = useState<string | null>(null); // UI Error message
 
     // Check for speech recognition support on mount
     useEffect(() => {
@@ -93,13 +94,15 @@ export default function ChatTab() {
             recognition.onerror = (event: any) => {
                 // Ignore benign errors like 'no-speech' (silence) or 'aborted' (stopped manually)
                 if (event.error === 'no-speech' || event.error === 'aborted' || event.error === 'not-allowed') {
-                    if (event.error === 'not-allowed') {
+                    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                        setErrorMessage("Microphone access denied. Please check browser permissions.");
                         console.warn("Microphone access denied");
                     }
                     setIsListening(false);
                     return;
                 }
                 console.error('Speech recognition error:', event.error);
+                setErrorMessage("Speech recognition error. Please try again.");
                 setIsListening(false);
             };
 
@@ -173,6 +176,7 @@ export default function ChatTab() {
             recognitionRef.current.stop();
             setIsListening(false);
         } else {
+            setErrorMessage(null); // Clear previous errors
             // iOS Safari Fix: Warm up speech synthesis on user interaction
             if ('speechSynthesis' in window) {
                 const warmup = new SpeechSynthesisUtterance('');
@@ -427,6 +431,13 @@ export default function ChatTab() {
                 {speechSupported && (
                     <p className="text-xs text-slate-400 mt-2 text-center">
                         {isListening ? "🎤 Speak now..." : "Tap the microphone to use voice input"}
+                    </p>
+                )}
+
+                {/* Error Message */}
+                {errorMessage && (
+                    <p className="text-xs text-red-500 mt-2 text-center animate-pulse">
+                        {errorMessage}
                     </p>
                 )}
             </form>
