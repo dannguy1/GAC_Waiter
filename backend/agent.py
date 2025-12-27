@@ -159,6 +159,7 @@ CRITICAL RULES:
   Action: [tool_name]
   Action Input: [your input]
   Then STOP and wait. Do not continue with fake observations or assumed results.
+- **DO NOT output raw JSON.** Respond in natural conversational language. If a tool returns data, summarize it for the user.
 """
 
         # Construct message history for LLM
