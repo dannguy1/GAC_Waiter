@@ -11,14 +11,14 @@ export default function ConciergeView() {
     const showSuggestions = activeCategory === "All";
 
     return (
-        <div className="flex flex-col h-full bg-slate-50">
-            {/* Chat Area - Takes flexible remaining height, minimum height for mobile */}
-            <div className="flex-1 min-h-[40vh] sm:min-h-[30vh] overflow-hidden border-b border-slate-200 bg-white relative">
+        <div className="flex flex-col md:flex-row h-full bg-slate-50 overflow-hidden">
+            {/* Chat Area - Left Side (or Top on mobile) */}
+            <div className="flex-1 md:w-1/2 h-full border-b md:border-b-0 md:border-r border-slate-200 bg-white relative">
                 <ChatTab />
             </div>
 
-            {/* Menu Showcase - Responsive height: smaller on mobile, larger on desktop */}
-            <div className="h-[35vh] sm:h-[40vh] md:h-[45vh] lg:h-[50vh] min-h-[200px] max-h-[500px] overflow-y-auto bg-slate-50 shadow-inner transition-colors">
+            {/* Menu Showcase - Right Side (or Bottom on mobile) */}
+            <div className="h-[35vh] md:h-full md:w-1/2 overflow-y-auto bg-slate-50 shadow-inner transition-colors">
                 <MenuGrid
                     compact
                     title={showSuggestions ? "Concierge Suggestions" : activeCategory}
