@@ -324,11 +324,26 @@ CRITICAL RULES:
                         }
                     }
             else:
-                # No action, this is the final answer
+                # Filter mentioned_items: Only show items that are actually discussed in the final answer
+                # This ensures the "Suggested Items" card perfectly aligns with the text response.
+                final_mentioned_items = []
+                content_lower = content.lower()
+                for item in self.last_mentioned_items:
+                    # Check if item name or part of it appears in the text
+                    # We check for the full name or significant parts
+                    name = item.get('item_name', '').lower()
+                    viet = item.get('item_viet', '').lower()
+                    
+                    if name in content_lower or (viet and viet in content_lower):
+                        final_mentioned_items.append(item)
+                    elif any(part in content_lower for part in name.split() if len(part) > 4):
+                         # Fallback: if a significant word (len>4) from the name is in the text (e.g. "shaking beef" matches "Shaking Beef")
+                         final_mentioned_items.append(item)
+
                 return {
                     "text": content, 
                     "language": detected_language,
-                    "mentioned_items": self.last_mentioned_items,
+                    "mentioned_items": final_mentioned_items,
                     "cart_updates": current_cart_updates,
                     "token_usage": {
                         "prompt_tokens": total_prompt_tokens,
