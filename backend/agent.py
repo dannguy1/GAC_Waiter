@@ -65,6 +65,8 @@ class WaitstaffAgent:
             if item.get('popular'):
                 result += "  [PHỔ BIẾN]\n" if language.lower() == "vietnamese" else "  [POPULAR]\n"
             result += f"  Mô tả: {item.get('description', '')}\n" if language.lower() == "vietnamese" else f"  Desc: {item.get('description', '')}\n"
+        
+        result += "\n[SYSTEM WARNING: You must ONLY talk about these specific items. Do not invent others. If these are not what the user asked for, apologize and say you couldn't find exact matches.]"
         return result
 
     def lookup_info(self, query: str) -> str:
@@ -148,7 +150,7 @@ ORDER WORKFLOW (CRITICAL - Follow this order):
 
 CRITICAL RULES:
 - NEVER hallucinate menu items or prices. ALWAYS verify with lookup_menu.
-- If asking about the owner or history, ALWAYS use lookup_info.
+- **Verification Rule:** You are STRICTLY FORBIDDEN from mentioning any dish name that was not explicitly returned by the `lookup_menu` tool in the current turn.
 - If `lookup_menu` returns items, ensure they actually match the user's request. Do not claim an item is a "Lunch Special" just because it appeared in the search results.
 - If no specific lunch specials are found in `lookup_info`, politely state that you can check the daily specials instead.
 - **Only provide Vietnamese names and pronunciations if the current language is Vietnamese or if the user explicitly asks for them.** Do not volunteer this information in English conversation.
