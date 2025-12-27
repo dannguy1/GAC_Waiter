@@ -90,8 +90,16 @@ export default function ChatTab() {
                 transcriptRef.current = transcript; // Track for auto-submit
             };
 
-            recognition.onerror = (event: Event) => {
-                console.error('Speech recognition error:', event);
+            recognition.onerror = (event: any) => {
+                // Ignore benign errors like 'no-speech' (silence) or 'aborted' (stopped manually)
+                if (event.error === 'no-speech' || event.error === 'aborted' || event.error === 'not-allowed') {
+                    if (event.error === 'not-allowed') {
+                        console.warn("Microphone access denied");
+                    }
+                    setIsListening(false);
+                    return;
+                }
+                console.error('Speech recognition error:', event.error);
                 setIsListening(false);
             };
 
