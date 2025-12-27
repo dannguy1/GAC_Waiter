@@ -182,6 +182,9 @@ export default function ChatTab() {
     }, [isListening]);
 
     const playAudio = useCallback(async (text: string, idx: number) => {
+        // Strip emojis for TTS ensuring clean speech
+        const cleanText = text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F018}-\u{1F0F5}\u{1F200}-\u{1F270}]/gu, '');
+
         // Stop currently playing audio or speech
         if (audioRef.current) {
             audioRef.current.pause();
@@ -200,7 +203,7 @@ export default function ChatTab() {
         // Try client-side TTS first
         if ('speechSynthesis' in window) {
             try {
-                const utterance = new SpeechSynthesisUtterance(text);
+                const utterance = new SpeechSynthesisUtterance(cleanText);
 
                 // Optional: Select a voice (preferably English female/neutral if available)
                 // const voices = window.speechSynthesis.getVoices();
@@ -246,7 +249,7 @@ export default function ChatTab() {
 
         // Server-side fallback (Piper TTS)
         try {
-            const response = await requestTTS(text);
+            const response = await requestTTS(cleanText);
             if (response.audio_base64) {
                 // Create audio from base64
                 const audioBlob = Uint8Array.from(atob(response.audio_base64), c => c.charCodeAt(0));
