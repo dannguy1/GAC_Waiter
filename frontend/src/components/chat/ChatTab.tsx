@@ -59,6 +59,9 @@ export default function ChatTab() {
     const [playingIdx, setPlayingIdx] = useState<number | null>(null);
     const [loadingIdx, setLoadingIdx] = useState<number | null>(null);
 
+    // Stable ref for handleSend to use in callbacks
+    const handleSendRef = useRef<any>(null);
+
     // Speech Recognition State
     const [isListening, setIsListening] = useState(false);
     const [speechSupported, setSpeechSupported] = useState(false);
@@ -111,12 +114,12 @@ export default function ChatTab() {
                 // Auto-submit if there's content
                 if (transcriptRef.current.trim()) {
                     // Small delay to ensure state is updated
-                    setTimeout(() => {
-                        const form = document.querySelector('form');
-                        if (form) {
-                            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+                    if (transcriptRef.current.trim()) {
+                        // Use stable ref to call fresh handleSend
+                        if (handleSendRef.current) {
+                            handleSendRef.current(undefined, transcriptRef.current);
                         }
-                    }, 100);
+                    }
                 }
             };
 
@@ -146,9 +149,11 @@ export default function ChatTab() {
         };
     }, []);
 
-    const handleSend = async (e?: React.FormEvent) => {
+    const handleSend = async (e?: React.FormEvent, overrideInput?: string) => {
         e?.preventDefault();
-        if (!input.trim() || isChatSending) return;
+        const textToSend = overrideInput || input;
+
+        if (!textToSend.trim() || isChatSending) return;
 
         // Stop listening if currently active
         if (isListening && recognitionRef.current) {
@@ -157,17 +162,21 @@ export default function ChatTab() {
 
         // Detect if this send was triggered by voice (transcriptRef populated)
         // or effectively by checking if transcript was used recently
-        if (transcriptRef.current && input.includes(transcriptRef.current)) {
+        if (transcriptRef.current && textToSend.includes(transcriptRef.current)) {
             setShouldAutoPlay(true);
         } else {
             setShouldAutoPlay(false);
         }
         transcriptRef.current = ""; // Clear for next time
 
-        const msg = input;
         setInput("");
-        await sendMessage(msg);
+        await sendMessage(textToSend);
     };
+
+    // Keep ref updated
+    useEffect(() => {
+        handleSendRef.current = handleSend;
+    });
 
     const toggleListening = useCallback(() => {
         if (!recognitionRef.current) return;
