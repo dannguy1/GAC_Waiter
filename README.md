@@ -70,6 +70,10 @@ LLM_MODEL=llama-3.1-70b-versatile
 # Server Ports
 APP_PORT=8501    # Frontend (Next.js)
 API_PORT=8000    # Backend API
+
+# Audio Features
+ENABLE_SERVER_AUDIO=false         # Backend: Enable/Disable Piper TTS engine
+NEXT_PUBLIC_DISABLE_NATIVE_VOICE=false # Frontend: Set 'true' to force remote TTS (testing)
 ```
 
 See [docs/INSTALLATION.md](docs/INSTALLATION.md) for full configuration options.
