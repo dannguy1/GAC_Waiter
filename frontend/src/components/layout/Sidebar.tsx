@@ -43,7 +43,7 @@ export default function Sidebar() {
                             key={cat}
                             onClick={() => {
                                 setCategory(cat);
-                                if (window.innerWidth < 1024) toggleSidebar(); // Close on selection on mobile/tablet
+                                toggleSidebar(); // Auto-close sidebar on selection for all screens
                             }}
                             className={cn(
                                 "w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors",
