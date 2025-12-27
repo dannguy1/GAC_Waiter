@@ -24,15 +24,15 @@ const nextConfig = {
         return [
             {
                 source: '/v1/:path*',
-                destination: 'http://localhost:8000/v1/:path*',
+                destination: 'http://127.0.0.1:8000/v1/:path*',
             },
             {
                 source: '/images/:path*',
-                destination: 'http://localhost:8000/images/:path*',
+                destination: 'http://127.0.0.1:8000/images/:path*',
             },
             {
                 source: '/downloaded_images/:path*',
-                destination: 'http://localhost:8000/downloaded_images/:path*',
+                destination: 'http://127.0.0.1:8000/downloaded_images/:path*',
             },
         ];
     },
