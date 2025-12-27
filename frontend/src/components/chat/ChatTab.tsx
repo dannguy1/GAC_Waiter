@@ -72,6 +72,12 @@ export default function ChatTab() {
 
     // Check for speech recognition support on mount
     useEffect(() => {
+        // Feature flag: Disable native voice (STT/TTS) to test remote fallback or if desired
+        if (process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE === 'true') {
+            setSpeechSupported(false);
+            return;
+        }
+
         const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRecognitionAPI) {
             setSpeechSupported(true);
@@ -221,8 +227,8 @@ export default function ChatTab() {
 
         setLoadingIdx(idx);
 
-        // Try client-side TTS first
-        if ('speechSynthesis' in window) {
+        // Try client-side TTS first (if enabled)
+        if (process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE !== 'true' && 'speechSynthesis' in window) {
             try {
                 const utterance = new SpeechSynthesisUtterance(cleanText);
 
