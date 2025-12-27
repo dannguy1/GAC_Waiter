@@ -20,6 +20,7 @@ interface AppState {
     // UI State
     isSidebarOpen: boolean;
     isCartOpen: boolean;
+    selectedItem: MenuItem | null;
 
     // Actions
     fetchMenu: () => Promise<void>;
@@ -34,6 +35,7 @@ interface AppState {
 
     toggleSidebar: () => void;
     toggleCart: () => void;
+    setSelectedItem: (item: MenuItem | null) => void;
 }
 
 export const useStore = create<AppState>((set, get) => ({
@@ -48,6 +50,7 @@ export const useStore = create<AppState>((set, get) => ({
     isChatSending: false,
     isSidebarOpen: false,
     isCartOpen: false,
+    selectedItem: null,
 
     // Actions
     fetchMenu: async () => {
@@ -173,4 +176,5 @@ export const useStore = create<AppState>((set, get) => ({
 
     toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
     toggleCart: () => set((state) => ({ isCartOpen: !state.isCartOpen })),
+    setSelectedItem: (item) => set({ selectedItem: item }),
 }));

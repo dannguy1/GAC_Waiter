@@ -2,6 +2,7 @@
 import Sidebar from "./Sidebar";
 import ConciergeView from "../views/ConciergeView";
 import CartModal from "../cart/CartModal";
+import ItemDetailModal from "../menu/ItemDetailModal";
 import { useStore } from "@/lib/store";
 import { Menu, ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -73,6 +74,7 @@ export default function AppShell() {
 
             {/* Modal Overlay */}
             <CartModal />
+            <ItemDetailModal />
         </div>
     );
 }

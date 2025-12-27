@@ -12,11 +12,14 @@ interface MenuCardProps {
 
 export default function MenuCard({ item }: MenuCardProps) {
     const [imgSrc, setImgSrc] = useState(getImageUrl(item.image_path));
-    const { addToCart } = useStore();
+    const { addToCart, setSelectedItem } = useStore();
 
     return (
         <div className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all flex flex-col h-full">
-            <div className="relative h-48 w-full bg-slate-100 overflow-hidden">
+            <div
+                className="relative h-48 w-full bg-slate-100 overflow-hidden cursor-pointer"
+                onClick={() => setSelectedItem(item)}
+            >
                 <Image
                     src={imgSrc}
                     alt={item.item_name}
