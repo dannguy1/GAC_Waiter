@@ -64,6 +64,7 @@ export default function ChatTab() {
     const [speechSupported, setSpeechSupported] = useState(false);
     const recognitionRef = useRef<SpeechRecognition | null>(null);
     const transcriptRef = useRef<string>(""); // Track transcript for auto-submit
+    const [shouldAutoPlay, setShouldAutoPlay] = useState(false); // Auto-play response if voice was used
 
     // Check for speech recognition support on mount
     useEffect(() => {
@@ -143,6 +144,15 @@ export default function ChatTab() {
             recognitionRef.current.stop();
         }
 
+        // Detect if this send was triggered by voice (transcriptRef populated)
+        // or effectively by checking if transcript was used recently
+        if (transcriptRef.current && input.includes(transcriptRef.current)) {
+            setShouldAutoPlay(true);
+        } else {
+            setShouldAutoPlay(false);
+        }
+        transcriptRef.current = ""; // Clear for next time
+
         const msg = input;
         setInput("");
         await sendMessage(msg);
@@ -208,6 +218,17 @@ export default function ChatTab() {
             setLoadingIdx(null);
         }
     }, [playingIdx]);
+
+    // Auto-play effect
+    useEffect(() => {
+        if (shouldAutoPlay && !isChatSending && chatHistory.length > 0) {
+            const lastMsg = chatHistory[chatHistory.length - 1];
+            if (lastMsg.role === 'assistant') {
+                playAudio(lastMsg.content, chatHistory.length - 1);
+                setShouldAutoPlay(false); // Reset
+            }
+        }
+    }, [chatHistory, isChatSending, shouldAutoPlay, playAudio]);
 
     const stopAudio = useCallback(() => {
         if (audioRef.current) {
