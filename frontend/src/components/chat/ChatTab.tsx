@@ -217,9 +217,20 @@ export default function ChatTab() {
             try {
                 const utterance = new SpeechSynthesisUtterance(cleanText);
 
-                // Optional: Select a voice (preferably English female/neutral if available)
-                // const voices = window.speechSynthesis.getVoices();
-                // utterance.voice = voices.find(v => v.lang === 'en-US') || null;
+                // Voice Selection: Prioritize local English voices for speed (Android especially)
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    // Try to find a local English voice (low latency)
+                    const localEnglish = voices.find(v => v.lang.startsWith('en') && v.localService);
+                    // Fallback to any English voice
+                    const anyEnglish = voices.find(v => v.lang.startsWith('en'));
+
+                    if (localEnglish) {
+                        utterance.voice = localEnglish;
+                    } else if (anyEnglish) {
+                        utterance.voice = anyEnglish;
+                    }
+                }
 
                 let hasStarted = false;
                 utterance.onstart = () => {
