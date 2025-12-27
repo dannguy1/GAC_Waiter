@@ -165,6 +165,13 @@ export default function ChatTab() {
             recognitionRef.current.stop();
             setIsListening(false);
         } else {
+            // iOS Safari Fix: Warm up speech synthesis on user interaction
+            if ('speechSynthesis' in window) {
+                const warmup = new SpeechSynthesisUtterance('');
+                warmup.volume = 0;
+                window.speechSynthesis.speak(warmup);
+            }
+
             try {
                 recognitionRef.current.start();
                 setIsListening(true);
@@ -199,7 +206,9 @@ export default function ChatTab() {
                 // const voices = window.speechSynthesis.getVoices();
                 // utterance.voice = voices.find(v => v.lang === 'en-US') || null;
 
+                let hasStarted = false;
                 utterance.onstart = () => {
+                    hasStarted = true;
                     setLoadingIdx(null);
                     setPlayingIdx(idx);
                 };
@@ -215,6 +224,19 @@ export default function ChatTab() {
                 };
 
                 window.speechSynthesis.speak(utterance);
+
+                // iOS Timeout Fix: If it doesn't start in 500ms, assume stuck and fallback
+                await new Promise<void>((resolve, reject) => {
+                    setTimeout(() => {
+                        if (!hasStarted) {
+                            window.speechSynthesis.cancel();
+                            reject(new Error("iOS TTS stuck in loading"));
+                        } else {
+                            resolve();
+                        }
+                    }, 500);
+                });
+
                 return; // Successfully started client-side TTS
             } catch (e) {
                 console.warn("Client-side TTS failed, falling back to server:", e);
