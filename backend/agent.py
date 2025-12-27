@@ -40,7 +40,7 @@ class WaitstaffAgent:
 
     def lookup_menu(self, query: str, language: str = "English") -> str:
         """Search for items in the menu."""
-        items = self.retriever.retrieve_items(query, top_k=5)
+        items = self.retriever.retrieve_items(query, top_k=3)
 # Note: Filter for menu_items only? The retriever currently mixes them but marks type.
 # For specific menu lookup, we might want to prioritize 'menu_item'.
         if not items:
