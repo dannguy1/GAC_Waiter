@@ -68,6 +68,19 @@ See [docs/INSTALLATION.md](docs/INSTALLATION.md) for full configuration options.
 
 ---
 
+## 🍽️ Managing the Menu
+
+You can update the menu at any time without restarting the server:
+
+1.  **Edit** the source menu file: `data-original/menu.json`
+2.  **Run** the update script:
+    ```bash
+    ./scripts/refresh_menu.sh
+    ```
+    This will sync the changes and hot-reload the backend database.
+
+---
+
 ## 🏗️ Architecture
 
 ```
@@ -113,6 +126,8 @@ GAC_Waiter/
 | `./scripts/start.sh` | Start services |
 | `./scripts/stop.sh` | Stop services |
 | `./scripts/restart.sh` | Restart services |
+| `./scripts/status.sh` | Check service status |
+| `./scripts/refresh_menu.sh` | Hot-reload menu data (no restart) |
 
 ---
 

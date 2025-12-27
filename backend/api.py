@@ -24,6 +24,8 @@ load_dotenv(override=True)
 
 from fastapi import FastAPI, HTTPException, Body, Request
 from fastapi.responses import JSONResponse, Response
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, validator
 from typing import List, Optional, Dict, Any
 import base64
@@ -49,6 +51,35 @@ agent = WaitstaffAgent()
 
 # Create FastAPI app
 app = FastAPI(title="GAC Waiter Backend")
+
+# Add CORS Middleware (Required for React Frontend)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:8501",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:8501",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Mount Static Files for Images (Accessible at /images/...)
+# Ensure data/images exists
+if not os.path.exists("data/images"):
+    os.makedirs("data/images", exist_ok=True)
+if not os.path.exists("data/downloaded_images"):
+    os.makedirs("data/downloaded_images", exist_ok=True)
+
+# Mount both image directories if needed, or normalize to one.
+# App uses 'data/images', 'data/downloaded_images'.
+# We can mount generic 'data' or specific.
+# Let's mount /images to data/images
+app.mount("/images", StaticFiles(directory="data/images"), name="images")
+# And /downloaded_images
+app.mount("/downloaded_images", StaticFiles(directory="data/downloaded_images"), name="downloaded_images")
 
 # ============== RATE LIMITING ==============
 rate_limit_store = defaultdict(list)
@@ -163,10 +194,15 @@ def chat_endpoint(request: ChatRequest):
                 seen_names.add(name)
                 mentioned.append(item)
         
+        cart_updates = []
+        if isinstance(agent_result, dict):
+            cart_updates = agent_result.get("cart_updates", [])
+            
         return {
             "text": response_text,
             "language": detected_lang,
-            "mentioned_items": mentioned
+            "mentioned_items": mentioned,
+            "cart_updates": cart_updates
         }
     except Exception as e:
         import traceback

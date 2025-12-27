@@ -1,15 +1,16 @@
 #!/bin/bash
 cd "$(dirname "$0")/.."
 
-# Stop Frontend
-if [ -f app.pid ]; then
-    PID=$(cat app.pid)
-    echo "Stopping Frontend (PID: $PID)..."
+# Stop Next.js Frontend
+if [ -f frontend.pid ]; then
+    PID=$(cat frontend.pid)
+    echo "Stopping Next.js Frontend (PID: $PID)..."
     kill $PID 2>/dev/null
-    rm app.pid
+    rm frontend.pid
 else
-    echo "No app.pid found. Attempting pkill..."
-    pkill -f "streamlit run app.py"
+    # Fallback to pkill
+    pkill -f "next-server" 2>/dev/null
+    pkill -f "next dev" 2>/dev/null
 fi
 
 # Stop Backend

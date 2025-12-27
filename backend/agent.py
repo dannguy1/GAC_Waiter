@@ -84,15 +84,17 @@ class WaitstaffAgent:
 
     def run(self, messages: list, current_language: str = "English") -> dict:
         self.last_mentioned_items = [] # Reset for this turn
+        current_cart_updates = [] # Track items added in this turn
         """
         Run the ReAct loop to process the conversation.
-        Returns: { "text": str, "language": str }
+        Returns: { "text": str, "language": str, "cart_updates": list }
         """
         # 1. Prepare Tools and System Prompt
         tools_desc = """
 1. lookup_menu(query: str): Search for dishes, prices, ingredients. usage: Action: lookup_menu\nAction Input: query
-2. lookup_info(query: str): Search for owner, location, history, policies, AND SPECIALS. usage: Action: lookup_info\nAction Input: query
+2. lookup_info(query: str): Search for owner, location, history, policies. usage: Action: lookup_info\nAction Input: query
 3. set_language(language: str): Set the current session language. usage: Action: set_language\nAction Input: language
+4. add_to_cart(input: str): Add item to order. Input format: Use "Item Name, Quantity, Notes". usage: Action: add_to_cart\nAction Input: Pho Tai, 2, no onions
 """
         # Track the language state locally for this turn
         detected_language = current_language
@@ -121,9 +123,15 @@ PROTOCOL:
 
 ORDER WORKFLOW (CRITICAL - Follow this order):
 1. **Exploration**: Help customers browse the menu, answer questions about dishes.
-2. **Taking Orders**: When customer orders items, acknowledge each item with its price.
-   - Listen for special requests: "no spicy", "extra sauce", "well done", etc.
-   - Acknowledge any modifications: "Got it, Pad Thai with no peanuts."
+2. **Taking Orders**: When customer wants to add items (e.g. "I want pho", "add 2 egg rolls", "give me the special"):
+   - You MUST call the `add_to_cart` tool. DO NOT just reply conversationally saying "I've added" without actually calling the tool.
+   - Format:
+     Action: add_to_cart
+     Action Input: Item Name, Qty, Special Notes
+   - Wait for the Observation from the tool before responding.
+   - If the tool says the item was added successfully, THEN acknowledge to the customer.
+   - If the tool says item not found, help the customer choose from suggestions.
+   - NEVER claim you've added an item unless you received a successful Observation from add_to_cart.
 3. **SPECIAL NOTES (IMPORTANT)**: Listen for and acknowledge:
    - Dietary preferences: "no spicy", "vegetarian", "less salt", "no onions"
    - Time constraints: "I'm in a hurry", "only have 30 minutes", "need it quick"
@@ -147,6 +155,10 @@ CRITICAL RULES:
 - **ALWAYS ask about allergies before confirming an order. This is a safety requirement.**
 - Be concise and friendly.
 - Do not expose the tool usage to the user in the final answer.
+- **DO NOT write "Observation:" in your output.** The system will provide the observation after you specify Action and Action Input. Just output:
+  Action: [tool_name]
+  Action Input: [your input]
+  Then STOP and wait. Do not continue with fake observations or assumed results.
 """
 
         # Construct message history for LLM
@@ -202,6 +214,8 @@ CRITICAL RULES:
                     tool = action_line.split("Action:")[1].strip()
                     query = input_line.split("Action Input:")[1].strip()
                     
+                    logger.info(f"TOOL CALL: {tool} with input: {query[:50]}...")
+                    
                     # Execute
                     observation = ""
                     if tool == "lookup_menu":
@@ -211,13 +225,86 @@ CRITICAL RULES:
                     elif tool == "set_language":
                         detected_language = query
                         observation = f"Language set to {detected_language}. Please respond in {detected_language} from now on."
+                    elif tool == "add_to_cart":
+                        try:
+                            # Parse "Name, Qty, Notes"
+                            parts = [x.strip() for x in query.split(',')]
+                            item_name = parts[0]
+                            qty = 1
+                            notes = ""
+                            if len(parts) > 1 and parts[1].replace('.','',1).isdigit():
+                                qty = int(float(parts[1]))
+                            if len(parts) > 2:
+                                notes = ", ".join(parts[2:])
+                            
+                            # VALIDATION: Check if item exists in menu using fuzzy matching
+                            import unicodedata
+                            import re
+                            
+                            # Normalize search term: lowercase, remove hyphens, normalize spaces
+                            search_name = item_name.lower().strip()
+                            search_name = re.sub(r'[-_]', ' ', search_name)  # Replace hyphens/underscores with space
+                            search_name = re.sub(r'\s+', ' ', search_name)   # Normalize multiple spaces
+                            search_norm = unicodedata.normalize('NFD', search_name)
+                            search_norm = ''.join(c for c in search_norm if unicodedata.category(c) != 'Mn')
+                            
+                            matched_item = None
+                            for menu_item in self.retriever.menu_items:
+                                if menu_item.get('type') == 'general_info':
+                                    continue
+                                    
+                                # Normalize menu item name the same way
+                                name = menu_item.get('item_name', '').lower()
+                                name = re.sub(r'[-_]', ' ', name)
+                                name = re.sub(r'\s+', ' ', name)
+                                
+                                viet = menu_item.get('item_viet', '').lower()
+                                viet_norm = unicodedata.normalize('NFD', viet)
+                                viet_norm = ''.join(c for c in viet_norm if unicodedata.category(c) != 'Mn')
+                                
+                                # Check exact match or partial match
+                                if (name == search_name or 
+                                    viet == search_name or 
+                                    viet_norm == search_norm or
+                                    search_name in name or 
+                                    name in search_name or
+                                    search_norm in viet_norm):
+                                    matched_item = menu_item
+                                    break
+                            
+                            if matched_item:
+                                # Use the exact menu item name
+                                exact_name = matched_item.get('item_name')
+                                price = matched_item.get('price', 0)
+                                current_cart_updates.append({"name": exact_name, "qty": qty, "notes": notes})
+                                self.last_mentioned_items.append(matched_item)
+                                observation = f"Successfully added {qty}x {exact_name} (${price:.2f}) to cart. {f'Notes: {notes}' if notes else ''}"
+                            else:
+                                # Item not found - suggest alternatives
+                                similar = self.retriever.retrieve_items(item_name, top_k=3)
+                                suggestions = [i.get('item_name') for i in similar if i.get('type') != 'general_info'][:3]
+                                if suggestions:
+                                    observation = f"Item '{item_name}' not found on our menu. Did you mean: {', '.join(suggestions)}? Please specify the exact item name."
+                                else:
+                                    observation = f"Item '{item_name}' not found on our menu. Please use lookup_menu to find available items."
+                        except Exception as e:
+                            observation = f"Error adding to cart: {e}"
                     else:
                         observation = f"Error: Tool {tool} not found."
                         
-                    logger.debug(f"Tool Output: {observation[:100]}...")
+                    logger.info(f"Tool Output: {observation[:200]}...")
+                    
+                    # Clean the assistant content: strip everything after Action Input line
+                    # This removes fake observations the LLM might generate
+                    clean_content = content
+                    lines = content.split('\n')
+                    for i, line in enumerate(lines):
+                        if "Action Input:" in line:
+                            clean_content = '\n'.join(lines[:i+1])
+                            break
                     
                     # Append result to history
-                    current_messages.append({"role": "assistant", "content": content})
+                    current_messages.append({"role": "assistant", "content": clean_content})
                     current_messages.append({"role": "user", "content": f"Observation: {observation}"})
                     
                 except Exception as e:
@@ -228,6 +315,7 @@ CRITICAL RULES:
                         "text": content, 
                         "language": detected_language,
                         "mentioned_items": self.last_mentioned_items,
+                        "cart_updates": current_cart_updates,
                         "token_usage": {
                             "prompt_tokens": total_prompt_tokens,
                             "completion_tokens": total_completion_tokens,
@@ -240,6 +328,7 @@ CRITICAL RULES:
                     "text": content, 
                     "language": detected_language,
                     "mentioned_items": self.last_mentioned_items,
+                    "cart_updates": current_cart_updates,
                     "token_usage": {
                         "prompt_tokens": total_prompt_tokens,
                         "completion_tokens": total_completion_tokens,

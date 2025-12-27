@@ -260,6 +260,19 @@ LLM_MODEL=model-name
     }
   ]
 }
+
+#### Hot-Reloading Menu Updates
+
+To update the menu **without restarting the server**:
+
+1. Edit the source file at `data-original/menu.json`.
+2. Run the refresh script:
+
+```bash
+./scripts/refresh_menu.sh
+```
+
+This will automatically sync the changes to the live data folder and trigger a backend reload to update the search index.
 ```
 
 ### Restaurant Facts (facts.json)

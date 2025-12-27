@@ -6,9 +6,8 @@ if [ -f .env ]; then
   export $(grep -v '^#' .env | xargs)
 fi
 
-APP_PORT=${APP_PORT:-8501}
-APP_HOST=${APP_HOST:-0.0.0.0}
 API_PORT=${API_PORT:-8000}
+FRONTEND_PORT=${APP_PORT:-3000}
 
 # Start API
 if [ -f api.pid ]; then
@@ -25,14 +24,14 @@ echo "API started (PID $API_PID)"
 # Wait for API to warm up
 sleep 5
 
-# Start Frontend
-if [ -f app.pid ]; then
-    echo "Cleaning stale app.pid"
-    rm app.pid
+# Start Next.js Frontend
+if [ -f frontend.pid ]; then
+    echo "Cleaning stale frontend.pid"
+    rm frontend.pid
 fi
 
-echo "Starting Frontend UI on $APP_HOST:$APP_PORT..."
-nohup ./venv/bin/streamlit run app.py --server.port $APP_PORT --server.address $APP_HOST > app.log 2>&1 &
-APP_PID=$!
-echo $APP_PID > app.pid
-echo "Frontend started (PID $APP_PID)"
+echo "Starting Next.js Frontend on port $FRONTEND_PORT..."
+PORT=$FRONTEND_PORT nohup npm run dev --prefix frontend > frontend.log 2>&1 &
+FRONTEND_PID=$!
+echo $FRONTEND_PID > frontend.pid
+echo "Next.js Frontend started (PID $FRONTEND_PID) on port $FRONTEND_PORT"

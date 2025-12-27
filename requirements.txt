@@ -1,16 +1,21 @@
-streamlit
-pandas
+# Backend API Dependencies
 openai
-faster-whisper
-sounddevice
-numpy
-requests
-soundfile
 python-dotenv
 fastapi
 uvicorn
 python-multipart
+requests
+numpy
+
+# RAG / Embeddings
 sentence-transformers>=3.0.0
 faiss-cpu>=1.8.0
 rank-bm25==0.2.2
+
+# Language Detection
 langdetect
+
+# TTS (Piper binary handles audio, these are optional for advanced features)
+# sounddevice
+# soundfile
+# faster-whisper
