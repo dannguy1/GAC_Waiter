@@ -17,12 +17,12 @@
         },
         {
             "topic": "Specials of the Day",
-            "content": "Our current specials include: \n- Monday: Grilled Pork Belly with Sticky Rice\n- Tuesday: Spicy Lemongrass Chicken\n- Weekend: Roasted Duck with Bao Buns",
+            "content": "Our current specials include: \n- Monday: Lemongrass Seafood Soup\n- Tuesday: Egg Rolls\n- Weekend: Crispy Peking Duck with Crepes",
             "type": "general_info"
         },
         {
-            "topic": "Popular Dishes Highlights",
-            "content": "Our most celebrated dishes are the Roasted Garlic Dungeness Crab, known for its buttery richness, and the Pomelo Salad, a refreshing mix of citrus and shrimp. The Salmon Belly Roll is also a crowd favorite.",
+            "topic": "Popular Dishes",
+            "content": "Our most celebrated dishes are Toothpick Lamb, known for its rich flavor, and the Pomelo Salad, a refreshing mix of citrus and shrimp. The Salmon Belly Roll is also a crowd favorite.",
             "type": "general_info"
         }
     ]

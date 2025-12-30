@@ -36,3 +36,13 @@ export interface CartUpdate {
     item_name?: string;
     quantity?: number;
 }
+
+export interface CheckoutPayload {
+    cart: {
+        item_name: string;
+        quantity: number;
+        notes: string;
+        price: number;
+    }[];
+    general_notes: string;
+}

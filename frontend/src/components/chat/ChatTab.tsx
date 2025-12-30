@@ -73,6 +73,7 @@ export default function ChatTab() {
     // Check for speech recognition support on mount
     useEffect(() => {
         // Feature flag: Disable native voice (STT/TTS) to test remote fallback or if desired
+        console.log("DEBUG: NEXT_PUBLIC_DISABLE_NATIVE_VOICE =", process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE);
         if (process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE === 'true') {
             setSpeechSupported(false);
             return;
@@ -228,12 +229,16 @@ export default function ChatTab() {
         setLoadingIdx(idx);
 
         // Try client-side TTS first (if enabled)
-        if (process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE !== 'true' && 'speechSynthesis' in window) {
+        const canUseNative = process.env.NEXT_PUBLIC_DISABLE_NATIVE_VOICE !== 'true';
+        const hasSpeechSynth = 'speechSynthesis' in window;
+
+        if (canUseNative && hasSpeechSynth) {
             try {
                 const utterance = new SpeechSynthesisUtterance(cleanText);
 
                 // Voice Selection: Prioritize local English voices for speed (Android especially)
                 const voices = window.speechSynthesis.getVoices();
+
                 if (voices.length > 0) {
                     // Try to find a local English voice (low latency)
                     const localEnglish = voices.find(v => v.lang.startsWith('en') && v.localService);
@@ -270,12 +275,20 @@ export default function ChatTab() {
                 await new Promise<void>((resolve, reject) => {
                     setTimeout(() => {
                         if (!hasStarted) {
-                            window.speechSynthesis.cancel();
-                            reject(new Error("iOS TTS stuck in loading"));
+                            // Only cancel/reject if it REALLY hasn't started. 
+                            // Some browsers are just slow. 500ms might be too aggressive for Linux?
+                            // Let's bump to 1000ms for safer debugging
+                            if (!window.speechSynthesis.speaking) {
+                                console.warn("DEBUG: Native TTS timeout (not speaking).");
+                                window.speechSynthesis.cancel();
+                                reject(new Error("TTS start timeout"));
+                            } else {
+                                resolve();
+                            }
                         } else {
                             resolve();
                         }
-                    }, 500);
+                    }, 1000);
                 });
 
                 return; // Successfully started client-side TTS
@@ -283,6 +296,8 @@ export default function ChatTab() {
                 console.warn("Client-side TTS failed, falling back to server:", e);
                 // Fallthrough to server-side
             }
+        } else {
+            console.log("DEBUG: Skipping Native TTS (Flag or No Support)");
         }
 
         // Server-side fallback (Piper TTS)

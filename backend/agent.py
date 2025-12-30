@@ -87,6 +87,8 @@ class WaitstaffAgent:
     def run(self, messages: list, current_language: str = "English") -> dict:
         self.last_mentioned_items = [] # Reset for this turn
         current_cart_updates = [] # Track items added in this turn
+        current_general_note = None
+        order_confirmed_status = False
         """
         Run the ReAct loop to process the conversation.
         Returns: { "text": str, "language": str, "cart_updates": list }
@@ -97,6 +99,8 @@ class WaitstaffAgent:
 2. lookup_info(query: str): Search for owner, location, history, policies. usage: Action: lookup_info\nAction Input: query
 3. set_language(language: str): Set the current session language. usage: Action: set_language\nAction Input: language
 4. add_to_cart(input: str): Add item to order. Input format: Use "Item Name, Quantity, Notes". usage: Action: add_to_cart\nAction Input: Pho Tai, 2, no onions
+5. set_general_note(note: str): Set special instructions for the ENTIRE order (e.g., allergies, global preferences). usage: Action: set_general_note\nAction Input: Customer has peanut allergy
+6. confirm_order(): Call this ONLY after the user has explicitly confirmed the order readback. usage: Action: confirm_order\nAction Input: confirmed
 """
         # Track the language state locally for this turn
         detected_language = current_language
@@ -112,41 +116,52 @@ If the language is Vietnamese, write purely in Vietnamese using the Latin alphab
 Methodically translate your thoughts to {current_language} before outputting.
 
 PROTOCOL:
-1. Review the customer's input.
-2. If the user asks to speak another language, use `set_language`.
-3. If the customer asks for **specials (lunch, dinner, daily)**, ALWAYS use `lookup_info` first to check for "Specials of the Day" or policies.
-   - Do NOT use `lookup_menu` for generic 'special' queries unless you are looking for a specific named dish.
-4. If you need facts (prices, ingredients, owner name), use a tool. 
+1. **SAFETY FIRST (ALLERGIES)**: 
+   - Check if the user mentioned any allergy or dietary restriction (e.g., "I'm allergic to peanuts", "no spicy").
+   - IF YES, you MUST call `set_general_note` **BEFORE** producing any text response.
+   - **DO NOT** just say "I noted that". You must take the action.
+   - Format:
+     Action: set_general_note
+     Action Input: User has [Allergy/preference]
+2. Review the customer's input.
+3. If the user asks to speak another language, use `set_language`.
+4. If the customer asks for **specials (lunch, dinner, daily)**:
+   - First, use `lookup_info` to find the written specials.
+   - **CRITICAL**: If specific dishes are listed in the info (e.g., "Lemongrass Chicken"), you MUST then call `lookup_menu` for those specific items. This ensures the user sees the photos and prices in the "Suggested Items" panel.
+5. If you need facts (prices, ingredients, owner name), use a tool. 
    - Output: 
      Action: [tool_name]
      Action Input: [query]
-5. If you have enough info or it's just chit-chat, respond directly to the customer.
+6. If you have enough info or it's just chit-chat, respond directly to the customer.
    - Output: [Final Answer]
 
 ORDER WORKFLOW (CRITICAL - Follow this order):
 1. **Exploration**: Help customers browse the menu, answer questions about dishes.
-2. **Taking Orders**: When customer wants to add items (e.g. "I want pho", "add 2 egg rolls", "give me the special"):
-   - You MUST call the `add_to_cart` tool. DO NOT just reply conversationally saying "I've added" without actually calling the tool.
+   - **CRITICAL**: ONLY recommend items that you have explicitly found using `lookup_menu`. Do not hallucinate dishes.
+2. **Taking Orders**: When customer wants to add items (e.g., "I want pho", "add 2 egg rolls"):
+   - You MUST call `add_to_cart`.
    - Format:
      Action: add_to_cart
-     Action Input: Item Name, Qty, Special Notes
-   - Wait for the Observation from the tool before responding.
-   - If the tool says the item was added successfully, THEN acknowledge to the customer.
-   - If the tool says item not found, help the customer choose from suggestions.
-   - NEVER claim you've added an item unless you received a successful Observation from add_to_cart.
-3. **SPECIAL NOTES (IMPORTANT)**: Listen for and acknowledge:
-   - Dietary preferences: "no spicy", "vegetarian", "less salt", "no onions"
-   - Time constraints: "I'm in a hurry", "only have 30 minutes", "need it quick"
-   - Preparation notes: "well done", "sauce on the side", "extra hot"
-   - Service notes: "to go", "separate checks", "for here"
-   - If customer mentions any of these, repeat back to confirm: "I've noted that you're in a hurry."
-4. **ALLERGY CHECK (MANDATORY)**: Before confirming any order, you MUST ask:
-   - "Do you have any food allergies we should be aware of?"
-   - If they mention allergies, acknowledge and note them.
-   - If they say "no allergies", confirm this.
-5. **Order Confirmation**: Read back the full order WITH special notes:
-   - "Just to confirm: [items with prices], no spicy, and you need it within 30 minutes. Total is $X. Is that correct?"
-6. **Finalization**: Only after customer confirms, thank them and let them know the order is being prepared.
+     Action Input: Item Name, Qty, [Modifications ONLY: no onions, extra sauce]
+   - **CRITICAL**: DO NOT put allergies or "no spicy" preferences here unless it's specific to just that dish. Use `set_general_note` for safety rules.
+   - **UPSELL**: After a successful add, ALWAYS suggest a complementary Drink or Side Order if they haven't ordered one yet.
+3. **SPECIAL NOTES & ALLERGIES**:
+   - If user mentions allergies or global preferences (e.g., "Peanut Allergy", "Gluten Free", "No Spicy Food", "Separate Checks"):
+   - You MUST call `set_general_note`.
+   - Format:
+     Action: set_general_note
+     Action Input: User has peanut allergy
+4. **Order Confirmation & Safety Check**:
+   - When user is done ordering, you MUST:
+     a. Explicitly ask: "Do you have any food allergies?" (If not already discussed).
+     b. Perform a full **Order Readback**: "Confirmed: [List Items]. Total approx $X. Global Notes: [Notes]. Is this correct?"
+5. **Finalization**:
+   - ONLY after the user says "Yes/Correct" to the readback:
+   - Call the `confirm_order` tool to unlock the checkout button.
+   - Format:
+     Action: confirm_order
+     Action Input: confirmed
+   - Say: "Great! I've confirmed your order. You can now press the Submit Order button to send it to the kitchen."
 
 CRITICAL RULES:
 - NEVER hallucinate menu items or prices. ALWAYS verify with lookup_menu.
@@ -174,6 +189,11 @@ CRITICAL RULES:
         # Token tracking
         total_prompt_tokens = 0
         total_completion_tokens = 0
+        
+        # Initialize loop variables
+        cart_updates = []
+        current_general_note = None
+        order_confirmed_status = False
         
         for step in range(max_steps):
             response = self.client.chat.completions.create(
@@ -279,7 +299,7 @@ CRITICAL RULES:
                                 # Use the exact menu item name
                                 exact_name = matched_item.get('item_name')
                                 price = matched_item.get('price', 0)
-                                current_cart_updates.append({"name": exact_name, "qty": qty, "notes": notes})
+                                cart_updates.append({"name": exact_name, "qty": qty, "notes": notes})
                                 self.last_mentioned_items.append(matched_item)
                                 observation = f"Successfully added {qty}x {exact_name} (${price:.2f}) to cart. {f'Notes: {notes}' if notes else ''}"
                             else:
@@ -292,6 +312,12 @@ CRITICAL RULES:
                                     observation = f"Item '{item_name}' not found on our menu. Please use lookup_menu to find available items."
                         except Exception as e:
                             observation = f"Error adding to cart: {e}"
+                    elif tool == "set_general_note":
+                        current_general_note = query
+                        observation = f"General note set: {query}"
+                    elif tool == "confirm_order":
+                        order_confirmed_status = True
+                        observation = "Order confirmed. Checkout button unlocked."
                     else:
                         observation = f"Error: Tool {tool} not found."
                         
@@ -319,6 +345,8 @@ CRITICAL RULES:
                         "language": detected_language,
                         "mentioned_items": self.last_mentioned_items,
                         "cart_updates": current_cart_updates,
+                        "general_note": current_general_note,
+                        "order_confirmed": order_confirmed_status,
                         "token_usage": {
                             "prompt_tokens": total_prompt_tokens,
                             "completion_tokens": total_completion_tokens,
@@ -327,32 +355,61 @@ CRITICAL RULES:
                     }
             else:
                 # Filter mentioned_items: Only show items that are actually discussed in the final answer
-                # This ensures the "Suggested Items" card perfectly aligns with the text response.
-                final_mentioned_items = []
-                content_lower = content.lower()
-                for item in self.last_mentioned_items:
-                    # Check if item name or part of it appears in the text
-                    # We check for the full name or significant parts
-                    name = item.get('item_name', '').lower()
-                    viet = item.get('item_viet', '').lower()
-                    
-                    if name in content_lower or (viet and viet in content_lower):
-                        final_mentioned_items.append(item)
-                    elif any(part in content_lower for part in name.split() if len(part) > 4):
-                         # Fallback: if a significant word (len>4) from the name is in the text (e.g. "shaking beef" matches "Shaking Beef")
-                         final_mentioned_items.append(item)
+                final_mentioned_items = self._filter_mentioned_items(content, self.last_mentioned_items)
 
                 return {
                     "text": content, 
                     "language": detected_language,
                     "mentioned_items": final_mentioned_items,
-                    "cart_updates": current_cart_updates,
+                    "cart_updates": cart_updates,
+                    "general_note": current_general_note,
+                    "order_confirmed": order_confirmed_status,
                     "token_usage": {
                         "prompt_tokens": total_prompt_tokens,
                         "completion_tokens": total_completion_tokens,
                         "total_tokens": total_prompt_tokens + total_completion_tokens
                     }
                 }
+
+    def _filter_mentioned_items(self, content: str, candidate_items: list) -> list:
+        """
+        Filter items that are explicitly mentioned in the content.
+        Uses stricter matching for short names and looser matching for long Vietnamese names.
+        """
+        final_items = []
+        content_lower = content.lower()
+        
+        for item in candidate_items:
+            name = item.get('item_name', '').lower()
+            viet = item.get('item_viet', '').lower()
+            
+            # 1. Exact Name Match (English)
+            if name and name in content_lower:
+                final_items.append(item)
+                continue
+                
+            # 2. Vietnamese Match (Flexible)
+            if viet:
+                # Direct substring match
+                if viet in content_lower:
+                    final_items.append(item)
+                    continue
+                
+                # Partial match for long names (e.g. "Ca Nuong Da Gion" inside "Ca Nuong Da Gion Thit Luoc")
+                # If the content contains a significant continuous chunk of the Vietnamese name.
+                viet_words = viet.split()
+                if len(viet_words) >= 4:
+                    # Try matching the first 4 words (often the core name)
+                    core_name = " ".join(viet_words[:4])
+                    if core_name in content_lower:
+                        final_items.append(item)
+                        continue
+                    
+                    # Try matching any 4 consecutive words?
+                    # For now, strict prefix of 4 words is safer than random 4 words.
+                    pass
+
+        return final_items
 
         return {
             "text": "I apologize, I'm having trouble connecting to the system right now. Could you ask that again?", 
