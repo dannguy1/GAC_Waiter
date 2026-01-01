@@ -23,6 +23,7 @@ This document describes the tools available to the `WaitstaffAgent` in the GAC W
     Action Input: who is the owner
     ```
 *   **Returns**: Relevant text snippets from the restaurant's knowledge base.
+*   **Auto-Discovery**: The agent automatically scans the returned information for potential menu items and adds them to the "Menu Showcase" if found.
 
 ### 3. `set_language`
 *   **Purpose**: Updates the session language preference. The agent will respond in this language for future turns.

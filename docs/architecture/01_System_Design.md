@@ -160,8 +160,8 @@ graph TD
 
 ### 5.3 Dependencies
 **RAG**:
-- `sentence-transformers==2.2.2`: Embedding model
-- `faiss-cpu==1.7.4`: Vector similarity search
+- `sentence-transformers>=3.0.0`: Embedding model
+- `faiss-cpu>=1.8.0`: Vector similarity search
 - `rank-bm25==0.2.2`: Keyword search
 
 **TTS**:
@@ -180,7 +180,9 @@ graph TD
 
 ## 7. RAG Integration Details
 
-See [`docs/RAG_Integration.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/RAG_Integration.md) for comprehensive documentation on:
+### 7. RAG Integration Details
+ 
+See [`docs/components/02_RAG_System.md`](../../docs/components/02_RAG_System.md) for comprehensive documentation on:
 - RAG architecture and components
 - Indexing and retrieval algorithms
 - Validation and hallucination prevention
@@ -189,7 +191,9 @@ See [`docs/RAG_Integration.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/RAG_I
 
 ## 8. TTS System Details
 
-See [`docs/TTS_System.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/TTS_System.md) for comprehensive documentation on:
+### 8. TTS System Details
+ 
+See [`docs/components/03_TTS_System.md`](../../docs/components/03_TTS_System.md) for comprehensive documentation on:
 - On-demand audio generation architecture
 - Multi-language support (English, Vietnamese, Chinese, Spanish)
 - Automatic language detection
@@ -199,14 +203,18 @@ See [`docs/TTS_System.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/TTS_System
 
 ## 9. UI Design System
 
-See [`docs/UI_Design_Guide.md`](file:///home/dannguyen/GAC/GAC_Waiter/docs/UI_Design_Guide.md) for the interface specification:
+### 9. UI Design System
+ 
+See [`docs/components/04_UI_Design.md`](../../docs/components/04_UI_Design.md) for the interface specification:
 - **Theme**: "Garlic & Chives" Green (#4CAF50) & Dark Mode
 - **Typography**: Playfair Display (Headers) + Inter (Body)
 - **Components**: Custom CSS for buttons, chat bubbles, and layout
 
 ## 10. Image & Data Flow
 
-See [`docs/Image_Data_Flow.md`](./Image_Data_Flow.md) for documentation on:
+### 10. Image & Data Flow
+ 
+See [`docs/architecture/02_Data_Flow.md`](./02_Data_Flow.md) for documentation on:
 - **Data Flow Architecture**: How menu items and images flow through the system
 - **LLM Isolation**: Images are NEVER sent to the LLM - used only for local UI display
 - **Message Sanitization**: How conversation data is cleaned before LLM calls

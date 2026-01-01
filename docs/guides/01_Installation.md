@@ -263,16 +263,20 @@ LLM_MODEL=model-name
 
 #### Hot-Reloading Menu Updates
 
+#### Hot-Reloading Menu Updates
+
 To update the menu **without restarting the server**:
 
-1. Edit the source file at `data-original/menu.json`.
+1. Edit the active file at `data/menu.json`.
 2. Run the refresh script:
 
 ```bash
 ./scripts/refresh_menu.sh
 ```
 
-This will automatically sync the changes to the live data folder and trigger a backend reload to update the search index.
+This will:
+- Clear the RAG cache to ensure fresh indexing.
+- Trigger a backend reload to update the search index.
 ```
 
 ### Restaurant Facts (facts.json)
@@ -439,7 +443,7 @@ kill -9 <PID>
 ### Getting Help
 
 - Check logs: `tail -f api.log app.log`
-- Review docs: `docs/System_Design.md`
+- Review docs: `docs/architecture/01_System_Design.md`
 - Test LLM: `python scripts/verify_llm.py`
 
 ---

@@ -45,10 +45,9 @@ The system now uses **Retrieval-Augmented Generation (RAG)** to ensure menu accu
 
 ### Dependencies
 
-- `sentence-transformers==5.2.0` - Embedding model
-- `faiss-cpu==1.7.4` - Vector similarity search
+- `sentence-transformers>=3.0.0` - Embedding model
+- `faiss-cpu>=1.8.0` - Vector similarity search
 - `rank-bm25==0.2.2` - Keyword search
-- `tf-keras==2.20.1` - TensorFlow compatibility
 
 ### Future Enhancements (Phase 2 & 3)
 
