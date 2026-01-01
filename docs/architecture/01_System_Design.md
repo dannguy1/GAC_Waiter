@@ -133,6 +133,7 @@ graph TD
         "item_viet": "Ap Chao Chay",
         "pronunciation": "ahp chow chy",
         "description": "Sautéed flat rice noodles with tofu...",
+        "description_viet": "Hủ tiếu xào chay...",
         "price": 18,
         "category": "Rice & Noodles",
         "popular": false,
@@ -145,6 +146,8 @@ graph TD
   - `item_name`: English name (primary identifier)
   - `item_viet`: Vietnamese name (optional)
   - `pronunciation`: Phonetic pronunciation for Vietnamese name (optional)
+  - `description`: English description
+  - `description_viet`: Vietnamese description (optional)
   - `image_path`: Relative path to item image
 
 ### 5.2 Configuration (`.env`)
