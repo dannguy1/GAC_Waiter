@@ -25,9 +25,14 @@ def clean_llm_response(text: str) -> str:
     
     return text.strip()
 
+# Import menu_manager singleton
+from backend.menu_manager import MenuManager
+menu_manager = MenuManager()
+
 class WaitstaffAgent:
     def __init__(self):
         self.retriever = get_retriever()
+        self.menu_manager = menu_manager
         self.client = OpenAI(
             base_url=config.LLM_BASE_URL,
             api_key=config.LLM_API_KEY,
@@ -245,6 +250,12 @@ CRITICAL RULES:
                         observation = self.lookup_menu(query, detected_language)
                     elif tool == "lookup_info":
                         observation = self.lookup_info(query)
+                        # AUTO-DISCOVERY: Check if the info text mentions any actual menu items
+                        # This covers cases where the agent finds "Specials" in text but forgets to call lookup_menu
+                        found_in_info = self.menu_manager.find_items_in_text(observation)
+                        if found_in_info:
+                            logger.info(f"Auto-discovered {len(found_in_info)} items in lookup_info result")
+                            self.last_mentioned_items.extend(found_in_info)
                     elif tool == "set_language":
                         detected_language = query
                         observation = f"Language set to {detected_language}. Please respond in {detected_language} from now on."
@@ -371,43 +382,64 @@ CRITICAL RULES:
                     }
                 }
 
+    def _normalize_for_match(self, text: str) -> str:
+        """
+        Normalize text for fuzzy matching.
+        - Lowercase
+        - Expand common abbreviations (w. -> with, & -> and)
+        - Remove punctuation
+        - Collapse spaces
+        """
+        text = text.lower()
+        # Common abbreviations common in menu items
+        text = text.replace(" w. ", " with ")
+        text = text.replace(" & ", " and ")
+        
+        # Remove punctuation (keep spaces)
+        import re
+        text = re.sub(r'[^\w\s]', '', text)
+        
+        # Collapse spaces
+        return re.sub(r'\s+', ' ', text).strip()
+
     def _filter_mentioned_items(self, content: str, candidate_items: list) -> list:
         """
         Filter items that are explicitly mentioned in the content.
-        Uses stricter matching for short names and looser matching for long Vietnamese names.
+        Uses normalized matching for robustness against abbreviations and formatting.
         """
         final_items = []
-        content_lower = content.lower()
+        # Normalize the content once
+        content_norm = self._normalize_for_match(content)
+        
+        logger.debug(f"Normalized Content for matching: '{content_norm[:100]}...'")
         
         for item in candidate_items:
-            name = item.get('item_name', '').lower()
-            viet = item.get('item_viet', '').lower()
+            # 1. Exact Name Match (Normalized)
+            name = item.get('item_name', '')
+            name_norm = self._normalize_for_match(name)
             
-            # 1. Exact Name Match (English)
-            if name and name in content_lower:
+            if name_norm and name_norm in content_norm:
                 final_items.append(item)
                 continue
                 
             # 2. Vietnamese Match (Flexible)
+            viet = item.get('item_viet', '')
             if viet:
+                viet_norm = self._normalize_for_match(viet)
+                
                 # Direct substring match
-                if viet in content_lower:
+                if viet_norm and viet_norm in content_norm:
                     final_items.append(item)
                     continue
                 
-                # Partial match for long names (e.g. "Ca Nuong Da Gion" inside "Ca Nuong Da Gion Thit Luoc")
-                # If the content contains a significant continuous chunk of the Vietnamese name.
-                viet_words = viet.split()
+                # Partial match for long names
+                viet_words = viet_norm.split()
                 if len(viet_words) >= 4:
-                    # Try matching the first 4 words (often the core name)
+                    # Match first 4 words
                     core_name = " ".join(viet_words[:4])
-                    if core_name in content_lower:
+                    if core_name in content_norm:
                         final_items.append(item)
                         continue
-                    
-                    # Try matching any 4 consecutive words?
-                    # For now, strict prefix of 4 words is safer than random 4 words.
-                    pass
 
         return final_items
 

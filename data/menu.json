@@ -48,7 +48,7 @@
     {
       "item_name": "House Special Pork Chops",
       "description": "Savor our House Special Pork Chops, where juicy chops are marinated in a signature blend of spices, grilled to perfection, and served with a unique house sauce that elevates the humble pork chop to a gourmet delight.",
-      "image_path": "",
+      "image_path": "./images/PorkChop.jpg",
       "price": 12,
       "category": "Meat & Poultry",
       "popular": false,
@@ -100,7 +100,7 @@
       "description": "Sweetened sticky rice with fresh mangoes",
       "image_path": "./images/stickyricemango.jpg",
       "price": 24,
-      "category": "Rice & Noodles",
+      "category": "Dessert",
       "popular": false,
       "item_viet": "X\u00f4i Xo\u00e0i",
       "description_viet": "X\u00f4i n\u1ebfp d\u1ebbo ng\u1ecdt \u0103n k\u00e8m xo\u00e0i t\u01b0\u01a1i ch\u00edn th\u01a1m."
@@ -620,17 +620,6 @@
       "description_viet": "Cua Singapore rang \u1edbt - \u0103n k\u00e8m qu\u1ea9y v\u00e0 b\u00e1nh m\u00ec baguette."
     },
     {
-      "item_name": "Charbroiled Blk Tiger on Garlic Noodles",
-      "description": "Marinated black tiger shrimp served with garlic butter noodles",
-      "image_path": "./images/CharbroiedBlkTigeronGarlicNoodles.jpg",
-      "price": 10,
-      "category": "Rice & Noodles",
-      "popular": true,
-      "item_viet": "M\u00ec T\u1ecfi T\u00f4m S\u00fa N\u01b0\u1edbng",
-      "pronunciation": "Mee Twa Tom Soo Noo-ong",
-      "description_viet": "T\u00f4m s\u00fa \u0111en \u01b0\u1edbp gia v\u1ecb n\u01b0\u1edbng than, \u0103n k\u00e8m m\u00ec x\u00e0o b\u01a1 t\u1ecfi."
-    },
-    {
       "item_name": "Salt and Pepper Shrimp",
       "description": "Deep fried colossal shrimp sauteed in garlic butter, onions and jalepenos",
       "image_path": "./images/SaltandPepperShrimp.jpg",
@@ -820,7 +809,7 @@
     {
       "item_name": "Shaken Tofu",
       "description": "Fried tofu saut\u00e9ed with onions, bell peppers, and mushrooms. Served with rice",
-      "image_path": "./downloaded_images/Shaken_tofuDau_hu_luc_lac.jpg",
+      "image_path": "./images/ShakenTofu.jpg",
       "price": 14,
       "category": "Rice & Noodles",
       "popular": false,
@@ -1083,7 +1072,7 @@
     {
       "item_name": "Fried Rice",
       "description": "Vietnamese styled fried rice prepared with egg, peas and carrots plus your choice of shrimp, salted fish or combination.",
-      "image_path": "./downloaded_images/Fried_RiceCom_Chien.jpg",
+      "image_path": "./images/FriedRices.jpg",
       "price": 26,
       "category": "Rice & Noodles",
       "popular": false,
@@ -1400,9 +1389,9 @@
       "description_viet": "X\u00f4i v\u1edbi l\u1ea1p x\u01b0\u1edfng, tr\u1ee9ng v\u00e0 th\u1ecbt heo x\u00e9 s\u1ee3i."
     },
     {
-      "item_name": "Carmelized Catfish",
+      "item_name": "Caramelized Catfish",
       "description": "Catfish caramelized in sauce. Served with crispy rice",
-      "image_path": "",
+      "image_path": "./images/CaramelizedCatfish.jpg",
       "price": 17,
       "category": "Seafood",
       "popular": false,
@@ -1490,7 +1479,7 @@
     {
       "item_name": "Eggroll Noodles",
       "description": "Fried rice paper egg rolls served on top of rice noodles with lettuce, herbs, pickled vegetabled and peanuts",
-      "image_path": "",
+      "image_path": "./images/eggrolls.jpg",
       "price": 12,
       "category": "Rice & Noodles",
       "popular": true,
@@ -1698,7 +1687,7 @@
     {
       "item_name": "Shaken Tofu",
       "description": "Enjoy our Dau Hu Luc Lac, where tofu cubes are seasoned and 'shaken' to perfection, offering a delightful sear and served with fresh greens for a light, flavorful dish.",
-      "image_path": "./downloaded_images/Shaken_Tofu_-_Dau_Hu_Luc_Lac.jpg",
+      "image_path": "./images/ShakenTofu.jpg",
       "price": 12,
       "category": "Vegetables & Sides",
       "popular": true,
